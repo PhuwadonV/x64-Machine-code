@@ -169,7 +169,7 @@
 `F2` : repnz&emsp;// mandatory prefix<br>
 `F3` : repz&emsp;&ensp;// mandatory prefix<br>
 
-## REX flag
+## REX ( flag )
 `41` : rex.b&emsp;&ensp;// ModR/M r/m | SIB base | Opcode reg<br>
 `42` : rex.x&emsp;&ensp;// &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;SIB index<br>
 `44` : rex.r&emsp;&ensp;// ModR/M reg<br>
@@ -182,18 +182,30 @@
 | w         | r8d - r15d | :arrow_right: | r8 - r15   |
 
 ## VEX
-`C4` : <br>
-`C5` : <br>
+`C4` ?? ?? : 3-byte prefix<br>
+`C5` ?? : 2-byte prefix<br>
 
 ## EVEX
-`62` : <br>
+`62` ?? ?? ?? : 4-byte prefix<br>
 
-## Prefix-like
-`0F` : more opcode<br>
-
+## Prefix-like ( immediate override )
 `80` : opcode r/m8, imm8<br>
 `81` : opcode r/m32, imm32<br>
 `83` : opcode r/m32, imm8<br>
+
+## Prefix-like ( extend opcode )
+`0F`<br>
+`0F 38`<br>
+`0F 3A`<br>
+`66 0F`<br>
+`66 0F 38`<br>
+`66 0F 3A`<br>
+`F2 0F`<br>
+`F2 0F 38`<br>
+`F2 0F 3A`<br>
+`F3 0F`<br>
+`F3 0F 38`<br>
+`F3 0F 3A`<br>
 
 ## Opcode
 `00` /r : add r/m8, r8<br>
