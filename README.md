@@ -388,7 +388,7 @@
 `C1` /7 ib : sar r/m32, imm8<br>
 
 `C2` iw : ret imm16<br>
-`C3`    : ret <br>
+`C3`&emsp;&ensp;: ret <br>
 
 `C4` /r : lea r32, m16:32&emsp;// :x:Invalid<br>
 `C5` /r : lds r32, m16:32&emsp;// :x:Invalid<br>
@@ -517,6 +517,73 @@
 `DF` /5 : fild m64int<br>
 `DF` /6 : fbstp m80bcd<br>
 `DF` /7 : fistp m64int<br>
+
+`E0` ib : loopne rel8<br>
+`E1` ib : loope rel8<br>
+`E2` ib : loop rel8<br>
+
+`E3` ib : jrcxz rel8<br>
+
+`E4` ib : in al, imm8<br>
+`E5` ib : in eax, imm8<br>
+
+`E6` ib : out imm8, al<br>
+`E7` ib : out imm8, eax<br>
+
+`E8` id : call rel32<br>
+`E9` id : jmp rel32<br>
+
+`EA` iw id : jmp ptr16:32<br>
+
+`EB` iw : jmp rel16<br>
+
+`EC` ib : in al, dx<br>
+`ED` ib : in eax, dx<br>
+
+`EE` : out dx, al<br>
+`EF` : out dx, eax<br>
+
+`F1` : int1 // icebp<br>
+`F4` : hlt<br>
+`F5` : cmc<br>
+
+`F6` /0 ib : test r/m8, imm8<br>
+
+`F6` /2    : not r/m8<br>
+`F6` /3    : neg r/m8<br>
+`F6` /4    : mul r/m8<br>
+`F6` /5    : imul r/m8<br>
+`F6` /6    : div r/m8<br>
+`F6` /7    : idiv r/m8<br>
+
+`F7` /0 id : test r/m8, imm8<br>
+
+`F7` /2    : not r/m32<br>
+`F7` /3    : neg r/m32<br>
+`F7` /4    : mul r/m32<br>
+`F7` /5    : imul r/m32<br>
+`F7` /6    : div r/m32<br>
+`F7` /7    : idiv r/m32<br>
+
+`F8` : clc<br>
+`F9` : stc<br>
+`FA` : cli<br>
+`FB` : sti<br>
+`FC` : cld<br>
+`FD` : std<br>
+
+`FE` /0 : dec r/m8<br>
+`FE` /1 : inc r/m8<br>
+`FF` /0 : dec r/m16<br>
+`FF` /1 : inc r/m16<br>
+
+`FF` /2 : call r/m64<br>
+`FF` /3 : call m16:32<br>
+
+`FF` /4 : jmp r/m64<br>
+`FF` /5 : jmp m16:32<br>
+
+`FF` /6 : push r/m64<br>
 
 ## More Opcode
 0F `00` /0 : sldt r/m16<br>
