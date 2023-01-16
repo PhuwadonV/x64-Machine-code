@@ -3,7 +3,7 @@
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
 # Instruction Format
 ## Order
-[Prefix]+&ensp;[REX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]+
+[Prefix]\*&ensp;[REX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]\*
 
 ## Operand size
 `ib` : imm8<br>
@@ -130,8 +130,8 @@
 
 # Machine code
 ## Unknown
-`82` : ?
-`D6` : ?
+`82` : ?<br>
+`D6` : ?<br>
 ## Prefix
 `26` : es:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
 `2E` : cs:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
@@ -448,33 +448,33 @@
 `D4` ib : aam imm8&emsp;// :x:Invalid<br>
 `D5` ib : aad imm8&emsp;&nbsp;// :x:Invalid<br>
 
-`D7` : xlat
+`D7` : xlat<br>
 
-`D8` /0 : fadd m32fp
-`D8` /1 : fmul m32fp
-`D8` /2 : fcom m32fp
-`D8` /3 : fcomp m32fp
-`D8` /4 : fsub m32fp
-`D8` /5 : fsubr m32fp
-`D8` /6 : fdiv m32fp
-`D8` /7 : fdivr m32fp
+`D8` /0 : fadd m32fp<br>
+`D8` /1 : fmul m32fp<br>
+`D8` /2 : fcom m32fp<br>
+`D8` /3 : fcomp m32fp<br>
+`D8` /4 : fsub m32fp<br>
+`D8` /5 : fsubr m32fp<br>
+`D8` /6 : fdiv m32fp<br>
+`D8` /7 : fdivr m32fp<br>
 
-`D9` /0 : fld m32fp
-`D9` /2 : fst m32fp
-`D9` /3 : fstp m32fp
-`D9` /4 : fldenv m14/28byte
-`D9` /5 : fldcw m2byte
-`D9` /6 : fnstenv m14/28byte
-`D9` /7 : fnstcw m2byte
+`D9` /0 : fld m32fp<br>
+`D9` /2 : fst m32fp<br>
+`D9` /3 : fstp m32fp<br>
+`D9` /4 : fldenv m14/28byte<br>
+`D9` /5 : fldcw m2byte<br>
+`D9` /6 : fnstenv m14/28byte<br>
+`D9` /7 : fnstcw m2byte<br>
 
-`DA` /0 : fiadd m32int
-`DA` /1 : fimul m32int
-`DA` /2 : ficom m32int
-`DA` /3 : ficomp m32int
-`DA` /4 : fisub m32int
-`DA` /5 : fisubr m32int
-`DA` /6 : fidiv m32int
-`DA` /7 : fidivr m32int
+`DA` /0 : fiadd m32int<br>
+`DA` /1 : fimul m32int<br>
+`DA` /2 : ficom m32int<br>
+`DA` /3 : ficomp m32int<br>
+`DA` /4 : fisub m32int<br>
+`DA` /5 : fisubr m32int<br>
+`DA` /6 : fidiv m32int<br>
+`DA` /7 : fidivr m32int<br>
 
 ## More Opcode
 `0F 00` /0 : sldt r/m16<br>
