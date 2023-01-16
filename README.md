@@ -3,7 +3,7 @@
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
 # Instruction Format
 ## Order
-[Prefixes]&ensp;[REX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]
+[Prefix]+&ensp;[REX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]+
 
 ## Operand size
 `ib` : imm8<br>
@@ -131,6 +131,7 @@
 # Machine code
 ## Unknown
 `82` : ?
+`D6` : ?
 ## Prefix
 `26` : es:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
 `2E` : cs:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
@@ -184,10 +185,301 @@
 `0C` ib : or al, imm8<br>
 `0D` id : or eax, imm32
 
+`0E` : push cs&emsp;// :x:Invalid<br>
+
+`10` /r : adc r/m8, r8<br>
+`11` /r : adc r/m32, r32<br>
+`12` /r : adc r8, r/m8<br>
+`13` /r : adc r32, r/m32<br>
+`14` ib : adc al, imm8<br>
+`15` id : adc eax, imm32<br>
+
+`16` : push ss&emsp;// :x:Invalid<br>
+`17` : pop  ss&emsp;&nbsp;// :x:Invalid<br>
+
+`18` /r : sbb r/m8, r8<br>
+`19` /r : sbb r/m32, r32<br>
+`1A` /r : sbb r8, r/m8<br>
+`1B` /r : sbb r32, r/m32<br>
+`1C` ib : sbb al, imm8<br>
+`1D` id : sbb eax, imm32<br>
+
+`1E` : push ds&emsp;// :x:Invalid<br>
+`1F` : pop  ds&emsp;&nbsp;// :x:Invalid<br>
+
+`20` /r : and r/m8, r8<br>
+`21` /r : and r/m32, r32<br>
+`22` /r : and r8, r/m8<br>
+`23` /r : and r32, r/m32<br>
+`24` ib : and al, imm8<br>
+`25` id : and eax, imm32<br>
+
+`27` : daa&emsp;// :x:Invalid<br>
+
+`28` /r : sub r/m8, r8<br>
+`29` /r : sub r/m32, r32<br>
+`2A` /r : sub r8, r/m8<br>
+`2B` /r : sub r32, r/m32<br>
+`2C` ib : sub al, imm8<br>
+`2D` id : sub eax, imm32<br>
+
+`2F` : das&emsp;// :x:Invalid<br>
+
+`30` /r : xor r/m8, r8<br>
+`31` /r : xor r/m32, r32<br>
+`32` /r : xor r8, r/m8<br>
+`33` /r : xor r32, r/m32<br>
+`34` ib : xor al, imm8<br>
+`35` id : xor eax, imm32<br>
+
+`37` : aaa&emsp;// :x:Invalid<br>
+
+`38` /r : cmp r/m8, r8<br>
+`39` /r : cmp r/m32, r32<br>
+`3A` /r : cmp r8, r/m8<br>
+`3B` /r : cmp r32, r/m32<br>
+`3C` ib : cmp al, imm8<br>
+`3D` id : cmp eax, imm32<br>
+
+`3F` : aas&emsp;// :x:Invalid<br>
+
+`50` : push rax<br>
+`51` : push rcx<br>
+`52` : push rdx<br>
+`53` : push rbx<br>
+`54` : push rsp<br>
+`55` : push rbp<br>
+`56` : push rsi<br>
+`57` : push rdi<br>
+
+`58` : pop rax<br>
+`59` : pop rcx<br>
+`5A` : pop rdx<br>
+`5B` : pop rbx<br>
+`5C` : pop rsp<br>
+`5D` : pop rbp<br>
+`5E` : pop rsi<br>
+`5F` : pop rdi<br>
+
+`60`&emsp;&nbsp;: push a&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// :x:Invalid<br>
+`61`&emsp;&nbsp;: pop a&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;// :x:Invalid<br>
+`62` /r : bound r32, m32&32&emsp;// :x:Invalid<br>
+
+`63` /r : movsxd r32, r/m32<br>
+
+`68`&emsp;&emsp;&ensp;: push imm32<br>
+`69` /r id : imul r32, r/m32, imm32<br>
+`6A`&emsp;&emsp;&ensp;: push imm8<br>
+`6B` /r ib : imul r32, r/m32, imm8<br>
+
+`6C` : insb<br>
+`6D` : insd<br>
+`6E` : outsb<br>
+`6F` : outsd<br>
+
+`70` ib : jo rel8<br>
+`71` ib : jno rel8<br>
+`72` ib : jb rel8<br>
+`73` ib : jae rel8<br>
+`74` ib : je rel8<br>
+`75` ib : jne rel8<br>
+`76` ib : jbe rel8<br>
+`77` ib : ja rel8<br>
+`78` ib : js rel8<br>
+`79` ib : jns rel8<br>
+`7A` ib : jp rel8<br>
+`7B` ib : jnp rel8<br>
+`7C` ib : jl rel8<br>
+`7D` ib : jge rel8<br>
+`7E` ib : jle rel8<br>
+`7F` ib : jg rel8<br>
+
+`84` /r : test r/m8, r8<br>
+`85` /r : test r/m8, r8<br>
+
+`86` /r : xchg r8, r/m8<br>
+`87` /r : xchg r/m32, r32<br>
+
+`88` /r : mov r/m8, r8<br>
+`89` /r : mov r/m32, r32<br>
+`8A` /r : mov r8, r/m8<br>
+`8B` /r : mov r32, r/m32<br>
+`8C` /r : mov r16/r32/m16, sreg<br>
+
+`8D` /r : lea r32, m<br>
+
+`8E` /r : mov sreg, r/m16<br>
+
+`8F` /r : pop r/m64<br>
+
+`90` : xchg eax, eax // nop<br>
+`91` : xchg ecx, eax<br>
+`92` : xchg edx, eax<br>
+`93` : xchg ebx, eax<br>
+`94` : xchg esp, eax<br>
+`95` : xchg ebp, eax<br>
+`96` : xchg esi, eax<br>
+`97` : xchg edi, eax<br>
+
+`98` : cwde<br>
+`99` : cdq<br>
+
+`9A` iw id : call ptr16:32&emsp;// :x:Invalid<br>
+
+`9B` : fwait<br>
+`9C` : pushf<br>
+`9D` : popf<br>
+`9E` : sahf<br>
+`9F` : lahf<br>
+
+`A0` iq : mov al, moffs8<br>
+`A1` iq : mov eax, moffs32<br>
+`A2` iq : mov moffs8, AL<br>
+`A3` iq : mov moffs32, eax<br>
+
+`A4` : movsb<br>
+`A5` : movsd<br>
+`A6` : cmpsb<br>
+`A7` : cmpsd<br>
+
+`A8` ib : test al, imm8<br>
+`A9` id : test eax, imm32<br>
+
+`AA` : stosb<br>
+`AB` : stosd<br>
+`AC` : lodsb<br>
+`AD` : lodsd<br>
+`AE` : scasb<br>
+`AF` : scasd<br>
+
+`B0` ib : mov al, imm8<br>
+`B1` ib : mov cl, imm8<br>
+`B2` ib : mov dl, imm8<br>
+`B3` ib : mov bl, imm8<br>
+`B4` ib : mov ah, imm8<br>
+`B5` ib : mov ch, imm8<br>
+`B6` ib : mov dh, imm8<br>
+`B7` ib : mov bh, imm8<br>
+`B8` id : mov eax, imm32<br>
+`B9` id : mov ecx, imm32<br>
+`BA` id : mov edx, imm32<br>
+`BB` id : mov ebx, imm32<br>
+`BC` id : mov esp, imm32<br>
+`BD` id : mov ebp, imm32<br>
+`BE` id : mov esi, imm32<br>
+`BF` id : mov edi, imm32<br>
+
+`C0` /0 ib : rol r/m8, imm8<br>
+`C0` /1 ib : ror r/m8, imm8<br>
+`C0` /2 ib : rcl r/m8, imm8<br>
+`C0` /3 ib : rcr r/m8, imm8<br>
+`C0` /4 ib : shl r/m8, imm8<br>
+`C0` /4 ib : sal r/m8, imm8<br>
+`C0` /5 ib : shr r/m8, imm8<br>
+`C0` /7 ib : sar r/m8, imm8<br>
+
+`C1` /0 ib : rol r/m32, imm8<br>
+`C1` /1 ib : ror r/m32, imm8<br>
+`C1` /2 ib : rcl r/m32, imm8<br>
+`C1` /3 ib : rcr r/m32, imm8<br>
+`C1` /4 ib : shl r/m32, imm8<br>
+`C1` /4 ib : sal r/m32, imm8<br>
+`C1` /5 ib : shr r/m32, imm8<br>
+`C1` /7 ib : sar r/m32, imm8<br>
+
+`C2` iw : ret imm16<br>
+`C3`    : ret <br>
+
+`C4` /r : lea r32, m16:32&emsp;// :x:Invalid<br>
+`C5` /r : lds r32, m16:32&emsp;// :x:Invalid<br>
+
+`C6` /0 ib : mov r/m8, imm8<br>
+`C7` /0 id : mov r/m32, imm32<br>
+
+`C8` iw ib : enter imm16, imm8<br>
+`C9`&emsp;&emsp;&ensp;&nbsp;: leave<br>
+
+`CA` iw : retf imm16<br>
+`CB`&emsp;&ensp;: retf<br>
+
+`CC`&emsp;&ensp;: int3<br>
+`CD` id : int imm8<br>
+
+`CE` : into&emsp;// :x:Invalid<br>
+
+`CF` : iret<br>
+
+`D0` /0 : rol r/m8, 1<br>
+`D0` /1 : ror r/m8, 1<br>
+`D0` /2 : rcl r/m8, 1<br>
+`D0` /3 : rcr r/m8, 1<br>
+`D0` /4 : shl r/m8, 1<br>
+`D0` /4 : sal r/m8, 1<br>
+`D0` /5 : shr r/m8, 1<br>
+`D0` /7 : sar r/m8, 1<br>
+
+`D1` /0 : rol r/m16, 1<br>
+`D1` /1 : ror r/m16, 1<br>
+`D1` /2 : rcl r/m16, 1<br>
+`D1` /3 : rcr r/m16, 1<br>
+`D1` /4 : shl r/m16, 1<br>
+`D1` /4 : sal r/m16, 1<br>
+`D1` /5 : shr r/m16, 1<br>
+`D1` /7 : sar r/m16, 1<br>
+
+`D2` /0 : ROL r/m8, cl<br>
+`D2` /1 : ror r/m8, cl<br>
+`D2` /2 : rcl r/m8, cl<br>
+`D2` /3 : rcr r/m8, cl<br>
+`D2` /4 : shl r/m8, cl<br>
+`D2` /4 : sal r/m8, cl<br>
+`D2` /5 : shr r/m8, cl<br>
+`D2` /7 : sar r/m8, cl<br>
+
+`D3` /0 : ROL r/m16, cl<br>
+`D3` /1 : ror r/m16, cl<br>
+`D3` /2 : rcl r/m16, cl<br>
+`D3` /3 : rcr r/m16, cl<br>
+`D3` /4 : shl r/m16, cl<br>
+`D3` /4 : sal r/m16, cl<br>
+`D3` /5 : shr r/m16, cl<br>
+`D3` /7 : sar r/m16, cl<br>
+
+`D4` ib : aam imm8&emsp;// :x:Invalid<br>
+`D5` ib : aad imm8&emsp;&nbsp;// :x:Invalid<br>
+
+`D7` : xlat
+
+`D8` /0 : fadd m32fp
+`D8` /1 : fmul m32fp
+`D8` /2 : fcom m32fp
+`D8` /3 : fcomp m32fp
+`D8` /4 : fsub m32fp
+`D8` /5 : fsubr m32fp
+`D8` /6 : fdiv m32fp
+`D8` /7 : fdivr m32fp
+
+`D9` /0 : fld m32fp
+`D9` /2 : fst m32fp
+`D9` /3 : fstp m32fp
+`D9` /4 : fldenv m14/28byte
+`D9` /5 : fldcw m2byte
+`D9` /6 : fnstenv m14/28byte
+`D9` /7 : fnstcw m2byte
+
+`DA` /0 : fiadd m32int
+`DA` /1 : fimul m32int
+`DA` /2 : ficom m32int
+`DA` /3 : ficomp m32int
+`DA` /4 : fisub m32int
+`DA` /5 : fisubr m32int
+`DA` /6 : fidiv m32int
+`DA` /7 : fidivr m32int
+
 ## More Opcode
-`00` /0 : sldt r/m16<br>
-`00` /1 : str r/m16<br>
-`00` /2 : lldt r/m16<br>
-`00` /3 : ltr r/m16<br>
-`00` /4 : verr r/m16<br>
-`00` /5 : verw r/m16<br>
+`0F 00` /0 : sldt r/m16<br>
+`0F 00` /1 : str r/m16<br>
+`0F 00` /2 : lldt r/m16<br>
+`0F 00` /3 : ltr r/m16<br>
+`0F 00` /4 : verr r/m16<br>
+`0F 00` /5 : verw r/m16<br>
