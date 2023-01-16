@@ -194,18 +194,18 @@
 `83` : opcode r/m32, imm8<br>
 
 ## Prefix-like ( extend opcode )
-`0F`<br>
-`0F 38`<br>
-`0F 3A`<br>
-`66 0F`<br>
-`66 0F 38`<br>
-`66 0F 3A`<br>
-`F2 0F`<br>
-`F2 0F 38`<br>
-`F2 0F 3A`<br>
-`F3 0F`<br>
-`F3 0F 38`<br>
-`F3 0F 3A`<br>
+&emsp;&emsp;&emsp;&emsp;`0F`<br>
+&emsp;&emsp;&emsp;&emsp;`0F 38`<br>
+&emsp;&emsp;&emsp;&emsp;`0F 3A`<br>
+66 [VEX] `0F`<br>
+66 [VEX] `0F 38`<br>
+66 [VEX] `0F 3A`<br>
+F2 [VEX] `0F`<br>
+F2 [VEX] `0F 38`<br>
+F2 [VEX] `0F 3A`<br>
+F3 [VEX] `0F`<br>
+F3 [VEX] `0F 38`<br>
+F3 [VEX] `0F 3A`<br>
 
 ## Opcode
 `00` /r : add r/m8, r8<br>
