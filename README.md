@@ -2,10 +2,11 @@
 - VEX prefix
 - EVEX prefix
 - More opcode
-- SIMD Extensions
+
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
+
 # Instruction Format
 ## Order
 [Prefix]\*&ensp;[REX]&emsp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]\*<br>
@@ -605,7 +606,7 @@ F3 [VEX] `0F 3A`<br>
 0F `00` /4 : verr r/m16<br>
 0F `00` /5 : verw r/m16<br>
 
-## SIMD Extensions
+## More Opcodes ( VEX / EVEX prefix )
 &emsp;66 0F `10` \r : movupd xmm1, xmm2/m128<br>
 vex.128 `10` \r : vmovupd xmm1, xmm2/m128<br>
 vex.256 `10` \r : vmovupd ymm1, ymm2/m256<br>
