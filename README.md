@@ -70,14 +70,14 @@
 
 | Register (R)&emsp;        | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
 |---------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
-| `reg0`                    | 80     | 88     | 90     | 98     | A0     | A8     | B0     | B8     |
-| `reg1`                    | 81     | 89     | 91     | 99     | A1     | A9     | B1     | B9     |
-| `reg2`                    | 82     | 8A     | 92     | 9A     | A2     | AA     | B2     | BA     |
-| `reg3`                    | 83     | 8B     | 93     | 9B     | A3     | AB     | B3     | BB     |
-| `reg4`                    | 84     | 8C     | 94     | 9C     | A4     | AC     | B4     | BC     |
-| `reg5`                    | 85     | 8D     | 95     | 9D     | A5     | AD     | B5     | BD     |
-| `reg6`                    | 86     | 8E     | 96     | 9E     | A6     | AE     | B6     | BE     |
-| `reg7`                    | 87     | 8F     | 97     | 9F     | A7     | AF     | B7     | BF     |
+| `reg0`                    | C0     | C8     | D0     | D8     | E0     | E8     | F0     | F8     |
+| `reg1`                    | C1     | C9     | D1     | D9     | E1     | E9     | F1     | F9     |
+| `reg2`                    | C2     | CA     | D2     | DA     | E2     | EA     | F2     | FA     |
+| `reg3`                    | C3     | CB     | D3     | DB     | E3     | EB     | F3     | FB     |
+| `reg4`                    | C4     | CC     | D4     | DC     | E4     | EC     | F4     | FC     |
+| `reg5`                    | C5     | CD     | D5     | DD     | E5     | ED     | F5     | FD     |
+| `reg6`                    | C6     | CE     | D6     | DE     | E6     | EE     | F6     | FE     |
+| `reg7`                    | C7     | CF     | D7     | DF     | E7     | EF     | F7     | FF     |
 
 ## SIB
 | ModR/M  | `*`                             |
