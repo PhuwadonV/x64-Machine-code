@@ -3,7 +3,9 @@
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
 # Instruction Format
 ## Order
-[Prefix]\*&ensp;[REX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]\*
+[Prefix]\*&ensp;[REX]&emsp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]\*<br>
+[Prefix]\*&ensp;[VEX]&emsp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]\*<br>
+[Prefix]\*&ensp;[EVEX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]\*<br>
 
 ## Operand size
 `ib` : imm8<br>
@@ -130,8 +132,27 @@
 
 # Machine code
 ## Unknown
-`82` : ?<br>
-`D6` : ?<br>
+:grey_question: `82`<br>
+:grey_question: `D6`<br>
+## Invalid
+:x: `06`&emsp;&emsp;&ensp;: push es<br>
+:x: `07`&emsp;&emsp;&ensp;: pop  es<br>
+:x: `0E`&emsp;&emsp;&ensp;: push cs<br>
+:x: `16`&emsp;&emsp;&ensp;: push ss<br>
+:x: `17`&emsp;&emsp;&ensp;: pop  ss<br>
+:x: `1E`&emsp;&emsp;&ensp;: push ds<br>
+:x: `1F`&emsp;&emsp;&ensp;: pop  ds<br>
+:x: `27`&emsp;&emsp;&ensp;: daa<br>
+:x: `2F`&emsp;&emsp;&ensp;: das<br>
+:x: `37`&emsp;&emsp;&ensp;: aaa<br>
+:x: `3F`&emsp;&emsp;&ensp;: aas<br>
+:x: `60`&emsp;&emsp;&ensp;: push a<br>
+:x: `61`&emsp;&emsp;&ensp;: pop a<br>
+:x: `9A` iw id : call ptr16:32<br>
+:x: `CE`&emsp;&emsp;&ensp;: into<br>
+:x: `D4` ib&emsp;&ensp;: aam imm8<br>
+:x: `D5` ib&emsp;&ensp;: aad imm8<br>
+
 ## Prefix
 `26` : es:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
 `2E` : cs:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
@@ -160,6 +181,13 @@
 | w         | eax - edi  | :arrow_right: | rax - rdi  |
 | w         | r8d - r15d | :arrow_right: | r8 - r15   |
 
+## VEX
+`C4` : <br>
+`C5` : <br>
+
+## EVEX
+`62` : <br>
+
 ## Prefix-like
 `0F` : more opcode<br>
 
@@ -175,17 +203,12 @@
 `04` ib : add al, imm8<br>
 `05` id : add eax, imm32<br>
 
-`06` : push es&emsp;// :x:Invalid<br>
-`07` : pop  es&emsp;&nbsp;// :x:Invalid<br>
-
 `08` /r : or r/m8, r8<br>
 `09` /r : or r/m32, r32<br>
 `0A` /r : or r8, r/m8<br>
 `0B` /r : or r32, r/m32<br>
 `0C` ib : or al, imm8<br>
 `0D` id : or eax, imm32
-
-`0E` : push cs&emsp;// :x:Invalid<br>
 
 `10` /r : adc r/m8, r8<br>
 `11` /r : adc r/m32, r32<br>
@@ -194,18 +217,12 @@
 `14` ib : adc al, imm8<br>
 `15` id : adc eax, imm32<br>
 
-`16` : push ss&emsp;// :x:Invalid<br>
-`17` : pop  ss&emsp;&nbsp;// :x:Invalid<br>
-
 `18` /r : sbb r/m8, r8<br>
 `19` /r : sbb r/m32, r32<br>
 `1A` /r : sbb r8, r/m8<br>
 `1B` /r : sbb r32, r/m32<br>
 `1C` ib : sbb al, imm8<br>
 `1D` id : sbb eax, imm32<br>
-
-`1E` : push ds&emsp;// :x:Invalid<br>
-`1F` : pop  ds&emsp;&nbsp;// :x:Invalid<br>
 
 `20` /r : and r/m8, r8<br>
 `21` /r : and r/m32, r32<br>
@@ -214,16 +231,12 @@
 `24` ib : and al, imm8<br>
 `25` id : and eax, imm32<br>
 
-`27` : daa&emsp;// :x:Invalid<br>
-
 `28` /r : sub r/m8, r8<br>
 `29` /r : sub r/m32, r32<br>
 `2A` /r : sub r8, r/m8<br>
 `2B` /r : sub r32, r/m32<br>
 `2C` ib : sub al, imm8<br>
 `2D` id : sub eax, imm32<br>
-
-`2F` : das&emsp;// :x:Invalid<br>
 
 `30` /r : xor r/m8, r8<br>
 `31` /r : xor r/m32, r32<br>
@@ -232,16 +245,12 @@
 `34` ib : xor al, imm8<br>
 `35` id : xor eax, imm32<br>
 
-`37` : aaa&emsp;// :x:Invalid<br>
-
 `38` /r : cmp r/m8, r8<br>
 `39` /r : cmp r/m32, r32<br>
 `3A` /r : cmp r8, r/m8<br>
 `3B` /r : cmp r32, r/m32<br>
 `3C` ib : cmp al, imm8<br>
 `3D` id : cmp eax, imm32<br>
-
-`3F` : aas&emsp;// :x:Invalid<br>
 
 `50` : push rax<br>
 `51` : push rcx<br>
@@ -260,10 +269,6 @@
 `5D` : pop rbp<br>
 `5E` : pop rsi<br>
 `5F` : pop rdi<br>
-
-`60`&emsp;&nbsp;: push a&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// :x:Invalid<br>
-`61`&emsp;&nbsp;: pop a&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;// :x:Invalid<br>
-`62` /r : bound r32, m32&32&emsp;// :x:Invalid<br>
 
 `63` /r : movsxd r32, r/m32<br>
 
@@ -323,8 +328,6 @@
 
 `98` : cwde<br>
 `99` : cdq<br>
-
-`9A` iw id : call ptr16:32&emsp;// :x:Invalid<br>
 
 `9B` : fwait<br>
 `9C` : pushf<br>
@@ -390,9 +393,6 @@
 `C2` iw : ret imm16<br>
 `C3`&emsp;&ensp;: ret <br>
 
-`C4` /r : lea r32, m16:32&emsp;// :x:Invalid<br>
-`C5` /r : lds r32, m16:32&emsp;// :x:Invalid<br>
-
 `C6` /0 ib : mov r/m8, imm8<br>
 `C7` /0 id : mov r/m32, imm32<br>
 
@@ -404,8 +404,6 @@
 
 `CC`&emsp;&ensp;: int3<br>
 `CD` id : int imm8<br>
-
-`CE` : into&emsp;// :x:Invalid<br>
 
 `CF` : iret<br>
 
@@ -444,9 +442,6 @@
 `D3` /4 : sal r/m16, cl<br>
 `D3` /5 : shr r/m16, cl<br>
 `D3` /7 : sar r/m16, cl<br>
-
-`D4` ib : aam imm8&emsp;// :x:Invalid<br>
-`D5` ib : aad imm8&emsp;&nbsp;// :x:Invalid<br>
 
 `D7` : xlat<br>
 
