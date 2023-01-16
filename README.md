@@ -1,3 +1,6 @@
+# Link
+[Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
+[Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
 # Instruction Format
 ## Order
 [Prefixes]&ensp;[REX]&ensp;[Prefix-like]&ensp;`Opcode`&ensp;[ModR/M [SIB [DISP]]]&ensp;[imm]
@@ -142,10 +145,10 @@
 
 `F0` : lock<br>
 `F2` : repnz&emsp;// mandatory prefix<br>
-`F3` : repz&emsp;&nbsp;// mandatory prefix<br>
+`F3` : repz&emsp;&ensp;// mandatory prefix<br>
 
 ## REX flag
-`41` : rex.b&emsp;&ensp;// ModR/M r/m | SIB base  | Opcode reg<br>
+`41` : rex.b&emsp;&ensp;// ModR/M r/m | SIB base | Opcode reg<br>
 `42` : rex.x&emsp;&ensp;// &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;SIB index<br>
 `44` : rex.r&emsp;&ensp;// ModR/M reg<br>
 `48` : rex.w&emsp;// 32bit :arrow_right: 64bit<br>
