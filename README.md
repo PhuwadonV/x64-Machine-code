@@ -476,10 +476,52 @@
 `DA` /6 : fidiv m32int<br>
 `DA` /7 : fidivr m32int<br>
 
+`DB` /0 : fild m32int<br>
+`DB` /1 : fisttp m32int<br>
+`DB` /2 : fist m32int<br>
+`DB` /3 : fistp m32int<br>
+`DB` /5 : fld m80fp<br>
+`DB` /7 : fltp m80fp<br>
+
+`DC` /0 : fadd m64fp<br>
+`DC` /1 : fmul m64fp<br>
+`DC` /2 : fcom m64fp<br>
+`DC` /3 : fcomp m64fp<br>
+`DC` /4 : fsub m64fp<br>
+`DC` /5 : fsubr m64fp<br>
+`DC` /6 : fdev m64fp<br>
+`DC` /7 : fdivr m64fp<br>
+
+`DD` /0 : fld m64fp<br>
+`DD` /1 : fisttp m64int<br>
+`DD` /2 : fst m64fp<br>
+`DD` /3 : fstp m64fp<br>
+`DD` /4 : frstor m94/108byte<br>
+`DD` /6 : fnsave m94/108byte<br>
+`DD` /7 : fnstsw m2byte<br>
+
+`DE` /0 : fiadd m16int<br>
+`DE` /1 : fimul m16int<br>
+`DE` /2 : ficom m16int<br>
+`DE` /3 : ficomip m16int<br>
+`DE` /4 : fisub m16int<br>
+`DE` /5 : fisubr m16int<br>
+`DE` /6 : fidiv m16int<br>
+`DE` /7 : fidivr m16int<br>
+
+`DF` /0 : fild m16int<br>
+`DF` /1 : fisttp m16int<br>
+`DF` /2 : fist m16int<br>
+`DF` /3 : fistp m16int<br>
+`DF` /4 : fbld m80bcd<br>
+`DF` /5 : fild m64int<br>
+`DF` /6 : fbstp m80bcd<br>
+`DF` /7 : fistp m64int<br>
+
 ## More Opcode
-`0F 00` /0 : sldt r/m16<br>
-`0F 00` /1 : str r/m16<br>
-`0F 00` /2 : lldt r/m16<br>
-`0F 00` /3 : ltr r/m16<br>
-`0F 00` /4 : verr r/m16<br>
-`0F 00` /5 : verw r/m16<br>
+0F `00` /0 : sldt r/m16<br>
+0F `00` /1 : str r/m16<br>
+0F `00` /2 : lldt r/m16<br>
+0F `00` /3 : ltr r/m16<br>
+0F `00` /4 : verr r/m16<br>
+0F `00` /5 : verw r/m16<br>
