@@ -2,6 +2,7 @@
 - VEX prefix
 - EVEX prefix
 - More opcode
+- SIMD Extensions
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
@@ -173,7 +174,7 @@
 `F2` : repnz&emsp;// mandatory prefix<br>
 `F3` : repz&emsp;&ensp;// mandatory prefix<br>
 
-## REX ( flag )
+## REX ( Flag )
 `41` : rex.b&emsp;&ensp;// ModR/M r/m | SIB base | Opcode reg<br>
 `42` : rex.x&emsp;&ensp;// &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;SIB index<br>
 `44` : rex.r&emsp;&ensp;// ModR/M reg<br>
@@ -192,12 +193,12 @@
 ## EVEX
 `62` ?? ?? ?? : 4-byte prefix<br>
 
-## Prefix-like ( immediate override )
+## Prefix-like ( Immediate override )
 `80` : opcode r/m8, imm8<br>
 `81` : opcode r/m32, imm32<br>
 `83` : opcode r/m32, imm8<br>
 
-## Prefix-like ( extend opcode )
+## Prefix-like ( Extend Opcode )
 &emsp;&emsp;&emsp;&emsp;`0F`<br>
 &emsp;&emsp;&emsp;&emsp;`0F 38`<br>
 &emsp;&emsp;&emsp;&emsp;`0F 3A`<br>
@@ -596,10 +597,15 @@ F3 [VEX] `0F 3A`<br>
 
 `FF` /6 : push r/m64<br>
 
-## More Opcode
+## More Opcodes ( No VEX / EVEX prefix )
 0F `00` /0 : sldt r/m16<br>
 0F `00` /1 : str r/m16<br>
 0F `00` /2 : lldt r/m16<br>
 0F `00` /3 : ltr r/m16<br>
 0F `00` /4 : verr r/m16<br>
 0F `00` /5 : verw r/m16<br>
+
+## SIMD Extensions
+&emsp;66 0F `10` \r : movupd xmm1, xmm2/m128<br>
+vex.128 `10` \r : vmovupd xmm1, xmm2/m128<br>
+vex.256 `10` \r : vmovupd ymm1, ymm2/m256<br>
