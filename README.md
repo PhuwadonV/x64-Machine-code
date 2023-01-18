@@ -607,7 +607,12 @@ F3 [VEX] `0F 3A`<br>
 0F `00` /4 : verr r/m16<br>
 0F `00` /5 : verw r/m16<br>
 
+F2 0F 38 `F0` /r : crc32 r32, r/m8
+
 ## More Opcodes ( VEX / EVEX prefix )
-&emsp;66 0F `10` \r : movupd xmm1, xmm2/m128<br>
-vex.128 `10` \r : vmovupd xmm1, xmm2/m128<br>
-vex.256 `10` \r : vmovupd ymm1, ymm2/m256<br>
+&emsp;&emsp;&nbsp;0F `10` \r : movupd xmm, xmm/m128<br>
+&emsp;66 0F `10` \r : movupd xmm, xmm/m128<br>
+vex.128 `10` \r : vmovups xmm, xmm/m128<br>
+vex.256 `10` \r : vmovupd ymm, ymm/m256<br>
+&emsp;F2 0F `10` \r : movsd xmm, xmm<br>
+&emsp;F3 0F `10` \r : movss xmm, xmm<br>
