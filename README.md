@@ -211,17 +211,12 @@
 
 ## VEX
 `C4` ?? ?? : 3-byte prefix<br>
-`C5` ?? : 2-byte prefix<br>
+`C5` ??&emsp;&ensp;: 2-byte prefix<br>
 
 ## EVEX
 `62` ?? ?? ?? : 4-byte prefix<br>
 
-## Prefix-like ( Immediate override )
-`80` : opcode r/m8, imm8<br>
-`81` : opcode r/m32, imm32<br>
-`83` : opcode r/m32, imm8<br>
-
-## Prefix-like ( Extend Opcode )
+## Prefix-like
 &emsp;&emsp;&emsp;&emsp;`0F`<br>
 &emsp;&emsp;&emsp;&emsp;`0F 38`<br>
 &emsp;&emsp;&emsp;&emsp;`0F 3A`<br>
@@ -338,6 +333,33 @@ F3 [VEX] `0F 3A`<br>
 `7D` ib : jge rel8<br>
 `7E` ib : jle rel8<br>
 `7F` ib : jg rel8<br>
+
+`80` /0 ib : add r/m8, imm8<br>
+`80` /1 ib : or r/m8, imm8<br>
+`80` /2 ib : adc r/m8, imm8<br>
+`80` /3 ib : sbb r/m8, imm8<br>
+`80` /4 ib : and r/m8, imm8<br>
+`80` /5 ib : sub r/m8, imm8<br>
+`80` /6 ib : xor r/m8, imm8<br>
+`80` /7 ib : cmp r/m8, imm8<br>
+
+`81` /0 id : add r/m32, imm32<br>
+`81` /1 id : or r/m32, imm32<br>
+`81` /2 id : adc r/m32, imm32<br>
+`81` /3 id : sbb r/m32, imm32<br>
+`81` /4 id : and r/m32, imm32<br>
+`81` /5 id : sub r/m32, imm32<br>
+`81` /6 id : xor r/m32, imm32<br>
+`81` /7 id : cmp r/m32, imm32<br>
+
+`81` /0 ib : add r/m32, imm8<br>
+`81` /1 ib : or r/m32, imm8<br>
+`81` /2 ib : adc r/m32, imm8<br>
+`81` /3 ib : sbb r/m32, imm8<br>
+`81` /4 ib : and r/m32, imm8<br>
+`81` /5 ib : sub r/m32, imm8<br>
+`81` /6 ib : xor r/m32, imm8<br>
+`81` /7 ib : cmp r/m32, imm8<br>
 
 `84` /r : test r/m8, r8<br>
 `85` /r : test r/m8, r8<br>
