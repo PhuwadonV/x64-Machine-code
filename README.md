@@ -181,11 +181,12 @@
 `44` : rex.r&emsp;&ensp;// ModR/M reg<br>
 `48` : rex.w&emsp;// 32bit :arrow_right: 64bit<br>
 
-| Flag      |            |               |            |
-|-----------|------------|---------------|------------|
-| b & x & r | eax - edi  | :arrow_right: | r8d - r15d |
-| w         | eax - edi  | :arrow_right: | rax - rdi  |
-| w         | r8d - r15d | :arrow_right: | r8 - r15   |
+| Flag      |             |               |              |
+|-----------|-------------|---------------|--------------|
+| b & x & r | eax - edi   | :arrow_right: | r8d - r15d   |
+| b & x & r | xmm0 - xmm7 | :arrow_right: | xmm8 - xmm15 |
+| w         | eax - edi   | :arrow_right: | rax - rdi    |
+| w         | r8d - r15d  | :arrow_right: | r8 - r15     |
 
 ## VEX
 `C4` ?? ?? : 3-byte prefix<br>
