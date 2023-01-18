@@ -1,4 +1,6 @@
 # Purpose
+- To understand Microarchitecture optimization when the document refer to instruction format.
+  - Using empty REX ( 0x40 ) for code alignment.
 - To understand how instruction variable length work.
   - How ton of instructions fit inside machine encoded.
 - To understand how to calculating instruction length.
