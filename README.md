@@ -18,11 +18,21 @@
   - shl eax, 2 // Normal instruction ( C1 E0 02 )
   - shl eax, 3 // Normal instruction ( C1 E0 03 )
 
+# CPU Features
+- x64
+- SSE
+- SSE2
+- SSE3
+- SSSE3
+- SSE4.1
+- SSE4.2
+- AVX
+- AVX2
+
 # WIP
 - VEX prefix
-- EVEX prefix
-- More opcode ( No VEX / EVEX prefix )
-- More opcode ( VEX / EVEX prefix )
+- More opcodes
+- More opcodes ( SIMD )
 
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
@@ -642,7 +652,7 @@ F3 [VEX] `0F 3A`<br>
 
 `FF` /6 : push r/m64<br>
 
-## More Opcodes ( No VEX / EVEX prefix )
+## More Opcodes
 0F `00` /0 : sldt r/m16<br>
 0F `00` /1 : str r/m16<br>
 0F `00` /2 : lldt r/m16<br>
@@ -650,12 +660,19 @@ F3 [VEX] `0F 3A`<br>
 0F `00` /4 : verr r/m16<br>
 0F `00` /5 : verw r/m16<br>
 
-F2 0F 38 `F0` /r : crc32 r32, r/m8
+F2 0F 38 `F0` /r : crc32 r32, r/m8<br>
+F2 0F 38 `F1` /r : crc32 r32, r/m16<br>
 
-## More Opcodes ( VEX / EVEX prefix )
-&emsp;&emsp;&nbsp;0F `10` \r : movupd xmm, xmm/m128<br>
-&emsp;66 0F `10` \r : movupd xmm, xmm/m128<br>
-vex.128 `10` \r : vmovups xmm, xmm/m128<br>
-vex.256 `10` \r : vmovupd ymm, ymm/m256<br>
-&emsp;F2 0F `10` \r : movsd xmm, xmm<br>
-&emsp;F3 0F `10` \r : movss xmm, xmm<br>
+## More Opcodes ( SIMD )
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0F `10` \r : movups xmm, xmm/m128<br>
+vex.128.0F&emsp;&emsp;&ensp;&nbsp;`10` \r : vmovups xmm, xmm/m128<br>
+
+&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `10` \r : movupd xmm, xmm/m128<br>
+vex.128.66.0F&emsp;&ensp;`10` \r : vmovupd xmm, xmm/m128<br>
+
+&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F2 0F `10` \r : movsd xmm, xmm<br>
+&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F3 0F `10` \r : movss xmm, xmm<br>
+
+&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
+vex.128.66.0F&emsp;&ensp;`58` /r : vaddpd xmm, xmm, xmm/m128<br>
+vex.256.66.0F&emsp;&ensp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
