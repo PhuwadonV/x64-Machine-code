@@ -1,3 +1,17 @@
+# Purpose
+- To understand how instruction variable length work.
+  - How ton of instructions fit inside encoding
+- To understand how to calculating instruction length.
+  - push ebx // 1 byte
+  - push r8 // 2 bytes
+- To understand why some instructions form does not exist based on machine encoding.
+  - add eax, DWORD PTR [rbp] // Does not exist
+  - add eax, DWORD PTR [rbp + 0x0] // Exist
+- To understand which instructions are important and how it intend to be used;
+  - 1 byte instruction // important
+  - add // Important : use 4 1-byte opcode ( 00 - 05 )
+  - sldt r/m16 // Not important : use 2-bytes opcode ( 0F 00 )
+
 # WIP
 - VEX prefix
 - EVEX prefix
