@@ -12,7 +12,7 @@
 - To understand which instructions are important and how it intend to be used;
   - 1 byte instruction // important
   - add // Important : use 4 1-byte opcode ( 00 - 05 )
-  - sldt r/m16 // Not important : use 2-bytes opcode ( 0F 00 )
+  - sldt r/m16 // Not important : use 2-byte opcode ( 0F 00 )
   - shl eax, 1 // Special instruction ( D1 E0 )
   - shl eax, 1 // Normal instruction ( C1 E0 01 ) // Not intend to be used
   - shl eax, 2 // Normal instruction ( C1 E0 02 )
@@ -21,7 +21,8 @@
 # WIP
 - VEX prefix
 - EVEX prefix
-- More opcode
+- More opcode ( No VEX / EVEX prefix )
+- More opcode ( VEX / EVEX prefix )
 
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
