@@ -1,6 +1,6 @@
 # Purpose
 - To understand how instruction variable length work.
-  - How ton of instructions fit inside machine encoded
+  - How ton of instructions fit inside machine encoded.
 - To understand how to calculating instruction length.
   - push ebx // 1 byte
   - push r8 // 2 bytes
@@ -11,6 +11,10 @@
   - 1 byte instruction // important
   - add // Important : use 4 1-byte opcode ( 00 - 05 )
   - sldt r/m16 // Not important : use 2-bytes opcode ( 0F 00 )
+  - shl eax, 1 // Special instruction ( D1 E0 )
+  - shl eax, 1 // Normal instruction ( C1 E0 01 ) // Not intend to be used
+  - shl eax, 2 // Normal instruction ( C1 E0 02 )
+  - shl eax, 3 // Normal instruction ( C1 E0 03 )
 
 # WIP
 - VEX prefix
