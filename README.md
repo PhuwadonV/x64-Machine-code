@@ -41,58 +41,58 @@
 | `reg6`      | ch | si | esi | mm6 | xmm6 |
 | `reg7`      | dh | di | edi | mm7 | xmm7 |
 
-| Memory (M)                | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
-|---------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
-| [eax]                     | 00     | 08     | 10     | 18     | 20     | 28     | 30     | 38     |
-| [ecx]                     | 01     | 09     | 11     | 19     | 21     | 29     | 31     | 39     |
-| [edx]                     | 02     | 0A     | 12     | 1A     | 22     | 2A     | 32     | 3A     |
-| [ebx]                     | 03     | 0B     | 13     | 1B     | 23     | 2B     | 33     | 3B     |
-| sib                       | 04     | 0C     | 14     | 1C     | 24     | 2C     | 34     | 3C     |
-| disp32                    | 05     | 0D     | 15     | 1D     | 25     | 2D     | 35     | 3D     |
-| [esi]                     | 06     | 0E     | 16     | 1E     | 26     | 2E     | 36     | 3E     |
-| [edi]                     | 07     | 0F     | 17     | 1F     | 27     | 2F     | 37     | 3F     |
+| Memory (M) \ Register        | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
+|------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
+| [eax]                        | 00     | 08     | 10     | 18     | 20     | 28     | 30     | 38     |
+| [ecx]                        | 01     | 09     | 11     | 19     | 21     | 29     | 31     | 39     |
+| [edx]                        | 02     | 0A     | 12     | 1A     | 22     | 2A     | 32     | 3A     |
+| [ebx]                        | 03     | 0B     | 13     | 1B     | 23     | 2B     | 33     | 3B     |
+| sib                          | 04     | 0C     | 14     | 1C     | 24     | 2C     | 34     | 3C     |
+| rip + disp32                 | 05     | 0D     | 15     | 1D     | 25     | 2D     | 35     | 3D     |
+| [esi]                        | 06     | 0E     | 16     | 1E     | 26     | 2E     | 36     | 3E     |
+| [edi]                        | 07     | 0F     | 17     | 1F     | 27     | 2F     | 37     | 3F     |
 
-| Memory (M)                | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
-|---------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
-| [eax] + disp8             | 40     | 48     | 50     | 58     | 60     | 68     | 70     | 78     |
-| [ecx] + disp8             | 41     | 49     | 51     | 59     | 61     | 69     | 71     | 79     |
-| [edx] + disp8             | 42     | 4A     | 52     | 5A     | 62     | 6A     | 72     | 7A     |
-| [ebx] + disp8             | 43     | 4B     | 53     | 5B     | 63     | 6B     | 73     | 7B     |
-| sib&emsp;&nbsp;+ disp8    | 44     | 4C     | 54     | 5C     | 64     | 6C     | 74     | 7C     |
-| [ebp] + disp8             | 45     | 4D     | 55     | 5D     | 65     | 6D     | 75     | 7D     |
-| [esi]&ensp;&nbsp;+ disp8  | 46     | 4E     | 56     | 5E     | 66     | 6E     | 76     | 7E     |
-| [edi]&ensp;+ disp8        | 47     | 4F     | 57     | 5F     | 67     | 6F     | 77     | 7F     |
+| Memory (M) \ Register        | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
+|------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
+| [eax] + disp8                | 40     | 48     | 50     | 58     | 60     | 68     | 70     | 78     |
+| [ecx] + disp8                | 41     | 49     | 51     | 59     | 61     | 69     | 71     | 79     |
+| [edx] + disp8                | 42     | 4A     | 52     | 5A     | 62     | 6A     | 72     | 7A     |
+| [ebx] + disp8                | 43     | 4B     | 53     | 5B     | 63     | 6B     | 73     | 7B     |
+| sib&emsp;&nbsp;+ disp8       | 44     | 4C     | 54     | 5C     | 64     | 6C     | 74     | 7C     |
+| [ebp] + disp8                | 45     | 4D     | 55     | 5D     | 65     | 6D     | 75     | 7D     |
+| [esi]&ensp;&nbsp;+ disp8     | 46     | 4E     | 56     | 5E     | 66     | 6E     | 76     | 7E     |
+| [edi]&ensp;+ disp8           | 47     | 4F     | 57     | 5F     | 67     | 6F     | 77     | 7F     |
 
-| Memorys (M)               | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
-|---------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
-| [eax] + disp32            | 80     | 88     | 90     | 98     | A0     | A8     | B0     | B8     |
-| [ecx] + disp32            | 81     | 89     | 91     | 99     | A1     | A9     | B1     | B9     |
-| [edx] + disp32            | 82     | 8A     | 92     | 9A     | A2     | AA     | B2     | BA     |
-| [ebx] + disp32            | 83     | 8B     | 93     | 9B     | A3     | AB     | B3     | BB     |
-| sib&emsp;&nbsp;+ disp32   | 84     | 8C     | 94     | 9C     | A4     | AC     | B4     | BC     |
-| [ebp] + disp32            | 85     | 8D     | 95     | 9D     | A5     | AD     | B5     | BD     |
-| [esi]&ensp;&nbsp;+ disp32 | 86     | 8E     | 96     | 9E     | A6     | AE     | B6     | BE     |
-| [edi]&ensp;+ disp32       | 87     | 8F     | 97     | 9F     | A7     | AF     | B7     | BF     |
+| Memory (M) \ Register        | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
+|------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
+| [eax] + disp32               | 80     | 88     | 90     | 98     | A0     | A8     | B0     | B8     |
+| [ecx] + disp32               | 81     | 89     | 91     | 99     | A1     | A9     | B1     | B9     |
+| [edx] + disp32               | 82     | 8A     | 92     | 9A     | A2     | AA     | B2     | BA     |
+| [ebx] + disp32               | 83     | 8B     | 93     | 9B     | A3     | AB     | B3     | BB     |
+| sib&emsp;&nbsp;+ disp32      | 84     | 8C     | 94     | 9C     | A4     | AC     | B4     | BC     |
+| [ebp] + disp32               | 85     | 8D     | 95     | 9D     | A5     | AD     | B5     | BD     |
+| [esi]&ensp;&nbsp;+ disp32    | 86     | 8E     | 96     | 9E     | A6     | AE     | B6     | BE     |
+| [edi]&ensp;+ disp32          | 87     | 8F     | 97     | 9F     | A7     | AF     | B7     | BF     |
 
-| Register (R)&emsp;        | `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
-|---------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
-| `reg0`                    | C0     | C8     | D0     | D8     | E0     | E8     | F0     | F8     |
-| `reg1`                    | C1     | C9     | D1     | D9     | E1     | E9     | F1     | F9     |
-| `reg2`                    | C2     | CA     | D2     | DA     | E2     | EA     | F2     | FA     |
-| `reg3`                    | C3     | CB     | D3     | DB     | E3     | EB     | F3     | FB     |
-| `reg4`                    | C4     | CC     | D4     | DC     | E4     | EC     | F4     | FC     |
-| `reg5`                    | C5     | CD     | D5     | DD     | E5     | ED     | F5     | FD     |
-| `reg6`                    | C6     | CE     | D6     | DE     | E6     | EE     | F6     | FE     |
-| `reg7`                    | C7     | CF     | D7     | DF     | E7     | EF     | F7     | FF     |
+| Register (R) \ Register&ensp;| `reg0` | `reg1` | `reg2` | `reg3` | `reg4` | `reg5` | `reg6` | `reg7` |
+|------------------------------|--------|--------|--------|--------|--------|--------|--------|--------|
+| `reg0`                       | C0     | C8     | D0     | D8     | E0     | E8     | F0     | F8     |
+| `reg1`                       | C1     | C9     | D1     | D9     | E1     | E9     | F1     | F9     |
+| `reg2`                       | C2     | CA     | D2     | DA     | E2     | EA     | F2     | FA     |
+| `reg3`                       | C3     | CB     | D3     | DB     | E3     | EB     | F3     | FB     |
+| `reg4`                       | C4     | CC     | D4     | DC     | E4     | EC     | F4     | FC     |
+| `reg5`                       | C5     | CD     | D5     | DD     | E5     | ED     | F5     | FD     |
+| `reg6`                       | C6     | CE     | D6     | DE     | E6     | EE     | F6     | FE     |
+| `reg7`                       | C7     | CF     | D7     | DF     | E7     | EF     | F7     | FF     |
 
-## SIB
+## SIB ( Scale * Index + Base )
 | ModR/M  | `*`                             |
 |---------|---------------------------------|
 | 00 - 3F | [scaled index] + disp32         |
 | 40 - 7F | [scaled index] + disp8 + [ebp]  |
 | 80 - BF | [scaled index] + disp32 + [ebp] |
 
-| Scaled Index         | eax | ecx | edx | ebx | esp | `*` | esi | edi |
+| Scaled Index \ Base  | eax | ecx | edx | ebx | esp | `*` | esi | edi |
 |----------------------|-----|-----|-----|-----|-----|-----|-----|-----|
 | [eax * 1]            | 00  | 01  | 02  | 03  | 04  | 05  | 06  | 07  |
 | [ecx * 1]            | 08  | 09  | 0A  | 0B  | 0C  | 0D  | 0E  | 0F  |
@@ -103,7 +103,7 @@
 | [esi&ensp;&nbsp;* 1] | 30  | 31  | 32  | 33  | 34  | 35  | 36  | 37  |
 | [edi&ensp;* 1]       | 38  | 39  | 3A  | 3B  | 3C  | 3D  | 3E  | 3F  |
 
-| Scaled Index         | eax | ecx | edx | ebx | esp | `*` | esi | edi |
+| Scaled Index \ Base  | eax | ecx | edx | ebx | esp | `*` | esi | edi |
 |----------------------|-----|-----|-----|-----|-----|-----|-----|-----|
 | [eax * 2]            | 40  | 41  | 42  | 43  | 44  | 45  | 46  | 47  |
 | [ecx * 2]            | 48  | 49  | 4A  | 4B  | 4C  | 4D  | 4E  | 4F  |
@@ -114,7 +114,7 @@
 | [esi&ensp;&nbsp;* 2] | 70  | 71  | 72  | 73  | 74  | 75  | 76  | 77  |
 | [edi&ensp;* 2]       | 78  | 79  | 7A  | 7B  | 7C  | 7D  | 7E  | 7F  |
 
-| Scaled Index         | eax | ecx | edx | ebx | esp | `*` | esi | edi |
+| Scaled Index \ Base  | eax | ecx | edx | ebx | esp | `*` | esi | edi |
 |----------------------|-----|-----|-----|-----|-----|-----|-----|-----|
 | [eax * 4]            | 80  | 81  | 82  | 83  | 84  | 85  | 86  | 87  |
 | [ecx * 4]            | 88  | 89  | 8A  | 8B  | 8C  | 8D  | 8E  | 8F  |
@@ -125,7 +125,7 @@
 | [esi&ensp;&nbsp;* 4] | B0  | B1  | B2  | B3  | B4  | B5  | B6  | B7  |
 | [edi&ensp;* 4]       | B8  | B9  | BA  | BB  | BC  | BD  | BE  | BF  |
 
-| Scaled Index         | eax | ecx | edx | ebx | esp | `*` | esi | edi |
+| Scaled Index \ Base  | eax | ecx | edx | ebx | esp | `*` | esi | edi |
 |----------------------|-----|-----|-----|-----|-----|-----|-----|-----|
 | [eax * 8]            | C0  | C1  | C2  | C3  | C4  | C5  | C6  | C7  |
 | [ecx * 8]            | C8  | C9  | CA  | CB  | CC  | CD  | CE  | CF  |
