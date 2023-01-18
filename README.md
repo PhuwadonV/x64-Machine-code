@@ -1,10 +1,10 @@
 # Purpose
 - To understand how instruction variable length work.
-  - How ton of instructions fit inside encoding
+  - How ton of instructions fit inside machine encoded
 - To understand how to calculating instruction length.
   - push ebx // 1 byte
   - push r8 // 2 bytes
-- To understand why some instructions form does not exist based on machine encoding.
+- To understand why some instructions form does not exist based on machine encoded.
   - add eax, DWORD PTR [rbp] // Does not exist
   - add eax, DWORD PTR [rbp + 0x0] // Exist
 - To understand which instructions are important and how it intend to be used;
