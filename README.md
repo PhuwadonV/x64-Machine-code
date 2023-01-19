@@ -226,8 +226,8 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `04` ib : add al, imm8<br>
 :green_heart: `05` id : add eax, imm32<br>
 
-:x: `06` : push es&emsp;// Invalid<br>
-:x: `07` : pop es&emsp;&nbsp;// Invalid<br>
+:boom: `06` : push es&emsp;// Invalid<br>
+:boom: `07` : pop es&emsp;&nbsp;// Invalid<br>
 
 :green_heart: `08` /r : or r/m8, r8<br>
 :green_heart: `09` /r : or r/m32, r32<br>
@@ -236,7 +236,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `0C` ib : or al, imm8<br>
 :green_heart: `0D` id : or eax, imm32
 
-:x: `0E` : push cs&emsp;// Invalid<br>
+:boom: `0E` : push cs&emsp;// Invalid<br>
 
 :blue_heart: `10` /r : adc r/m8, r8<br>
 :blue_heart: `11` /r : adc r/m32, r32<br>
@@ -245,8 +245,8 @@ F3 [VEX] `0F 3A`<br>
 :blue_heart: `14` ib : adc al, imm8<br>
 :blue_heart: `15` id : adc eax, imm32<br>
 
-:x: `16` : push ss&emsp;// Invalid<br>
-:x: `17` : pop ss&emsp;&nbsp;// Invalid<br>
+:boom: `16` : push ss&emsp;// Invalid<br>
+:boom: `17` : pop ss&emsp;&nbsp;// Invalid<br>
 
 :blue_heart: `18` /r : sbb r/m8, r8<br>
 :blue_heart: `19` /r : sbb r/m32, r32<br>
@@ -255,8 +255,8 @@ F3 [VEX] `0F 3A`<br>
 :blue_heart: `1C` ib : sbb al, imm8<br>
 :blue_heart: `1D` id : sbb eax, imm32<br>
 
-:x: `1E` : push ds&emsp;// Invalid<br>
-:x: `1F` : pop ds&emsp;&nbsp;// Invalid<br>
+:boom: `1E` : push ds&emsp;// Invalid<br>
+:boom: `1F` : pop ds&emsp;&nbsp;// Invalid<br>
 
 :green_heart: `20` /r : and r/m8, r8<br>
 :green_heart: `21` /r : and r/m32, r32<br>
@@ -265,7 +265,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `24` ib : and al, imm8<br>
 :green_heart: `25` id : and eax, imm32<br>
 
-:x: `27` : daa&emsp;// Invalid<br>
+:boom: `27` : daa&emsp;// Invalid<br>
 
 :green_heart: `28` /r : sub r/m8, r8<br>
 :green_heart: `29` /r : sub r/m32, r32<br>
@@ -274,7 +274,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `2C` ib : sub al, imm8<br>
 :green_heart: `2D` id : sub eax, imm32<br>
 
-:x: `2F` : das&emsp;// Invalid<br>
+:boom: `2F` : das&emsp;// Invalid<br>
 
 :green_heart: `30` /r : xor r/m8, r8<br>
 :green_heart: `31` /r : xor r/m32, r32<br>
@@ -283,7 +283,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `34` ib : xor al, imm8<br>
 :green_heart: `35` id : xor eax, imm32<br>
 
-:x: `37` : aaa&emsp;// Invalid<br>
+:boom: `37` : aaa&emsp;// Invalid<br>
 
 :green_heart: `38` /r : cmp r/m8, r8<br>
 :green_heart: `39` /r : cmp r/m32, r32<br>
@@ -292,7 +292,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `3C` ib : cmp al, imm8<br>
 :green_heart: `3D` id : cmp eax, imm32<br>
 
-:x: `3F` : aas&emsp;// Invalid<br>
+:boom: `3F` : aas&emsp;// Invalid<br>
 
 :green_heart: `50` : push rax<br>
 :green_heart: `51` : push rcx<br>
@@ -312,20 +312,20 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `5E` : pop rsi<br>
 :green_heart: `5F` : pop rdi<br>
 
-:x: `60` : push a<br>
-:x: `61` : pop a&emsp;&nbsp;// Invalid<br>
+:boom: `60` : push a&emsp;// Invalid<br>
+:boom: `61` : pop a&emsp;&nbsp;// Invalid<br>
 
 :confused: `63` /r : movsxd r32, r/m32<br>
 
-:purple_heart: `68`&emsp;&emsp;&ensp;: push imm32<br>
+:broken_heart: `68`&emsp;&emsp;&ensp;: push imm32<br>
 :confused: `69` /r id : imul r32, r/m32, imm32<br>
-:purple_heart: `6A`&emsp;&emsp;&ensp;: push imm8<br>
+:broken_heart: `6A`&emsp;&emsp;&ensp;: push imm8<br>
 :confused: `6B` /r ib : imul r32, r/m32, imm8<br>
 
-:purple_heart: `6C` : insb<br>
-:purple_heart: `6D` : insd<br>
-:purple_heart: `6E` : outsb<br>
-:purple_heart: `6F` : outsd<br>
+:broken_heart: `6C` : insb<br>
+:broken_heart: `6D` : insd<br>
+:broken_heart: `6E` : outsb<br>
+:broken_heart: `6F` : outsd<br>
 
 :green_heart: `70` ib : jo rel8<br>
 :green_heart: `71` ib : jno rel8<br>
@@ -392,18 +392,18 @@ F3 [VEX] `0F 3A`<br>
 :confused: `8F` /r : pop r/m64<br>
 
 :green_heart: `90` : xchg eax, eax // nop<br>
-:purple_heart: `91` : xchg ecx, eax<br>
-:purple_heart: `92` : xchg edx, eax<br>
-:purple_heart: `93` : xchg ebx, eax<br>
-:purple_heart: `94` : xchg esp, eax<br>
-:purple_heart: `95` : xchg ebp, eax<br>
-:purple_heart: `96` : xchg esi, eax<br>
-:purple_heart: `97` : xchg edi, eax<br>
+:confused: `91` : xchg ecx, eax<br>
+:confused: `92` : xchg edx, eax<br>
+:confused: `93` : xchg ebx, eax<br>
+:confused: `94` : xchg esp, eax<br>
+:confused: `95` : xchg ebp, eax<br>
+:confused: `96` : xchg esi, eax<br>
+:confused: `97` : xchg edi, eax<br>
 
 :confused: `98` : cwde<br>
 :confused: `99` : cdq<br>
 
-:x: `9A` iw id : call ptr16:32&emsp;// Invalid<br>
+:boom: `9A` iw id : call ptr16:32&emsp;// Invalid<br>
 
 :confused: `9B` : fwait<br>
 :confused: `9C` : pushf<br>
@@ -481,7 +481,7 @@ F3 [VEX] `0F 3A`<br>
 :confused: `CC`&emsp;&ensp;: int3<br>
 :confused: `CD` id : int imm8<br>
 
-:x: `CE` : into&emsp;// Invalid<br>
+:boom: `CE` : into&emsp;// Invalid<br>
 
 :confused: `CF` : iret<br>
 
@@ -521,80 +521,80 @@ F3 [VEX] `0F 3A`<br>
 :confused: `D3` /5 : shr r/m16, cl<br>
 :confused: `D3` /7 : sar r/m16, cl<br>
 
-:x: `D4` ib : aam imm8&emsp;// Invalid<br>
-:x: `D5` ib : aad imm8&emsp;// Invalid<br>
+:boom: `D4` ib : aam imm8&emsp;// Invalid<br>
+:boom: `D5` ib : aad imm8&emsp;// Invalid<br>
 
 :scream: `D6` : // Unknown<br>
 
 :confused: `D7` : xlat<br>
 
-:purple_heart: `D8` /0 : fadd m32fp<br>
-:purple_heart: `D8` /1 : fmul m32fp<br>
-:purple_heart: `D8` /2 : fcom m32fp<br>
-:purple_heart: `D8` /3 : fcomp m32fp<br>
-:purple_heart: `D8` /4 : fsub m32fp<br>
-:purple_heart: `D8` /5 : fsubr m32fp<br>
-:purple_heart: `D8` /6 : fdiv m32fp<br>
-:purple_heart: `D8` /7 : fdivr m32fp<br>
+:broken_heart: `D8` /0 : fadd m32fp<br>
+:broken_heart: `D8` /1 : fmul m32fp<br>
+:broken_heart: `D8` /2 : fcom m32fp<br>
+:broken_heart: `D8` /3 : fcomp m32fp<br>
+:broken_heart: `D8` /4 : fsub m32fp<br>
+:broken_heart: `D8` /5 : fsubr m32fp<br>
+:broken_heart: `D8` /6 : fdiv m32fp<br>
+:broken_heart: `D8` /7 : fdivr m32fp<br>
 
-:purple_heart: `D9` /0 : fld m32fp<br>
-:purple_heart: `D9` /2 : fst m32fp<br>
-:purple_heart: `D9` /3 : fstp m32fp<br>
-:purple_heart: `D9` /4 : fldenv m14/28byte<br>
-:purple_heart: `D9` /5 : fldcw m2byte<br>
-:purple_heart: `D9` /6 : fnstenv m14/28byte<br>
-:purple_heart: `D9` /7 : fnstcw m2byte<br>
+:broken_heart: `D9` /0 : fld m32fp<br>
+:broken_heart: `D9` /2 : fst m32fp<br>
+:broken_heart: `D9` /3 : fstp m32fp<br>
+:broken_heart: `D9` /4 : fldenv m14/28byte<br>
+:broken_heart: `D9` /5 : fldcw m2byte<br>
+:broken_heart: `D9` /6 : fnstenv m14/28byte<br>
+:broken_heart: `D9` /7 : fnstcw m2byte<br>
 
-:purple_heart: `DA` /0 : fiadd m32int<br>
-:purple_heart: `DA` /1 : fimul m32int<br>
-:purple_heart: `DA` /2 : ficom m32int<br>
-:purple_heart: `DA` /3 : ficomp m32int<br>
-:purple_heart: `DA` /4 : fisub m32int<br>
-:purple_heart: `DA` /5 : fisubr m32int<br>
-:purple_heart: `DA` /6 : fidiv m32int<br>
-:purple_heart: `DA` /7 : fidivr m32int<br>
+:broken_heart: `DA` /0 : fiadd m32int<br>
+:broken_heart: `DA` /1 : fimul m32int<br>
+:broken_heart: `DA` /2 : ficom m32int<br>
+:broken_heart: `DA` /3 : ficomp m32int<br>
+:broken_heart: `DA` /4 : fisub m32int<br>
+:broken_heart: `DA` /5 : fisubr m32int<br>
+:broken_heart: `DA` /6 : fidiv m32int<br>
+:broken_heart: `DA` /7 : fidivr m32int<br>
 
-:purple_heart: `DB` /0 : fild m32int<br>
-:purple_heart: `DB` /1 : fisttp m32int<br>
-:purple_heart: `DB` /2 : fist m32int<br>
-:purple_heart: `DB` /3 : fistp m32int<br>
-:purple_heart: `DB` /5 : fld m80fp<br>
-:purple_heart: `DB` /7 : fltp m80fp<br>
+:broken_heart: `DB` /0 : fild m32int<br>
+:broken_heart: `DB` /1 : fisttp m32int<br>
+:broken_heart: `DB` /2 : fist m32int<br>
+:broken_heart: `DB` /3 : fistp m32int<br>
+:broken_heart: `DB` /5 : fld m80fp<br>
+:broken_heart: `DB` /7 : fltp m80fp<br>
 
-:purple_heart: `DC` /0 : fadd m64fp<br>
-:purple_heart: `DC` /1 : fmul m64fp<br>
-:purple_heart: `DC` /2 : fcom m64fp<br>
-:purple_heart: `DC` /3 : fcomp m64fp<br>
-:purple_heart: `DC` /4 : fsub m64fp<br>
-:purple_heart: `DC` /5 : fsubr m64fp<br>
-:purple_heart: `DC` /6 : fdev m64fp<br>
-:purple_heart: `DC` /7 : fdivr m64fp<br>
+:broken_heart: `DC` /0 : fadd m64fp<br>
+:broken_heart: `DC` /1 : fmul m64fp<br>
+:broken_heart: `DC` /2 : fcom m64fp<br>
+:broken_heart: `DC` /3 : fcomp m64fp<br>
+:broken_heart: `DC` /4 : fsub m64fp<br>
+:broken_heart: `DC` /5 : fsubr m64fp<br>
+:broken_heart: `DC` /6 : fdev m64fp<br>
+:broken_heart: `DC` /7 : fdivr m64fp<br>
 
-:purple_heart: `DD` /0 : fld m64fp<br>
-:purple_heart: `DD` /1 : fisttp m64int<br>
-:purple_heart: `DD` /2 : fst m64fp<br>
-:purple_heart: `DD` /3 : fstp m64fp<br>
-:purple_heart: `DD` /4 : frstor m94/108byte<br>
-:purple_heart: `DD` /6 : fnsave m94/108byte<br>
-:purple_heart: `DD` /7 : fnstsw m2byte<br>
+:broken_heart: `DD` /0 : fld m64fp<br>
+:broken_heart: `DD` /1 : fisttp m64int<br>
+:broken_heart: `DD` /2 : fst m64fp<br>
+:broken_heart: `DD` /3 : fstp m64fp<br>
+:broken_heart: `DD` /4 : frstor m94/108byte<br>
+:broken_heart: `DD` /6 : fnsave m94/108byte<br>
+:broken_heart: `DD` /7 : fnstsw m2byte<br>
 
-:purple_heart: `DE` /0 : fiadd m16int<br>
-:purple_heart: `DE` /1 : fimul m16int<br>
-:purple_heart: `DE` /2 : ficom m16int<br>
-:purple_heart: `DE` /3 : ficomip m16int<br>
-:purple_heart: `DE` /4 : fisub m16int<br>
-:purple_heart: `DE` /5 : fisubr m16int<br>
-:purple_heart: `DE` /6 : fidiv m16int<br>
-:purple_heart: `DE` /7 : fidivr m16int<br>
+:broken_heart: `DE` /0 : fiadd m16int<br>
+:broken_heart: `DE` /1 : fimul m16int<br>
+:broken_heart: `DE` /2 : ficom m16int<br>
+:broken_heart: `DE` /3 : ficomip m16int<br>
+:broken_heart: `DE` /4 : fisub m16int<br>
+:broken_heart: `DE` /5 : fisubr m16int<br>
+:broken_heart: `DE` /6 : fidiv m16int<br>
+:broken_heart: `DE` /7 : fidivr m16int<br>
 
-:purple_heart: `DF` /0 : fild m16int<br>
-:purple_heart: `DF` /1 : fisttp m16int<br>
-:purple_heart: `DF` /2 : fist m16int<br>
-:purple_heart: `DF` /3 : fistp m16int<br>
-:purple_heart: `DF` /4 : fbld m80bcd<br>
-:purple_heart: `DF` /5 : fild m64int<br>
-:purple_heart: `DF` /6 : fbstp m80bcd<br>
-:purple_heart: `DF` /7 : fistp m64int<br>
+:broken_heart: `DF` /0 : fild m16int<br>
+:broken_heart: `DF` /1 : fisttp m16int<br>
+:broken_heart: `DF` /2 : fist m16int<br>
+:broken_heart: `DF` /3 : fistp m16int<br>
+:broken_heart: `DF` /4 : fbld m80bcd<br>
+:broken_heart: `DF` /5 : fild m64int<br>
+:broken_heart: `DF` /6 : fbstp m80bcd<br>
+:broken_heart: `DF` /7 : fistp m64int<br>
 
 :confused: `E0` ib : loopne rel8<br>
 :confused: `E1` ib : loope rel8<br>
@@ -602,11 +602,11 @@ F3 [VEX] `0F 3A`<br>
 
 :confused: `E3` ib : jrcxz rel8<br>
 
-:purple_heart: `E4` ib : in al, imm8<br>
-:purple_heart: `E5` ib : in eax, imm8<br>
+:broken_heart: `E4` ib : in al, imm8<br>
+:broken_heart: `E5` ib : in eax, imm8<br>
 
-:purple_heart: `E6` ib : out imm8, al<br>
-:purple_heart: `E7` ib : out imm8, eax<br>
+:broken_heart: `E6` ib : out imm8, al<br>
+:broken_heart: `E7` ib : out imm8, eax<br>
 
 :confused: `E8` id : call rel32<br>
 :confused: `E9` id : jmp rel32<br>
@@ -615,11 +615,11 @@ F3 [VEX] `0F 3A`<br>
 
 :confused: `EB` iw : jmp rel16<br>
 
-:purple_heart: `EC` ib : in al, dx<br>
-:purple_heart: `ED` ib : in eax, dx<br>
+:broken_heart: `EC` ib : in al, dx<br>
+:broken_heart: `ED` ib : in eax, dx<br>
 
-:purple_heart: `EE` : out dx, al<br>
-:purple_heart: `EF` : out dx, eax<br>
+:broken_heart: `EE` : out dx, al<br>
+:broken_heart: `EF` : out dx, eax<br>
 
 :confused: `F1` : int1 // icebp<br>
 :confused: `F4` : hlt<br>
