@@ -226,8 +226,8 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `04` ib : add al, imm8<br>
 :green_heart: `05` id : add eax, imm32<br>
 
-:boom: `06` : push es&emsp;// Invalid<br>
-:boom: `07` : pop es&emsp;&nbsp;// Invalid<br>
+:skull: `06` : push es&emsp;// Invalid<br>
+:skull: `07` : pop es&emsp;&nbsp;// Invalid<br>
 
 :green_heart: `08` /r : or r/m8, r8<br>
 :green_heart: `09` /r : or r/m32, r32<br>
@@ -236,7 +236,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `0C` ib : or al, imm8<br>
 :green_heart: `0D` id : or eax, imm32
 
-:boom: `0E` : push cs&emsp;// Invalid<br>
+:skull: `0E` : push cs&emsp;// Invalid<br>
 
 :blue_heart: `10` /r : adc r/m8, r8<br>
 :blue_heart: `11` /r : adc r/m32, r32<br>
@@ -245,8 +245,8 @@ F3 [VEX] `0F 3A`<br>
 :blue_heart: `14` ib : adc al, imm8<br>
 :blue_heart: `15` id : adc eax, imm32<br>
 
-:boom: `16` : push ss&emsp;// Invalid<br>
-:boom: `17` : pop ss&emsp;&nbsp;// Invalid<br>
+:skull: `16` : push ss&emsp;// Invalid<br>
+:skull: `17` : pop ss&emsp;&nbsp;// Invalid<br>
 
 :blue_heart: `18` /r : sbb r/m8, r8<br>
 :blue_heart: `19` /r : sbb r/m32, r32<br>
@@ -255,8 +255,8 @@ F3 [VEX] `0F 3A`<br>
 :blue_heart: `1C` ib : sbb al, imm8<br>
 :blue_heart: `1D` id : sbb eax, imm32<br>
 
-:boom: `1E` : push ds&emsp;// Invalid<br>
-:boom: `1F` : pop ds&emsp;&nbsp;// Invalid<br>
+:skull: `1E` : push ds&emsp;// Invalid<br>
+:skull: `1F` : pop ds&emsp;&nbsp;// Invalid<br>
 
 :green_heart: `20` /r : and r/m8, r8<br>
 :green_heart: `21` /r : and r/m32, r32<br>
@@ -265,7 +265,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `24` ib : and al, imm8<br>
 :green_heart: `25` id : and eax, imm32<br>
 
-:boom: `27` : daa&emsp;// Invalid<br>
+:skull: `27` : daa&emsp;// Invalid<br>
 
 :green_heart: `28` /r : sub r/m8, r8<br>
 :green_heart: `29` /r : sub r/m32, r32<br>
@@ -274,7 +274,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `2C` ib : sub al, imm8<br>
 :green_heart: `2D` id : sub eax, imm32<br>
 
-:boom: `2F` : das&emsp;// Invalid<br>
+:skull: `2F` : das&emsp;// Invalid<br>
 
 :green_heart: `30` /r : xor r/m8, r8<br>
 :green_heart: `31` /r : xor r/m32, r32<br>
@@ -283,7 +283,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `34` ib : xor al, imm8<br>
 :green_heart: `35` id : xor eax, imm32<br>
 
-:boom: `37` : aaa&emsp;// Invalid<br>
+:skull: `37` : aaa&emsp;// Invalid<br>
 
 :green_heart: `38` /r : cmp r/m8, r8<br>
 :green_heart: `39` /r : cmp r/m32, r32<br>
@@ -292,7 +292,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `3C` ib : cmp al, imm8<br>
 :green_heart: `3D` id : cmp eax, imm32<br>
 
-:boom: `3F` : aas&emsp;// Invalid<br>
+:skull: `3F` : aas&emsp;// Invalid<br>
 
 :green_heart: `50` : push rax<br>
 :green_heart: `51` : push rcx<br>
@@ -312,8 +312,8 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `5E` : pop rsi<br>
 :green_heart: `5F` : pop rdi<br>
 
-:boom: `60` : push a&emsp;// Invalid<br>
-:boom: `61` : pop a&emsp;&nbsp;// Invalid<br>
+:skull: `60` : push a&emsp;// Invalid<br>
+:skull: `61` : pop a&emsp;&nbsp;// Invalid<br>
 
 :confused: `63` /r : movsxd r32, r/m32<br>
 
@@ -362,7 +362,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `81` /6 id : xor r/m32, imm32<br>
 :green_heart: `81` /7 id : cmp r/m32, imm32<br>
 
-:scream: `82` : // Unknown<br>
+:thought_balloon: `82` : // Unknown<br>
 
 :green_heart: `83` /0 ib : add r/m32, imm8<br>
 :green_heart: `83` /1 ib : or r/m32, imm8<br>
@@ -403,7 +403,7 @@ F3 [VEX] `0F 3A`<br>
 :confused: `98` : cwde<br>
 :confused: `99` : cdq<br>
 
-:boom: `9A` iw id : call ptr16:32&emsp;// Invalid<br>
+:skull: `9A` iw id : call ptr16:32&emsp;// Invalid<br>
 
 :confused: `9B` : fwait<br>
 :confused: `9C` : pushf<br>
@@ -481,7 +481,7 @@ F3 [VEX] `0F 3A`<br>
 :confused: `CC`&emsp;&ensp;: int3<br>
 :confused: `CD` id : int imm8<br>
 
-:boom: `CE` : into&emsp;// Invalid<br>
+:skull: `CE` : into&emsp;// Invalid<br>
 
 :confused: `CF` : iret<br>
 
@@ -521,10 +521,10 @@ F3 [VEX] `0F 3A`<br>
 :confused: `D3` /5 : shr r/m16, cl<br>
 :confused: `D3` /7 : sar r/m16, cl<br>
 
-:boom: `D4` ib : aam imm8&emsp;// Invalid<br>
-:boom: `D5` ib : aad imm8&emsp;// Invalid<br>
+:skull: `D4` ib : aam imm8&emsp;// Invalid<br>
+:skull: `D5` ib : aad imm8&emsp;// Invalid<br>
 
-:scream: `D6` : // Unknown<br>
+:thought_balloon: `D6` : // Unknown<br>
 
 :confused: `D7` : xlat<br>
 
