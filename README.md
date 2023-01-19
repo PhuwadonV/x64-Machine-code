@@ -187,12 +187,30 @@ W : REX.W
 
 mmmmm
 - 0b`00000` : Reserved for future use
-- 0b`00001` : implied 0F leading opcode byte
-- 0b`00010` : implied 0F 38 leading opcode byte
-- 0b`00011` : implied 0F 3A leading opcode byte
+- 0b`00001` : implied `0F` leading opcode byte
+- 0b`00010` : implied `0F 38` leading opcode byte
+- 0b`00011` : implied `0F 3A` leading opcode byte
 - 0b`00100` - 0b`11111` : Reserved for future use
+> 2-byte VEX ( 0xC5 ) : implied `0F` leading opcode byte
 
-vvvv : Register specifier
+| vvvv   | Dest Register   | General-Purpose Register |
+|--------|-----------------|--------------------------|
+| 0b1111 | xmm0 / ymm0     | rax / eax                |
+| 0b1110 | xmm1 / ymm1     | rcx / ecx                |
+| 0b1101 | xmm2 / ymm2     | rdx / edx                |
+| 0b1100 | xmm3 / ymm3     | rbx / ebx                |
+| 0b1011 | xmm4 / ymm4     | rsp / esp                |
+| 0b1010 | xmm5 / ymm5     | rbp / ebp                |
+| 0b1001 | xmm6 / ymm6     | rsi / esi                |
+| 0b1000 | xmm7 / ymm7     | rdi / edi                |
+| 0b0111 | xmm8 / ymm8     | r8 / r8d                 |
+| 0b0110 | xmm9 / ymm9     | r9 / r9d                 |
+| 0b0101 | xmm10 / ymm10   | r10 / r10d               |
+| 0b0100 | xmm11 / ymm11   | r11 / r11d               |
+| 0b0011 | xmm12 / ymm12   | r12 / r12d               |
+| 0b0010 | xmm13 / ymm13   | r13 / r13d               |
+| 0b0000 | xmm14 / ymm14   | r14 / r14d               |
+| 0b0000 | xmm15 / ymm15   | r15 / r15d               |
 
 L : Vector Length
 - 0b`0` : 128-bit vector | scalar
@@ -200,9 +218,9 @@ L : Vector Length
 
 pp : Prefix
 - 0b`00` : None
-- 0b`01` : 66
-- 0b`10` : F3
-- 0b`11` : F2
+- 0b`01` : 0x`66`
+- 0b`10` : 0x`F3`
+- 0b`11` : 0x`F2`
 
 # Machine code
 ## Prefix
