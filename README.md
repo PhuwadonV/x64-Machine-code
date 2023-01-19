@@ -29,11 +29,6 @@
 - AVX
 - AVX2
 
-# WIP
-- VEX prefix
-- More opcodes
-- More opcodes ( SIMD )
-
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
