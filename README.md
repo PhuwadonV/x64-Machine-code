@@ -19,7 +19,7 @@
   - shl eax, 3 // Normal instruction ( C1 E0 03 )
 
 # CPU Features
-- x64
+- x86-64
 - SSE
 - SSE2
 - SSE3
@@ -168,28 +168,6 @@
 | [rdi&ensp;* 8]       | F8  | F9  | FA  | FB  | FC  | FD  | FE  | FF  |
 
 # Machine code
-## Unknown
-:grey_question: `82`<br>
-:grey_question: `D6`<br>
-## Invalid
-:x: `06`&emsp;&emsp;&ensp;: push es<br>
-:x: `07`&emsp;&emsp;&ensp;: pop  es<br>
-:x: `0E`&emsp;&emsp;&ensp;: push cs<br>
-:x: `16`&emsp;&emsp;&ensp;: push ss<br>
-:x: `17`&emsp;&emsp;&ensp;: pop  ss<br>
-:x: `1E`&emsp;&emsp;&ensp;: push ds<br>
-:x: `1F`&emsp;&emsp;&ensp;: pop  ds<br>
-:x: `27`&emsp;&emsp;&ensp;: daa<br>
-:x: `2F`&emsp;&emsp;&ensp;: das<br>
-:x: `37`&emsp;&emsp;&ensp;: aaa<br>
-:x: `3F`&emsp;&emsp;&ensp;: aas<br>
-:x: `60`&emsp;&emsp;&ensp;: push a<br>
-:x: `61`&emsp;&emsp;&ensp;: pop a<br>
-:x: `9A` iw id : call ptr16:32<br>
-:x: `CE`&emsp;&emsp;&ensp;: into<br>
-:x: `D4` ib&emsp;&ensp;: aam imm8<br>
-:x: `D5` ib&emsp;&ensp;: aad imm8<br>
-
 ## Prefix
 `26` : es:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
 `2E` : cs:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
@@ -241,438 +219,471 @@ F3 [VEX] `0F 38`<br>
 F3 [VEX] `0F 3A`<br>
 
 ## Opcode
-`00` /r : add r/m8, r8<br>
-`01` /r : add r/m32, r32<br>
-`02` /r : add r8, r/m8<br>
-`03` /r : add r32, r/m32<br>
-`04` ib : add al, imm8<br>
-`05` id : add eax, imm32<br>
-
-`08` /r : or r/m8, r8<br>
-`09` /r : or r/m32, r32<br>
-`0A` /r : or r8, r/m8<br>
-`0B` /r : or r32, r/m32<br>
-`0C` ib : or al, imm8<br>
-`0D` id : or eax, imm32
-
-`10` /r : adc r/m8, r8<br>
-`11` /r : adc r/m32, r32<br>
-`12` /r : adc r8, r/m8<br>
-`13` /r : adc r32, r/m32<br>
-`14` ib : adc al, imm8<br>
-`15` id : adc eax, imm32<br>
-
-`18` /r : sbb r/m8, r8<br>
-`19` /r : sbb r/m32, r32<br>
-`1A` /r : sbb r8, r/m8<br>
-`1B` /r : sbb r32, r/m32<br>
-`1C` ib : sbb al, imm8<br>
-`1D` id : sbb eax, imm32<br>
-
-`20` /r : and r/m8, r8<br>
-`21` /r : and r/m32, r32<br>
-`22` /r : and r8, r/m8<br>
-`23` /r : and r32, r/m32<br>
-`24` ib : and al, imm8<br>
-`25` id : and eax, imm32<br>
-
-`28` /r : sub r/m8, r8<br>
-`29` /r : sub r/m32, r32<br>
-`2A` /r : sub r8, r/m8<br>
-`2B` /r : sub r32, r/m32<br>
-`2C` ib : sub al, imm8<br>
-`2D` id : sub eax, imm32<br>
-
-`30` /r : xor r/m8, r8<br>
-`31` /r : xor r/m32, r32<br>
-`32` /r : xor r8, r/m8<br>
-`33` /r : xor r32, r/m32<br>
-`34` ib : xor al, imm8<br>
-`35` id : xor eax, imm32<br>
-
-`38` /r : cmp r/m8, r8<br>
-`39` /r : cmp r/m32, r32<br>
-`3A` /r : cmp r8, r/m8<br>
-`3B` /r : cmp r32, r/m32<br>
-`3C` ib : cmp al, imm8<br>
-`3D` id : cmp eax, imm32<br>
-
-`50` : push rax<br>
-`51` : push rcx<br>
-`52` : push rdx<br>
-`53` : push rbx<br>
-`54` : push rsp<br>
-`55` : push rbp<br>
-`56` : push rsi<br>
-`57` : push rdi<br>
-
-`58` : pop rax<br>
-`59` : pop rcx<br>
-`5A` : pop rdx<br>
-`5B` : pop rbx<br>
-`5C` : pop rsp<br>
-`5D` : pop rbp<br>
-`5E` : pop rsi<br>
-`5F` : pop rdi<br>
-
-`63` /r : movsxd r32, r/m32<br>
-
-`68`&emsp;&emsp;&ensp;: push imm32<br>
-`69` /r id : imul r32, r/m32, imm32<br>
-`6A`&emsp;&emsp;&ensp;: push imm8<br>
-`6B` /r ib : imul r32, r/m32, imm8<br>
-
-`6C` : insb<br>
-`6D` : insd<br>
-`6E` : outsb<br>
-`6F` : outsd<br>
-
-`70` ib : jo rel8<br>
-`71` ib : jno rel8<br>
-`72` ib : jb rel8<br>
-`73` ib : jae rel8<br>
-`74` ib : je rel8<br>
-`75` ib : jne rel8<br>
-`76` ib : jbe rel8<br>
-`77` ib : ja rel8<br>
-`78` ib : js rel8<br>
-`79` ib : jns rel8<br>
-`7A` ib : jp rel8<br>
-`7B` ib : jnp rel8<br>
-`7C` ib : jl rel8<br>
-`7D` ib : jge rel8<br>
-`7E` ib : jle rel8<br>
-`7F` ib : jg rel8<br>
-
-`80` /0 ib : add r/m8, imm8<br>
-`80` /1 ib : or r/m8, imm8<br>
-`80` /2 ib : adc r/m8, imm8<br>
-`80` /3 ib : sbb r/m8, imm8<br>
-`80` /4 ib : and r/m8, imm8<br>
-`80` /5 ib : sub r/m8, imm8<br>
-`80` /6 ib : xor r/m8, imm8<br>
-`80` /7 ib : cmp r/m8, imm8<br>
-
-`81` /0 id : add r/m32, imm32<br>
-`81` /1 id : or r/m32, imm32<br>
-`81` /2 id : adc r/m32, imm32<br>
-`81` /3 id : sbb r/m32, imm32<br>
-`81` /4 id : and r/m32, imm32<br>
-`81` /5 id : sub r/m32, imm32<br>
-`81` /6 id : xor r/m32, imm32<br>
-`81` /7 id : cmp r/m32, imm32<br>
-
-`81` /0 ib : add r/m32, imm8<br>
-`81` /1 ib : or r/m32, imm8<br>
-`81` /2 ib : adc r/m32, imm8<br>
-`81` /3 ib : sbb r/m32, imm8<br>
-`81` /4 ib : and r/m32, imm8<br>
-`81` /5 ib : sub r/m32, imm8<br>
-`81` /6 ib : xor r/m32, imm8<br>
-`81` /7 ib : cmp r/m32, imm8<br>
-
-`84` /r : test r/m8, r8<br>
-`85` /r : test r/m8, r8<br>
-
-`86` /r : xchg r8, r/m8<br>
-`87` /r : xchg r/m32, r32<br>
-
-`88` /r : mov r/m8, r8<br>
-`89` /r : mov r/m32, r32<br>
-`8A` /r : mov r8, r/m8<br>
-`8B` /r : mov r32, r/m32<br>
-`8C` /r : mov r16/r32/m16, sreg<br>
-
-`8D` /r : lea r32, m<br>
-
-`8E` /r : mov sreg, r/m16<br>
-
-`8F` /r : pop r/m64<br>
-
-`90` : xchg eax, eax // nop<br>
-`91` : xchg ecx, eax<br>
-`92` : xchg edx, eax<br>
-`93` : xchg ebx, eax<br>
-`94` : xchg esp, eax<br>
-`95` : xchg ebp, eax<br>
-`96` : xchg esi, eax<br>
-`97` : xchg edi, eax<br>
-
-`98` : cwde<br>
-`99` : cdq<br>
-
-`9B` : fwait<br>
-`9C` : pushf<br>
-`9D` : popf<br>
-`9E` : sahf<br>
-`9F` : lahf<br>
-
-`A0` iq : mov al, moffs8<br>
-`A1` iq : mov eax, moffs32<br>
-`A2` iq : mov moffs8, AL<br>
-`A3` iq : mov moffs32, eax<br>
-
-`A4` : movsb<br>
-`A5` : movsd<br>
-`A6` : cmpsb<br>
-`A7` : cmpsd<br>
-
-`A8` ib : test al, imm8<br>
-`A9` id : test eax, imm32<br>
-
-`AA` : stosb<br>
-`AB` : stosd<br>
-`AC` : lodsb<br>
-`AD` : lodsd<br>
-`AE` : scasb<br>
-`AF` : scasd<br>
-
-`B0` ib : mov al, imm8<br>
-`B1` ib : mov cl, imm8<br>
-`B2` ib : mov dl, imm8<br>
-`B3` ib : mov bl, imm8<br>
-`B4` ib : mov ah, imm8<br>
-`B5` ib : mov ch, imm8<br>
-`B6` ib : mov dh, imm8<br>
-`B7` ib : mov bh, imm8<br>
-`B8` id : mov eax, imm32<br>
-`B9` id : mov ecx, imm32<br>
-`BA` id : mov edx, imm32<br>
-`BB` id : mov ebx, imm32<br>
-`BC` id : mov esp, imm32<br>
-`BD` id : mov ebp, imm32<br>
-`BE` id : mov esi, imm32<br>
-`BF` id : mov edi, imm32<br>
-
-`C0` /0 ib : rol r/m8, imm8<br>
-`C0` /1 ib : ror r/m8, imm8<br>
-`C0` /2 ib : rcl r/m8, imm8<br>
-`C0` /3 ib : rcr r/m8, imm8<br>
-`C0` /4 ib : shl r/m8, imm8<br>
-`C0` /4 ib : sal r/m8, imm8<br>
-`C0` /5 ib : shr r/m8, imm8<br>
-`C0` /7 ib : sar r/m8, imm8<br>
-
-`C1` /0 ib : rol r/m32, imm8<br>
-`C1` /1 ib : ror r/m32, imm8<br>
-`C1` /2 ib : rcl r/m32, imm8<br>
-`C1` /3 ib : rcr r/m32, imm8<br>
-`C1` /4 ib : shl r/m32, imm8<br>
-`C1` /4 ib : sal r/m32, imm8<br>
-`C1` /5 ib : shr r/m32, imm8<br>
-`C1` /7 ib : sar r/m32, imm8<br>
-
-`C2` iw : ret imm16<br>
-`C3`&emsp;&ensp;: ret <br>
-
-`C6` /0 ib : mov r/m8, imm8<br>
-`C7` /0 id : mov r/m32, imm32<br>
-
-`C8` iw ib : enter imm16, imm8<br>
-`C9`&emsp;&emsp;&ensp;&nbsp;: leave<br>
-
-`CA` iw : retf imm16<br>
-`CB`&emsp;&ensp;: retf<br>
-
-`CC`&emsp;&ensp;: int3<br>
-`CD` id : int imm8<br>
-
-`CF` : iret<br>
-
-`D0` /0 : rol r/m8, 1<br>
-`D0` /1 : ror r/m8, 1<br>
-`D0` /2 : rcl r/m8, 1<br>
-`D0` /3 : rcr r/m8, 1<br>
-`D0` /4 : shl r/m8, 1<br>
-`D0` /4 : sal r/m8, 1<br>
-`D0` /5 : shr r/m8, 1<br>
-`D0` /7 : sar r/m8, 1<br>
-
-`D1` /0 : rol r/m16, 1<br>
-`D1` /1 : ror r/m16, 1<br>
-`D1` /2 : rcl r/m16, 1<br>
-`D1` /3 : rcr r/m16, 1<br>
-`D1` /4 : shl r/m16, 1<br>
-`D1` /4 : sal r/m16, 1<br>
-`D1` /5 : shr r/m16, 1<br>
-`D1` /7 : sar r/m16, 1<br>
-
-`D2` /0 : ROL r/m8, cl<br>
-`D2` /1 : ror r/m8, cl<br>
-`D2` /2 : rcl r/m8, cl<br>
-`D2` /3 : rcr r/m8, cl<br>
-`D2` /4 : shl r/m8, cl<br>
-`D2` /4 : sal r/m8, cl<br>
-`D2` /5 : shr r/m8, cl<br>
-`D2` /7 : sar r/m8, cl<br>
-
-`D3` /0 : ROL r/m16, cl<br>
-`D3` /1 : ror r/m16, cl<br>
-`D3` /2 : rcl r/m16, cl<br>
-`D3` /3 : rcr r/m16, cl<br>
-`D3` /4 : shl r/m16, cl<br>
-`D3` /4 : sal r/m16, cl<br>
-`D3` /5 : shr r/m16, cl<br>
-`D3` /7 : sar r/m16, cl<br>
-
-`D7` : xlat<br>
-
-`D8` /0 : fadd m32fp<br>
-`D8` /1 : fmul m32fp<br>
-`D8` /2 : fcom m32fp<br>
-`D8` /3 : fcomp m32fp<br>
-`D8` /4 : fsub m32fp<br>
-`D8` /5 : fsubr m32fp<br>
-`D8` /6 : fdiv m32fp<br>
-`D8` /7 : fdivr m32fp<br>
-
-`D9` /0 : fld m32fp<br>
-`D9` /2 : fst m32fp<br>
-`D9` /3 : fstp m32fp<br>
-`D9` /4 : fldenv m14/28byte<br>
-`D9` /5 : fldcw m2byte<br>
-`D9` /6 : fnstenv m14/28byte<br>
-`D9` /7 : fnstcw m2byte<br>
-
-`DA` /0 : fiadd m32int<br>
-`DA` /1 : fimul m32int<br>
-`DA` /2 : ficom m32int<br>
-`DA` /3 : ficomp m32int<br>
-`DA` /4 : fisub m32int<br>
-`DA` /5 : fisubr m32int<br>
-`DA` /6 : fidiv m32int<br>
-`DA` /7 : fidivr m32int<br>
-
-`DB` /0 : fild m32int<br>
-`DB` /1 : fisttp m32int<br>
-`DB` /2 : fist m32int<br>
-`DB` /3 : fistp m32int<br>
-`DB` /5 : fld m80fp<br>
-`DB` /7 : fltp m80fp<br>
-
-`DC` /0 : fadd m64fp<br>
-`DC` /1 : fmul m64fp<br>
-`DC` /2 : fcom m64fp<br>
-`DC` /3 : fcomp m64fp<br>
-`DC` /4 : fsub m64fp<br>
-`DC` /5 : fsubr m64fp<br>
-`DC` /6 : fdev m64fp<br>
-`DC` /7 : fdivr m64fp<br>
-
-`DD` /0 : fld m64fp<br>
-`DD` /1 : fisttp m64int<br>
-`DD` /2 : fst m64fp<br>
-`DD` /3 : fstp m64fp<br>
-`DD` /4 : frstor m94/108byte<br>
-`DD` /6 : fnsave m94/108byte<br>
-`DD` /7 : fnstsw m2byte<br>
-
-`DE` /0 : fiadd m16int<br>
-`DE` /1 : fimul m16int<br>
-`DE` /2 : ficom m16int<br>
-`DE` /3 : ficomip m16int<br>
-`DE` /4 : fisub m16int<br>
-`DE` /5 : fisubr m16int<br>
-`DE` /6 : fidiv m16int<br>
-`DE` /7 : fidivr m16int<br>
-
-`DF` /0 : fild m16int<br>
-`DF` /1 : fisttp m16int<br>
-`DF` /2 : fist m16int<br>
-`DF` /3 : fistp m16int<br>
-`DF` /4 : fbld m80bcd<br>
-`DF` /5 : fild m64int<br>
-`DF` /6 : fbstp m80bcd<br>
-`DF` /7 : fistp m64int<br>
-
-`E0` ib : loopne rel8<br>
-`E1` ib : loope rel8<br>
-`E2` ib : loop rel8<br>
-
-`E3` ib : jrcxz rel8<br>
-
-`E4` ib : in al, imm8<br>
-`E5` ib : in eax, imm8<br>
-
-`E6` ib : out imm8, al<br>
-`E7` ib : out imm8, eax<br>
-
-`E8` id : call rel32<br>
-`E9` id : jmp rel32<br>
-
-`EA` iw id : jmp ptr16:32<br>
-
-`EB` iw : jmp rel16<br>
-
-`EC` ib : in al, dx<br>
-`ED` ib : in eax, dx<br>
-
-`EE` : out dx, al<br>
-`EF` : out dx, eax<br>
-
-`F1` : int1 // icebp<br>
-`F4` : hlt<br>
-`F5` : cmc<br>
-
-`F6` /0 ib : test r/m8, imm8<br>
-
-`F6` /2    : not r/m8<br>
-`F6` /3    : neg r/m8<br>
-`F6` /4    : mul r/m8<br>
-`F6` /5    : imul r/m8<br>
-`F6` /6    : div r/m8<br>
-`F6` /7    : idiv r/m8<br>
-
-`F7` /0 id : test r/m8, imm8<br>
-
-`F7` /2    : not r/m32<br>
-`F7` /3    : neg r/m32<br>
-`F7` /4    : mul r/m32<br>
-`F7` /5    : imul r/m32<br>
-`F7` /6    : div r/m32<br>
-`F7` /7    : idiv r/m32<br>
-
-`F8` : clc<br>
-`F9` : stc<br>
-`FA` : cli<br>
-`FB` : sti<br>
-`FC` : cld<br>
-`FD` : std<br>
-
-`FE` /0 : dec r/m8<br>
-`FE` /1 : inc r/m8<br>
-`FF` /0 : dec r/m16<br>
-`FF` /1 : inc r/m16<br>
-
-`FF` /2 : call r/m64<br>
-`FF` /3 : call m16:32<br>
-
-`FF` /4 : jmp r/m64<br>
-`FF` /5 : jmp m16:32<br>
-
-`FF` /6 : push r/m64<br>
+:green_heart: `00` /r : add r/m8, r8<br>
+:green_heart: `01` /r : add r/m32, r32<br>
+:green_heart: `02` /r : add r8, r/m8<br>
+:green_heart: `03` /r : add r32, r/m32<br>
+:green_heart: `04` ib : add al, imm8<br>
+:green_heart: `05` id : add eax, imm32<br>
+
+:x: `06` : push es&emsp;// Invalid<br>
+:x: `07` : pop es&emsp;&nbsp;// Invalid<br>
+
+:green_heart: `08` /r : or r/m8, r8<br>
+:green_heart: `09` /r : or r/m32, r32<br>
+:green_heart: `0A` /r : or r8, r/m8<br>
+:green_heart: `0B` /r : or r32, r/m32<br>
+:green_heart: `0C` ib : or al, imm8<br>
+:green_heart: `0D` id : or eax, imm32
+
+:x: `0E` : push cs&emsp;// Invalid<br>
+
+:blue_heart: `10` /r : adc r/m8, r8<br>
+:blue_heart: `11` /r : adc r/m32, r32<br>
+:blue_heart: `12` /r : adc r8, r/m8<br>
+:blue_heart: `13` /r : adc r32, r/m32<br>
+:blue_heart: `14` ib : adc al, imm8<br>
+:blue_heart: `15` id : adc eax, imm32<br>
+
+:x: `16` : push ss&emsp;// Invalid<br>
+:x: `17` : pop ss&emsp;&nbsp;// Invalid<br>
+
+:blue_heart: `18` /r : sbb r/m8, r8<br>
+:blue_heart: `19` /r : sbb r/m32, r32<br>
+:blue_heart: `1A` /r : sbb r8, r/m8<br>
+:blue_heart: `1B` /r : sbb r32, r/m32<br>
+:blue_heart: `1C` ib : sbb al, imm8<br>
+:blue_heart: `1D` id : sbb eax, imm32<br>
+
+:x: `1E` : push ds&emsp;// Invalid<br>
+:x: `1F` : pop ds&emsp;&nbsp;// Invalid<br>
+
+:green_heart: `20` /r : and r/m8, r8<br>
+:green_heart: `21` /r : and r/m32, r32<br>
+:green_heart: `22` /r : and r8, r/m8<br>
+:green_heart: `23` /r : and r32, r/m32<br>
+:green_heart: `24` ib : and al, imm8<br>
+:green_heart: `25` id : and eax, imm32<br>
+
+:x: `27` : daa&emsp;// Invalid<br>
+
+:green_heart: `28` /r : sub r/m8, r8<br>
+:green_heart: `29` /r : sub r/m32, r32<br>
+:green_heart: `2A` /r : sub r8, r/m8<br>
+:green_heart: `2B` /r : sub r32, r/m32<br>
+:green_heart: `2C` ib : sub al, imm8<br>
+:green_heart: `2D` id : sub eax, imm32<br>
+
+:x: `2F` : das&emsp;// Invalid<br>
+
+:green_heart: `30` /r : xor r/m8, r8<br>
+:green_heart: `31` /r : xor r/m32, r32<br>
+:green_heart: `32` /r : xor r8, r/m8<br>
+:green_heart: `33` /r : xor r32, r/m32<br>
+:green_heart: `34` ib : xor al, imm8<br>
+:green_heart: `35` id : xor eax, imm32<br>
+
+:x: `37` : aaa&emsp;// Invalid<br>
+
+:green_heart: `38` /r : cmp r/m8, r8<br>
+:green_heart: `39` /r : cmp r/m32, r32<br>
+:green_heart: `3A` /r : cmp r8, r/m8<br>
+:green_heart: `3B` /r : cmp r32, r/m32<br>
+:green_heart: `3C` ib : cmp al, imm8<br>
+:green_heart: `3D` id : cmp eax, imm32<br>
+
+:x: `3F` : aas&emsp;// Invalid<br>
+
+:green_heart: `50` : push rax<br>
+:green_heart: `51` : push rcx<br>
+:green_heart: `52` : push rdx<br>
+:green_heart: `53` : push rbx<br>
+:green_heart: `54` : push rsp<br>
+:green_heart: `55` : push rbp<br>
+:green_heart: `56` : push rsi<br>
+:green_heart: `57` : push rdi<br>
+
+:green_heart: `58` : pop rax<br>
+:green_heart: `59` : pop rcx<br>
+:green_heart: `5A` : pop rdx<br>
+:green_heart: `5B` : pop rbx<br>
+:green_heart: `5C` : pop rsp<br>
+:green_heart: `5D` : pop rbp<br>
+:green_heart: `5E` : pop rsi<br>
+:green_heart: `5F` : pop rdi<br>
+
+:x: `60` : push a<br>
+:x: `61` : pop a&emsp;&nbsp;// Invalid<br>
+
+:confused: `63` /r : movsxd r32, r/m32<br>
+
+:purple_heart: `68`&emsp;&emsp;&ensp;: push imm32<br>
+:confused: `69` /r id : imul r32, r/m32, imm32<br>
+:purple_heart: `6A`&emsp;&emsp;&ensp;: push imm8<br>
+:confused: `6B` /r ib : imul r32, r/m32, imm8<br>
+
+:purple_heart: `6C` : insb<br>
+:purple_heart: `6D` : insd<br>
+:purple_heart: `6E` : outsb<br>
+:purple_heart: `6F` : outsd<br>
+
+:green_heart: `70` ib : jo rel8<br>
+:green_heart: `71` ib : jno rel8<br>
+:green_heart: `72` ib : jb rel8<br>
+:green_heart: `73` ib : jae rel8<br>
+:green_heart: `74` ib : je rel8<br>
+:green_heart: `75` ib : jne rel8<br>
+:green_heart: `76` ib : jbe rel8<br>
+:green_heart: `77` ib : ja rel8<br>
+:green_heart: `78` ib : js rel8<br>
+:green_heart: `79` ib : jns rel8<br>
+:green_heart: `7A` ib : jp rel8<br>
+:green_heart: `7B` ib : jnp rel8<br>
+:green_heart: `7C` ib : jl rel8<br>
+:green_heart: `7D` ib : jge rel8<br>
+:green_heart: `7E` ib : jle rel8<br>
+:green_heart: `7F` ib : jg rel8<br>
+
+:green_heart: `80` /0 ib : add r/m8, imm8<br>
+:green_heart: `80` /1 ib : or r/m8, imm8<br>
+:green_heart: `80` /2 ib : adc r/m8, imm8<br>
+:green_heart: `80` /3 ib : sbb r/m8, imm8<br>
+:green_heart: `80` /4 ib : and r/m8, imm8<br>
+:green_heart: `80` /5 ib : sub r/m8, imm8<br>
+:green_heart: `80` /6 ib : xor r/m8, imm8<br>
+:green_heart: `80` /7 ib : cmp r/m8, imm8<br>
+
+:green_heart: `81` /0 id : add r/m32, imm32<br>
+:green_heart: `81` /1 id : or r/m32, imm32<br>
+:green_heart: `81` /2 id : adc r/m32, imm32<br>
+:green_heart: `81` /3 id : sbb r/m32, imm32<br>
+:green_heart: `81` /4 id : and r/m32, imm32<br>
+:green_heart: `81` /5 id : sub r/m32, imm32<br>
+:green_heart: `81` /6 id : xor r/m32, imm32<br>
+:green_heart: `81` /7 id : cmp r/m32, imm32<br>
+
+:scream: `82` : // Unknown<br>
+
+:green_heart: `83` /0 ib : add r/m32, imm8<br>
+:green_heart: `83` /1 ib : or r/m32, imm8<br>
+:green_heart: `83` /2 ib : adc r/m32, imm8<br>
+:green_heart: `83` /3 ib : sbb r/m32, imm8<br>
+:green_heart: `83` /4 ib : and r/m32, imm8<br>
+:green_heart: `83` /5 ib : sub r/m32, imm8<br>
+:green_heart: `83` /6 ib : xor r/m32, imm8<br>
+:green_heart: `83` /7 ib : cmp r/m32, imm8<br>
+
+:confused: `84` /r : test r/m8, r8<br>
+:confused: `85` /r : test r/m8, r8<br>
+
+:confused: `86` /r : xchg r8, r/m8<br>
+:confused: `87` /r : xchg r/m32, r32<br>
+
+:confused: `88` /r : mov r/m8, r8<br>
+:confused: `89` /r : mov r/m32, r32<br>
+:confused: `8A` /r : mov r8, r/m8<br>
+:confused: `8B` /r : mov r32, r/m32<br>
+:confused: `8C` /r : mov r16/r32/m16, sreg<br>
+
+:confused: `8D` /r : lea r32, m<br>
+
+:confused: `8E` /r : mov sreg, r/m16<br>
+
+:confused: `8F` /r : pop r/m64<br>
+
+:green_heart: `90` : xchg eax, eax // nop<br>
+:purple_heart: `91` : xchg ecx, eax<br>
+:purple_heart: `92` : xchg edx, eax<br>
+:purple_heart: `93` : xchg ebx, eax<br>
+:purple_heart: `94` : xchg esp, eax<br>
+:purple_heart: `95` : xchg ebp, eax<br>
+:purple_heart: `96` : xchg esi, eax<br>
+:purple_heart: `97` : xchg edi, eax<br>
+
+:confused: `98` : cwde<br>
+:confused: `99` : cdq<br>
+
+:x: `9A` iw id : call ptr16:32&emsp;// Invalid<br>
+
+:confused: `9B` : fwait<br>
+:confused: `9C` : pushf<br>
+:confused: `9D` : popf<br>
+:confused: `9E` : sahf<br>
+:confused: `9F` : lahf<br>
+
+:confused: `A0` iq : mov al, moffs8<br>
+:confused: `A1` iq : mov eax, moffs32<br>
+:confused: `A2` iq : mov moffs8, AL<br>
+:confused: `A3` iq : mov moffs32, eax<br>
+
+:confused: `A4` : movsb<br>
+:confused: `A5` : movsd<br>
+:confused: `A6` : cmpsb<br>
+:confused: `A7` : cmpsd<br>
+
+:confused: `A8` ib : test al, imm8<br>
+:confused: `A9` id : test eax, imm32<br>
+
+:confused: `AA` : stosb<br>
+:confused: `AB` : stosd<br>
+:confused: `AC` : lodsb<br>
+:confused: `AD` : lodsd<br>
+:confused: `AE` : scasb<br>
+:confused: `AF` : scasd<br>
+
+:confused: `B0` ib : mov al, imm8<br>
+:confused: `B1` ib : mov cl, imm8<br>
+:confused: `B2` ib : mov dl, imm8<br>
+:confused: `B3` ib : mov bl, imm8<br>
+:confused: `B4` ib : mov ah, imm8<br>
+:confused: `B5` ib : mov ch, imm8<br>
+:confused: `B6` ib : mov dh, imm8<br>
+:confused: `B7` ib : mov bh, imm8<br>
+:confused: `B8` id : mov eax, imm32<br>
+:confused: `B9` id : mov ecx, imm32<br>
+:confused: `BA` id : mov edx, imm32<br>
+:confused: `BB` id : mov ebx, imm32<br>
+:confused: `BC` id : mov esp, imm32<br>
+:confused: `BD` id : mov ebp, imm32<br>
+:confused: `BE` id : mov esi, imm32<br>
+:confused: `BF` id : mov edi, imm32<br>
+
+:confused: `C0` /0 ib : rol r/m8, imm8<br>
+:confused: `C0` /1 ib : ror r/m8, imm8<br>
+:confused: `C0` /2 ib : rcl r/m8, imm8<br>
+:confused: `C0` /3 ib : rcr r/m8, imm8<br>
+:confused: `C0` /4 ib : shl r/m8, imm8<br>
+:confused: `C0` /4 ib : sal r/m8, imm8<br>
+:confused: `C0` /5 ib : shr r/m8, imm8<br>
+:confused: `C0` /7 ib : sar r/m8, imm8<br>
+
+:confused: `C1` /0 ib : rol r/m32, imm8<br>
+:confused: `C1` /1 ib : ror r/m32, imm8<br>
+:confused: `C1` /2 ib : rcl r/m32, imm8<br>
+:confused: `C1` /3 ib : rcr r/m32, imm8<br>
+:confused: `C1` /4 ib : shl r/m32, imm8<br>
+:confused: `C1` /4 ib : sal r/m32, imm8<br>
+:confused: `C1` /5 ib : shr r/m32, imm8<br>
+:confused: `C1` /7 ib : sar r/m32, imm8<br>
+
+:confused: `C2` iw : ret imm16<br>
+:confused: `C3`&emsp;&ensp;: ret <br>
+
+:confused: `C6` /0 ib : mov r/m8, imm8<br>
+:confused: `C7` /0 id : mov r/m32, imm32<br>
+
+:confused: `C8` iw ib : enter imm16, imm8<br>
+:confused: `C9`&emsp;&emsp;&ensp;&nbsp;: leave<br>
+
+:confused: `CA` iw : retf imm16<br>
+:confused: `CB`&emsp;&ensp;: retf<br>
+
+:confused: `CC`&emsp;&ensp;: int3<br>
+:confused: `CD` id : int imm8<br>
+
+:x: `CE` : into&emsp;// Invalid<br>
+
+:confused: `CF` : iret<br>
+
+:confused: `D0` /0 : rol r/m8, 1<br>
+:confused: `D0` /1 : ror r/m8, 1<br>
+:confused: `D0` /2 : rcl r/m8, 1<br>
+:confused: `D0` /3 : rcr r/m8, 1<br>
+:confused: `D0` /4 : shl r/m8, 1<br>
+:confused: `D0` /4 : sal r/m8, 1<br>
+:confused: `D0` /5 : shr r/m8, 1<br>
+:confused: `D0` /7 : sar r/m8, 1<br>
+
+:confused: `D1` /0 : rol r/m16, 1<br>
+:confused: `D1` /1 : ror r/m16, 1<br>
+:confused: `D1` /2 : rcl r/m16, 1<br>
+:confused: `D1` /3 : rcr r/m16, 1<br>
+:confused: `D1` /4 : shl r/m16, 1<br>
+:confused: `D1` /4 : sal r/m16, 1<br>
+:confused: `D1` /5 : shr r/m16, 1<br>
+:confused: `D1` /7 : sar r/m16, 1<br>
+
+:confused: `D2` /0 : rol r/m8, cl<br>
+:confused: `D2` /1 : ror r/m8, cl<br>
+:confused: `D2` /2 : rcl r/m8, cl<br>
+:confused: `D2` /3 : rcr r/m8, cl<br>
+:confused: `D2` /4 : shl r/m8, cl<br>
+:confused: `D2` /4 : sal r/m8, cl<br>
+:confused: `D2` /5 : shr r/m8, cl<br>
+:confused: `D2` /7 : sar r/m8, cl<br>
+
+:confused: `D3` /0 : rol r/m16, cl<br>
+:confused: `D3` /1 : ror r/m16, cl<br>
+:confused: `D3` /2 : rcl r/m16, cl<br>
+:confused: `D3` /3 : rcr r/m16, cl<br>
+:confused: `D3` /4 : shl r/m16, cl<br>
+:confused: `D3` /4 : sal r/m16, cl<br>
+:confused: `D3` /5 : shr r/m16, cl<br>
+:confused: `D3` /7 : sar r/m16, cl<br>
+
+:x: `D4` ib : aam imm8&emsp;// Invalid<br>
+:x: `D5` ib : aad imm8&emsp;// Invalid<br>
+
+:scream: `D6` : // Unknown<br>
+
+:confused: `D7` : xlat<br>
+
+:purple_heart: `D8` /0 : fadd m32fp<br>
+:purple_heart: `D8` /1 : fmul m32fp<br>
+:purple_heart: `D8` /2 : fcom m32fp<br>
+:purple_heart: `D8` /3 : fcomp m32fp<br>
+:purple_heart: `D8` /4 : fsub m32fp<br>
+:purple_heart: `D8` /5 : fsubr m32fp<br>
+:purple_heart: `D8` /6 : fdiv m32fp<br>
+:purple_heart: `D8` /7 : fdivr m32fp<br>
+
+:purple_heart: `D9` /0 : fld m32fp<br>
+:purple_heart: `D9` /2 : fst m32fp<br>
+:purple_heart: `D9` /3 : fstp m32fp<br>
+:purple_heart: `D9` /4 : fldenv m14/28byte<br>
+:purple_heart: `D9` /5 : fldcw m2byte<br>
+:purple_heart: `D9` /6 : fnstenv m14/28byte<br>
+:purple_heart: `D9` /7 : fnstcw m2byte<br>
+
+:purple_heart: `DA` /0 : fiadd m32int<br>
+:purple_heart: `DA` /1 : fimul m32int<br>
+:purple_heart: `DA` /2 : ficom m32int<br>
+:purple_heart: `DA` /3 : ficomp m32int<br>
+:purple_heart: `DA` /4 : fisub m32int<br>
+:purple_heart: `DA` /5 : fisubr m32int<br>
+:purple_heart: `DA` /6 : fidiv m32int<br>
+:purple_heart: `DA` /7 : fidivr m32int<br>
+
+:purple_heart: `DB` /0 : fild m32int<br>
+:purple_heart: `DB` /1 : fisttp m32int<br>
+:purple_heart: `DB` /2 : fist m32int<br>
+:purple_heart: `DB` /3 : fistp m32int<br>
+:purple_heart: `DB` /5 : fld m80fp<br>
+:purple_heart: `DB` /7 : fltp m80fp<br>
+
+:purple_heart: `DC` /0 : fadd m64fp<br>
+:purple_heart: `DC` /1 : fmul m64fp<br>
+:purple_heart: `DC` /2 : fcom m64fp<br>
+:purple_heart: `DC` /3 : fcomp m64fp<br>
+:purple_heart: `DC` /4 : fsub m64fp<br>
+:purple_heart: `DC` /5 : fsubr m64fp<br>
+:purple_heart: `DC` /6 : fdev m64fp<br>
+:purple_heart: `DC` /7 : fdivr m64fp<br>
+
+:purple_heart: `DD` /0 : fld m64fp<br>
+:purple_heart: `DD` /1 : fisttp m64int<br>
+:purple_heart: `DD` /2 : fst m64fp<br>
+:purple_heart: `DD` /3 : fstp m64fp<br>
+:purple_heart: `DD` /4 : frstor m94/108byte<br>
+:purple_heart: `DD` /6 : fnsave m94/108byte<br>
+:purple_heart: `DD` /7 : fnstsw m2byte<br>
+
+:purple_heart: `DE` /0 : fiadd m16int<br>
+:purple_heart: `DE` /1 : fimul m16int<br>
+:purple_heart: `DE` /2 : ficom m16int<br>
+:purple_heart: `DE` /3 : ficomip m16int<br>
+:purple_heart: `DE` /4 : fisub m16int<br>
+:purple_heart: `DE` /5 : fisubr m16int<br>
+:purple_heart: `DE` /6 : fidiv m16int<br>
+:purple_heart: `DE` /7 : fidivr m16int<br>
+
+:purple_heart: `DF` /0 : fild m16int<br>
+:purple_heart: `DF` /1 : fisttp m16int<br>
+:purple_heart: `DF` /2 : fist m16int<br>
+:purple_heart: `DF` /3 : fistp m16int<br>
+:purple_heart: `DF` /4 : fbld m80bcd<br>
+:purple_heart: `DF` /5 : fild m64int<br>
+:purple_heart: `DF` /6 : fbstp m80bcd<br>
+:purple_heart: `DF` /7 : fistp m64int<br>
+
+:confused: `E0` ib : loopne rel8<br>
+:confused: `E1` ib : loope rel8<br>
+:confused: `E2` ib : loop rel8<br>
+
+:confused: `E3` ib : jrcxz rel8<br>
+
+:purple_heart: `E4` ib : in al, imm8<br>
+:purple_heart: `E5` ib : in eax, imm8<br>
+
+:purple_heart: `E6` ib : out imm8, al<br>
+:purple_heart: `E7` ib : out imm8, eax<br>
+
+:confused: `E8` id : call rel32<br>
+:confused: `E9` id : jmp rel32<br>
+
+:confused: `EA` iw id : jmp ptr16:32<br>
+
+:confused: `EB` iw : jmp rel16<br>
+
+:purple_heart: `EC` ib : in al, dx<br>
+:purple_heart: `ED` ib : in eax, dx<br>
+
+:purple_heart: `EE` : out dx, al<br>
+:purple_heart: `EF` : out dx, eax<br>
+
+:confused: `F1` : int1 // icebp<br>
+:confused: `F4` : hlt<br>
+:confused: `F5` : cmc<br>
+
+:confused: `F6` /0 ib : test r/m8, imm8<br>
+
+:confused: `F6` /2    : not r/m8<br>
+:confused: `F6` /3    : neg r/m8<br>
+:confused: `F6` /4    : mul r/m8<br>
+:confused: `F6` /5    : imul r/m8<br>
+:confused: `F6` /6    : div r/m8<br>
+:confused: `F6` /7    : idiv r/m8<br>
+
+:confused: `F7` /0 id : test r/m8, imm8<br>
+
+:confused: `F7` /2    : not r/m32<br>
+:confused: `F7` /3    : neg r/m32<br>
+:confused: `F7` /4    : mul r/m32<br>
+:confused: `F7` /5    : imul r/m32<br>
+:confused: `F7` /6    : div r/m32<br>
+:confused: `F7` /7    : idiv r/m32<br>
+
+:confused: `F8` : clc<br>
+:confused: `F9` : stc<br>
+:confused: `FA` : cli<br>
+:confused: `FB` : sti<br>
+:confused: `FC` : cld<br>
+:confused: `FD` : std<br>
+
+:confused: `FE` /0 : dec r/m8<br>
+:confused: `FE` /1 : inc r/m8<br>
+:confused: `FF` /0 : dec r/m16<br>
+:confused: `FF` /1 : inc r/m16<br>
+
+:confused: `FF` /2 : call r/m64<br>
+:confused: `FF` /3 : call m16:32<br>
+
+:confused: `FF` /4 : jmp r/m64<br>
+:confused: `FF` /5 : jmp m16:32<br>
+
+:confused: `FF` /6 : push r/m64<br>
 
 ## More Opcodes
-0F `00` /0 : sldt r/m16<br>
-0F `00` /1 : str r/m16<br>
-0F `00` /2 : lldt r/m16<br>
-0F `00` /3 : ltr r/m16<br>
-0F `00` /4 : verr r/m16<br>
-0F `00` /5 : verw r/m16<br>
+:confused: 0F `00` /0 : sldt r/m16<br>
+:confused: 0F `00` /1 : str r/m16<br>
+:confused: 0F `00` /2 : lldt r/m16<br>
+:confused: 0F `00` /3 : ltr r/m16<br>
+:confused: 0F `00` /4 : verr r/m16<br>
+:confused: 0F `00` /5 : verw r/m16<br>
 
-F2 0F 38 `F0` /r : crc32 r32, r/m8<br>
-F2 0F 38 `F1` /r : crc32 r32, r/m16<br>
+:confused: F2 0F 38 `F0` /r : crc32 r32, r/m8<br>
+:confused: F2 0F 38 `F1` /r : crc32 r32, r/m16<br>
 
 ## More Opcodes ( SIMD )
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0F `10` \r : movups xmm, xmm/m128<br>
-vex.128.0F&emsp;&emsp;&ensp;&nbsp;`10` \r : vmovups xmm, xmm/m128<br>
+:confused: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0F `10` \r : movups xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&emsp;&ensp;&nbsp;`10` \r : vmovups xmm, xmm/m128<br>
 
-&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `10` \r : movupd xmm, xmm/m128<br>
-vex.128.66.0F&emsp;&ensp;`10` \r : vmovupd xmm, xmm/m128<br>
+:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `10` \r : movupd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;`10` \r : vmovupd xmm, xmm/m128<br>
 
-&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F2 0F `10` \r : movsd xmm, xmm<br>
-&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F3 0F `10` \r : movss xmm, xmm<br>
+:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F2 0F `10` \r : movsd xmm, xmm<br>
+:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F3 0F `10` \r : movss xmm, xmm<br>
 
-&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
-vex.128.66.0F&emsp;&ensp;`58` /r : vaddpd xmm, xmm, xmm/m128<br>
-vex.256.66.0F&emsp;&ensp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
+:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;`58` /r : vaddpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
