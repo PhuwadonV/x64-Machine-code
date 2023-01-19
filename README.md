@@ -167,6 +167,43 @@
 | [rsi&ensp;&nbsp;* 8] | F0  | F1  | F2  | F3  | F4  | F5  | F6  | F7  |
 | [rdi&ensp;* 8]       | F8  | F9  | FA  | FB  | FC  | FD  | FE  | FF  |
 
+## VEX
+0x`C4`&ensp;0b`RXBmmmmm`&ensp;0b`WvvvvLpp`<br>
+0x`C5`&ensp;0b`RvvvvLpp`<br>
+
+R : REX.R in 1’s complement
+- 0b`0` : REX.R = 1
+- 0b`1` : REX.R = 0
+
+X : REX.X in 1’s complement
+- 0b`0` : REX.X = 1
+- 0b`1` : REX.X = 0
+
+B : REX.B in 1’s complement
+- 0b`0` : REX.B = 1
+- 0b`1` : REX.B = 0
+
+W : REX.W
+
+mmmmm
+- 0b`00000` : Reserved for future use
+- 0b`00001` : implied 0F leading opcode byte
+- 0b`00010` : implied 0F 38 leading opcode byte
+- 0b`00011` : implied 0F 3A leading opcode byte
+- 0b`00100` - 0b`11111` : Reserved for future use
+
+vvvv : Register specifier
+
+L : Vector Length
+- 0b`0` : 128-bit vector | scalar
+- 0b`1` : 256-bit vector
+
+pp : Prefix
+- 0b`00` : None
+- 0b`01` : 66
+- 0b`10` : F3
+- 0b`11` : F2
+
 # Machine code
 ## Prefix
 `26` : es:[addr]&emsp;&nbsp;// use with any branch instruction is reserved<br>
@@ -198,11 +235,11 @@
 | w         | r8d - r15d  | :arrow_right: | r8 - r15     |
 
 ## VEX
-`C4` ?? ?? : 3-byte prefix<br>
-`C5` ??&emsp;&ensp;: 2-byte prefix<br>
+`C4`&emsp;??&emsp;??&emsp;&emsp;&ensp;&nbsp;: 3-byte prefix<br>
+`C5`&emsp;??&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;: 2-byte prefix<br>
 
 ## EVEX
-`62` ?? ?? ?? : 4-byte prefix<br>
+`62`&emsp;??&emsp;??&emsp;??&emsp;: 4-byte prefix<br>
 
 ## Prefix-like
 &emsp;&emsp;&emsp;&emsp;`0F`<br>
@@ -675,15 +712,25 @@ F3 [VEX] `0F 3A`<br>
 :confused: F2 0F 38 `F1` /r : crc32 r32, r/m16<br>
 
 ## More Opcodes ( SIMD )
-:confused: &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;0F `10` \r : movups xmm, xmm/m128<br>
-:confused: vex.128.0F&emsp;&emsp;&ensp;&nbsp;`10` \r : vmovups xmm, xmm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `10` /r : movups xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&emsp;&ensp;&nbsp;`10` /r : vmovups xmm, xmm/m128<br>
 
-:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `10` \r : movupd xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`10` \r : vmovupd xmm, xmm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `10` /r : movupd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;`10` /r : vmovupd xmm, xmm/m128<br>
 
-:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F2 0F `10` \r : movsd xmm, xmm<br>
-:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;F3 0F `10` \r : movss xmm, xmm<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `10` /r : movsd xmm, xmm<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `10` /r : movss xmm, xmm<br>
 
-:confused: &emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `58` /r : addps xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&ensp;0F `58` /r : vaddps xmm, xmm, xmm/m128<br>
+:confused: vex.256.0F&emsp;&ensp;0F `58` /r : vaddps ymm, ymm, ymm/m256<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
 :confused: vex.128.66.0F&emsp;&ensp;`58` /r : vaddpd xmm, xmm, xmm/m128<br>
 :confused: vex.256.66.0F&emsp;&ensp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `58` /r : addsd xmm, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddsd xmm, xmm, xmm/m64<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `58` /r : addss xmm, xmm/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddss xmm, xmm, xmm3/m32<br>
