@@ -17,6 +17,7 @@
   - shl eax, 1 // Normal instruction ( C1 E0 01 ) // Not intend to be used
   - shl eax, 2 // Normal instruction ( C1 E0 02 )
   - shl eax, 3 // Normal instruction ( C1 E0 03 )
+  - test eax, eax  // Shorter than : cmp eax, 0
 
 # CPU Features
 - x86-64
