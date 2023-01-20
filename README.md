@@ -163,8 +163,21 @@
 | [rdi&ensp;* 8]       | F8  | F9  | FA  | FB  | FC  | FD  | FE  | FF  |
 
 ## VEX
-0x`C4`&ensp;0b`RXBmmmmm`&ensp;0b`WvvvvLpp`<br>
-0x`C5`&ensp;0b`RvvvvLpp`<br>
+0x`C4`&ensp;0b`RXBm`-`mmmm`&ensp;0b`Wvvv`-`vLpp`<br>
+0x`C5`&ensp;0b`Rvvv`-`vLpp`<br>
+
+| Prefix-like \ Example | 2-byte VEX | 3-byte VEX |
+|-----------------------|------------|------------|
+| &emsp;&ensp;0F        | C5 F8      | C4 E1 78   |
+| 66 0F                 | C5 F9      | C4 E1 79   |
+| 66 0F 38              |            | C4 E2 79   |
+| 66 0F 3A              |            | C4 E3 79   |
+| F2 0F                 | C5 FA      | C4 E1 7A   |
+| F2 0F 38              |            | C4 E2 7A   |
+| F2 0F 3A              |            | C4 E3 7A   |
+| F3 0F                 | C5 FB      | C4 E1 7B   |
+| F3 0F 38              |            | C4 E2 7B   |
+| F3 0F 3A              |            | C4 E3 7B   |
 
 R : REX.R in 1’s complement
 - 0b`0` : REX.R = 1
@@ -180,32 +193,32 @@ B : REX.B in 1’s complement
 
 W : REX.W
 
-mmmmm
-- 0b`00000` : Reserved for future use
-- 0b`00001` : implied `0F` leading opcode byte
-- 0b`00010` : implied `0F 38` leading opcode byte
-- 0b`00011` : implied `0F 3A` leading opcode byte
-- 0b`00100` - 0b`11111` : Reserved for future use
+m-mmmm
+- 0b`0`-`0000` : Reserved for future use
+- 0b`0`-`0001` : implied `0F` leading opcode byte
+- 0b`0`-`0010` : implied `0F 38` leading opcode byte
+- 0b`0`-`0011` : implied `0F 3A` leading opcode byte
+- 0b`0`-`0100` - 0b`11111` : Reserved for future use
 > 2-byte VEX ( 0xC5 ) : implied `0F` leading opcode byte
 
-| vvvv   | Dest Register   | General-Purpose Register |
-|--------|-----------------|--------------------------|
-| 0b1111 | xmm0 / ymm0     | rax / eax                |
-| 0b1110 | xmm1 / ymm1     | rcx / ecx                |
-| 0b1101 | xmm2 / ymm2     | rdx / edx                |
-| 0b1100 | xmm3 / ymm3     | rbx / ebx                |
-| 0b1011 | xmm4 / ymm4     | rsp / esp                |
-| 0b1010 | xmm5 / ymm5     | rbp / ebp                |
-| 0b1001 | xmm6 / ymm6     | rsi / esi                |
-| 0b1000 | xmm7 / ymm7     | rdi / edi                |
-| 0b0111 | xmm8 / ymm8     | r8 / r8d                 |
-| 0b0110 | xmm9 / ymm9     | r9 / r9d                 |
-| 0b0101 | xmm10 / ymm10   | r10 / r10d               |
-| 0b0100 | xmm11 / ymm11   | r11 / r11d               |
-| 0b0011 | xmm12 / ymm12   | r12 / r12d               |
-| 0b0010 | xmm13 / ymm13   | r13 / r13d               |
-| 0b0000 | xmm14 / ymm14   | r14 / r14d               |
-| 0b0000 | xmm15 / ymm15   | r15 / r15d               |
+| vvv-v   | Dest Register   | General-Purpose Register |
+|---------|-----------------|--------------------------|
+| 0b111-1 | xmm0 / ymm0     | rax / eax                |
+| 0b111-0 | xmm1 / ymm1     | rcx / ecx                |
+| 0b110-1 | xmm2 / ymm2     | rdx / edx                |
+| 0b110-0 | xmm3 / ymm3     | rbx / ebx                |
+| 0b101-1 | xmm4 / ymm4     | rsp / esp                |
+| 0b101-0 | xmm5 / ymm5     | rbp / ebp                |
+| 0b100-1 | xmm6 / ymm6     | rsi / esi                |
+| 0b100-0 | xmm7 / ymm7     | rdi / edi                |
+| 0b011-1 | xmm8 / ymm8     | r8 / r8d                 |
+| 0b011-0 | xmm9 / ymm9     | r9 / r9d                 |
+| 0b010-1 | xmm10 / ymm10   | r10 / r10d               |
+| 0b010-0 | xmm11 / ymm11   | r11 / r11d               |
+| 0b001-1 | xmm12 / ymm12   | r12 / r12d               |
+| 0b001-0 | xmm13 / ymm13   | r13 / r13d               |
+| 0b000-0 | xmm14 / ymm14   | r14 / r14d               |
+| 0b000-0 | xmm15 / ymm15   | r15 / r15d               |
 
 L : Vector Length
 - 0b`0` : 128-bit vector | scalar
