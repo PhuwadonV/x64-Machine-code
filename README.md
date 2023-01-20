@@ -20,9 +20,6 @@
 
 # CPU Features
 - x86-64
-- BMI1
-- BMI2
-- PREFETCHW
 - MMX
 - SSE
 - SSE2
@@ -738,8 +735,64 @@ F3 [VEX] `0F 3A`<br>
 :confused: 0F `00` /4 : verr r/m16<br>
 :confused: 0F `00` /5 : verw r/m16<br>
 
+:green_heart: 0F `0B` : ud2
+
+:green_heart: 0F `01` F9 : rdtscp
+
+:confused: 0F `18` /0 : prefetchnta m8<br>
+:confused: 0F `18` /1 : prefetch0 m8<br>
+:confused: 0F `18` /2 : prefetch1 m8<br>
+:confused: 0F `18` /3 : prefetch2 m8<br>
+
+:confused: 0F `1F` /0 : nop<br>
+
+:green_heart: 0F `31` : rdtsc<br>
+
+:confused: 0F `05` : syscall<br>
+
+:confused: 0F `07` : sysret<br>
+
+:green_heart: 0F `80` ib : jo rel32<br>
+:green_heart: 0F `81` ib : jno rel32<br>
+:green_heart: 0F `82` ib : jb rel32<br>
+:green_heart: 0F `83` ib : jae rel32<br>
+:green_heart: 0F `84` ib : je rel32<br>
+:green_heart: 0F `85` ib : jne rel32<br>
+:green_heart: 0F `86` ib : jbe rel32<br>
+:green_heart: 0F `87` ib : ja rel32<br>
+:green_heart: 0F `88` ib : js rel32<br>
+:green_heart: 0F `89` ib : jns rel32<br>
+:green_heart: 0F `8A` ib : jp rel32<br>
+:green_heart: 0F `8B` ib : jnp rel32<br>
+:green_heart: 0F `8C` ib : jl rel32<br>
+:green_heart: 0F `8D` ib : jge rel32<br>
+:green_heart: 0F `8E` ib : jle rel32<br>
+:green_heart: 0F `8F` ib : jg rel32<br>
+
+:green_heart: 0F `A2` : cpuid<br>
+
+:green_heart: 0F `AE` /7 : clflush m8<br>
+:green_heart: 0F `AE` E8 : lfence<br>
+:green_heart: 0F `AE` F0 : mfence<br>
+:green_heart: 0F `AE` F8 : sfence<br>
+
+:confused: 0F `AF` /r : imul r32, r/m32<br>
+
+:green_heart: 0F `B0` /r : cmpxchg r/m8, r8<br>
+:green_heart: 0F `B1` /r : cmpxchg r/m32, r32<br>
+
+:green_heart: 0F `B6` /r : movzx r32, r/m8<br>
+:green_heart: 0F `B7` /r : movzx r32, r/m16<br>
+
+:confused: 0F `B9` /r : ud1 r32, r/m32
+
+:green_heart: 0F `BE` /r : movsx r32, r/m8<br>
+:green_heart: 0F `BF` /r : movsx r32, r/m16<br>
+
 :confused: F2 0F 38 `F0` /r : crc32 r32, r/m8<br>
 :confused: F2 0F 38 `F1` /r : crc32 r32, r/m16<br>
+
+:confused: 0F `FF` /r : ud0 r32, r/m32
 
 ## More Opcodes ( SIMD )
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `10` /r : movups xmm, xmm/m128<br>
