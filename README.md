@@ -20,6 +20,10 @@
 
 # CPU Features
 - x86-64
+- BMI1
+- BMI2
+- PREFETCHW
+- MMX
 - SSE
 - SSE2
 - SSE3
@@ -760,3 +764,11 @@ F3 [VEX] `0F 3A`<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `58` /r : addss xmm, xmm/m32<br>
 :confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddss xmm, xmm, xmm3/m32<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `D0` /r : addsubpd xmm, xmm/m128<br>
+:confused:vex.128.66.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubpd xmm, xmm, xmm/m128<br>
+:confused:vex.256.66.0F&emsp;&ensp; `D0` /r : vaddsubpd ymm, ymm, ymm/m256<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `D0` /r : addsubps xmm, xmm/m128<br>
+:confused:vex.128.F2.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubps xmm, xmm, xmm/m128<br>
+:confused:vex.256.F2.0F&emsp;&ensp; `D0` /r : vaddsubps ymm, ymm, ymm/m256<br>
