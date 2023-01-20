@@ -438,7 +438,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `83` /7 ib : cmp r/m32, imm8<br>
 
 :confused: `84` /r : test r/m8, r8<br>
-:confused: `85` /r : test r/m8, r8<br>
+:confused: `85` /r : test r/m32, r32<br>
 
 :confused: `86` /r : xchg r8, r/m8<br>
 :confused: `87` /r : xchg r/m32, r32<br>
@@ -698,7 +698,7 @@ F3 [VEX] `0F 3A`<br>
 :confused: `F6` /6    : div r/m8<br>
 :confused: `F6` /7    : idiv r/m8<br>
 
-:confused: `F7` /0 id : test r/m8, imm8<br>
+:confused: `F7` /0 id : test r/m32, imm32<br>
 
 :confused: `F7` /2    : not r/m32<br>
 :confused: `F7` /3    : neg r/m32<br>
