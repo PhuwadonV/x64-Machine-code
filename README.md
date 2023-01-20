@@ -2,11 +2,11 @@
 - To understand Microarchitecture optimization when the document refer to instruction format.
   - Using empty REX ( 0x40 ) for code alignment.
 - To understand how instruction variable length work.
-  - How ton of instructions fit inside machine encoded.
+  - How ton of instructions fit inside instruction encoding.
 - To understand how to calculate instruction length.
   - push ebx // 1 byte
   - push r8 // 2 bytes
-- To understand why some instructions form does not exist based on machine encoded.
+- To understand why some instructions form does not exist based on instruction encoding.
   - add eax, DWORD PTR [rbp] // Does not exist
   - add eax, DWORD PTR [rbp + 0x0] // Exist
 - To understand which instructions are important and how it intend to be used;
