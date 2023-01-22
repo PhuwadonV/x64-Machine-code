@@ -740,6 +740,8 @@ F3 [VEX] `0F 3A`<br>
 
 :green_heart:&emsp;&emsp;&emsp;0F `01` F9 : rdtscp<br>
 
+:confused:&emsp;&emsp;&emsp;0F `06` : clts<br>
+
 :confused:&emsp;&emsp;&emsp;0F `18` /0 : prefetchnta m8<br>
 :confused:&emsp;&emsp;&emsp;0F `18` /1 : prefetch0 m8<br>
 :confused:&emsp;&emsp;&emsp;0F `18` /2 : prefetch1 m8<br>
@@ -748,6 +750,23 @@ F3 [VEX] `0F 3A`<br>
 :confused:&emsp;&emsp;&emsp;0F `1F` /0 : nop<br>
 
 :green_heart:&emsp;&emsp;&emsp;0F `31` : rdtsc<br>
+
+:green_heart:&emsp;&emsp;&emsp;0F `40` : cmovo r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `41` : cmovno r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `42` : cmovb r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `43` : cmovae r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `44` : cmove r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `45` : cmovne r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `46` : cmovbe r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `47` : cmova r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `48` : cmovs r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `49` : cmovns r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `4A` : cmovp r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `4B` : cmovnp r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `4C` : cmovl r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `4D` : cmovge r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `4E` : cmovle r32, r/m32<br>
+:green_heart:&emsp;&emsp;&emsp;0F `4F` : cmovg r32, r/m32<br>
 
 :confused:&emsp;&emsp;&emsp;0F `05` : syscall<br>
 
@@ -777,6 +796,7 @@ F3 [VEX] `0F 3A`<br>
 :confused:&emsp;&emsp;&emsp;0F `AB` : bts r/m32, r32<br>
 
 :green_heart:&emsp;&emsp;&emsp;0F `AE` /7 : clflush m8<br>
+:confused:&emsp;&ensp;&nbsp;66 0F `AE` /7 : clflushopt m8<br>
 :green_heart:&emsp;&emsp;&emsp;0F `AE` E8 : lfence<br>
 :green_heart:&emsp;&emsp;&emsp;0F `AE` F0 : mfence<br>
 :green_heart:&emsp;&emsp;&emsp;0F `AE` F8 : sfence<br>
