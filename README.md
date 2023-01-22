@@ -841,21 +841,21 @@ F3 [VEX] `0F 3A`<br>
 :confused:&emsp;&emsp;&emsp;0F `FF` /r : ud0 r32, r/m32<br>
 
 ## More Opcodes ( SIMD )
-:confused:&emsp;&emsp;&emsp;&nbsp;66 0F 3A `0C` /r ib : blendps xmm, xmm/m128, imm8<br>
-:confused:vex.128.66.0F.3A `0C` /r ib : vblendps xmm, xmm, xmm/m128, imm8<br>
-:confused:vex.256.66.0F.3A `0C` /r ib : vblendps ymm, ymm, ymm/m256, imm8<br>
+:confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 3A `0C` /r ib : blendps xmm, xmm/m128, imm8<br>
+:confused: vex.128.66.0F.3A `0C` /r ib : vblendps xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.66.0F.3A `0C` /r ib : vblendps ymm, ymm, ymm/m256, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&nbsp;66 0F 3A `0D` /r ib : blendpd xmm, xmm/m128, imm8<br>
-:confused:vex.128.66.0F.3A `0D` /r ib : vblendpd xmm, xmm, xmm/m128, imm8<br>
-:confused:vex.256.66.0F.3A `0D` /r ib : vblendpd ymm, ymm, ymm/m256, imm8<br>
+:confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 3A `0D` /r ib : blendpd xmm, xmm/m128, imm8<br>
+:confused: vex.128.66.0F.3A `0D` /r ib : vblendpd xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.66.0F.3A `0D` /r ib : vblendpd ymm, ymm, ymm/m256, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&nbsp;66 0F 38 `14` /r ib : blendvps xmm, xmm/m128, xmm0<br>
-:confused:vex.128.66.0F.3A `4A` /r ib : vblendvps xmm, xmm, xmm/m128, xmm<br>
-:confused:vex.256.66.0F.3A `4A` /r ib : vblendvps ymm, ymm, ymm/m256, ymm<br>
+:confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 38 `14` /r ib : blendvps xmm, xmm/m128, xmm0<br>
+:confused: vex.128.66.0F.3A `4A` /r ib : vblendvps xmm, xmm, xmm/m128, xmm<br>
+:confused: vex.256.66.0F.3A `4A` /r ib : vblendvps ymm, ymm, ymm/m256, ymm<br>
 
-:confused:&emsp;&emsp;&emsp;&nbsp;66 0F 38 `15` /r ib : blendvpd xmm, xmm/m128, xmm0<br>
-:confused:vex.128.66.0F.3A `4B` /r ib : vblendvpd xmm, xmm, xmm/m128, xmm<br>
-:confused:vex.256.66.0F.3A `4B` /r ib : vblendvpd ymm, ymm, ymm/m256, ymm<br>
+:confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 38 `15` /r ib : blendvpd xmm, xmm/m128, xmm0<br>
+:confused: vex.128.66.0F.3A `4B` /r ib : vblendvpd xmm, xmm, xmm/m128, xmm<br>
+:confused: vex.256.66.0F.3A `4B` /r ib : vblendvpd ymm, ymm, ymm/m256, ymm<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `54` /r : andps xmm, xmm/m128<br>
 :confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`54` /r : vandps xmm, xmm, xmm/m128<br>
@@ -882,15 +882,23 @@ F3 [VEX] `0F 3A`<br>
 :confused: vex.256.66.0F&emsp;&ensp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `58` /r : addsd xmm, xmm/m64<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddsd xmm, xmm, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`58` /r : vaddsd xmm, xmm, xmm/m64<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `58` /r : addss xmm, xmm/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddss xmm, xmm, xmm3/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`58` /r : vaddss xmm, xmm, xmm3/m32<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `C2` /r ib : cmpps xmm, xmm/m128, imm8<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`C2` /r ib : vcmpps xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`C2` /r ib : vcmpps ymm, ymm, ymm/m256, imm8<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `C2` /r ib: cmppd xmm, xmm/m128, imm8<br>
+:confused: vex.128.66.0F&emsp;&ensp;`C2` /r ib: vcmppd xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.66.0F&emsp;&ensp;`C2` /r ib: vcmppd ymm, ymm, ymm/m128, imm8<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `D0` /r : addsubpd xmm, xmm/m128<br>
-:confused:vex.128.66.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubpd xmm, xmm, xmm/m128<br>
-:confused:vex.256.66.0F&emsp;&ensp; `D0` /r : vaddsubpd ymm, ymm, ymm/m256<br>
+:confused: vex.128.66.0F&emsp;&ensp;`D0` /r : vaddsubpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;`D0` /r : vaddsubpd ymm, ymm, ymm/m256<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `D0` /r : addsubps xmm, xmm/m128<br>
-:confused:vex.128.F2.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubps xmm, xmm, xmm/m128<br>
-:confused:vex.256.F2.0F&emsp;&ensp; `D0` /r : vaddsubps ymm, ymm, ymm/m256<br>
+:confused: vex.128.F2.0F&emsp;&ensp;`D0` /r : vaddsubps xmm, xmm, xmm/m128<br>
+:confused: vex.256.F2.0F&emsp;&ensp;`D0` /r : vaddsubps ymm, ymm, ymm/m256<br>
