@@ -602,6 +602,24 @@ F3 [VEX] `0F 3A`<br>
 :broken_heart: `D8` /6 : fdiv m32fp<br>
 :broken_heart: `D8` /7 : fdivr m32fp<br>
 
+:broken_heart: `D8` C0 : fadd st(0), st(0)<br>
+:broken_heart: `D8` C1 : fadd st(0), st(1)<br>
+:broken_heart: `D8` C2 : fadd st(0), st(2)<br>
+:broken_heart: `D8` C3 : fadd st(0), st(3)<br>
+:broken_heart: `D8` C4 : fadd st(0), st(4)<br>
+:broken_heart: `D8` C5 : fadd st(0), st(5)<br>
+:broken_heart: `D8` C6 : fadd st(0), st(6)<br>
+:broken_heart: `D8` C7 : fadd st(0), st(7)<br>
+
+:broken_heart: `D8` C8 : fmul st(0), st(0)<br>
+:broken_heart: `D8` C9 : fmul st(0), st(1)<br>
+:broken_heart: `D8` CA : fmul st(0), st(2)<br>
+:broken_heart: `D8` CB : fmul st(0), st(3)<br>
+:broken_heart: `D8` CC : fmul st(0), st(4)<br>
+:broken_heart: `D8` CD : fmul st(0), st(5)<br>
+:broken_heart: `D8` CE : fmul st(0), st(6)<br>
+:broken_heart: `D8` CF : fmul st(0), st(7)<br>
+
 :broken_heart: `D9` /0 : fld m32fp<br>
 :broken_heart: `D9` /2 : fst m32fp<br>
 :broken_heart: `D9` /3 : fstp m32fp<br>
@@ -609,6 +627,10 @@ F3 [VEX] `0F 3A`<br>
 :broken_heart: `D9` /5 : fldcw m2byte<br>
 :broken_heart: `D9` /6 : fnstenv m14/28byte<br>
 :broken_heart: `D9` /7 : fnstcw m2byte<br>
+
+:broken_heart: `D9` E0 : fchs<br>
+:broken_heart: `D9` E1 : fabs<br>
+:broken_heart: `D9` F0 : f2xm1<br>
 
 :broken_heart: `DA` /0 : fiadd m32int<br>
 :broken_heart: `DA` /1 : fimul m32int<br>
@@ -626,6 +648,8 @@ F3 [VEX] `0F 3A`<br>
 :broken_heart: `DB` /5 : fld m80fp<br>
 :broken_heart: `DB` /7 : fltp m80fp<br>
 
+:broken_heart: `DB` E2 : fnclex<br>
+
 :broken_heart: `DC` /0 : fadd m64fp<br>
 :broken_heart: `DC` /1 : fmul m64fp<br>
 :broken_heart: `DC` /2 : fcom m64fp<br>
@@ -634,6 +658,24 @@ F3 [VEX] `0F 3A`<br>
 :broken_heart: `DC` /5 : fsubr m64fp<br>
 :broken_heart: `DC` /6 : fdev m64fp<br>
 :broken_heart: `DC` /7 : fdivr m64fp<br>
+
+:broken_heart: `DC` C0 : fadd st(0), st(0)<br>
+:broken_heart: `DC` C1 : fadd st(1), st(0)<br>
+:broken_heart: `DC` C2 : fadd st(2), st(0)<br>
+:broken_heart: `DC` C3 : fadd st(3), st(0)<br>
+:broken_heart: `DC` C4 : fadd st(4), st(0)<br>
+:broken_heart: `DC` C5 : fadd st(5), st(0)<br>
+:broken_heart: `DC` C6 : fadd st(6), st(0)<br>
+:broken_heart: `DC` C7 : fadd st(7), st(0)<br>
+
+:broken_heart: `DC` C8 : fmul st(0), st(0)<br>
+:broken_heart: `DC` C9 : fmul st(1), st(0)<br>
+:broken_heart: `DC` CA : fmul st(2), st(0)<br>
+:broken_heart: `DC` CB : fmul st(3), st(0)<br>
+:broken_heart: `DC` CC : fmul st(4), st(0)<br>
+:broken_heart: `DC` CD : fmul st(5), st(0)<br>
+:broken_heart: `DC` CE : fmul st(6), st(0)<br>
+:broken_heart: `DC` CF : fmul st(7), st(0)<br>
 
 :broken_heart: `DD` /0 : fld m64fp<br>
 :broken_heart: `DD` /1 : fisttp m64int<br>
@@ -651,6 +693,24 @@ F3 [VEX] `0F 3A`<br>
 :broken_heart: `DE` /5 : fisubr m16int<br>
 :broken_heart: `DE` /6 : fidiv m16int<br>
 :broken_heart: `DE` /7 : fidivr m16int<br>
+
+:broken_heart: `DE` C0 : faddp st(0), st(0)<br>
+:broken_heart: `DE` C1 : faddp st(1), st(0)<br>
+:broken_heart: `DE` C2 : faddp st(2), st(0)<br>
+:broken_heart: `DE` C3 : faddp st(3), st(0)<br>
+:broken_heart: `DE` C4 : faddp st(4), st(0)<br>
+:broken_heart: `DE` C5 : faddp st(5), st(0)<br>
+:broken_heart: `DE` C6 : faddp st(6), st(0)<br>
+:broken_heart: `DE` C7 : faddp st(7), st(0)<br>
+
+:broken_heart: `DE` C8 : fmulp st(0), st(0)<br>
+:broken_heart: `DE` C9 : fmulp st(1), st(0)<br>
+:broken_heart: `DE` CA : fmulp st(2), st(0)<br>
+:broken_heart: `DE` CB : fmulp st(3), st(0)<br>
+:broken_heart: `DE` CC : fmulp st(4), st(0)<br>
+:broken_heart: `DE` CD : fmulp st(5), st(0)<br>
+:broken_heart: `DE` CE : fmulp st(6), st(0)<br>
+:broken_heart: `DE` CF : fmulp st(7), st(0)<br>
 
 :broken_heart: `DF` /0 : fild m16int<br>
 :broken_heart: `DF` /1 : fisttp m16int<br>
@@ -859,6 +919,9 @@ F3 [VEX] `0F 3A`<br>
 :confused: vex.128.66.0F.3A `4B` /r ib : vblendvpd xmm, xmm, xmm/m128, xmm<br>
 :confused: vex.256.66.0F.3A `4B` /r ib : vblendvpd ymm, ymm, ymm/m256, ymm<br>
 
+:confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 3A `17` /r ib : extractps reg/m32, xmm, imm8<br>
+:confused: vex.128.66.0F.3A `17` /r ib : vextractps reg/m32, xmm, imm8<br>
+
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `2A` /r : cvtpi2ps xmm, mm/m64<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `2A` /r : cvtpi2pd xmm, mm/m64<br>
@@ -969,6 +1032,8 @@ F3 [VEX] `0F 3A`<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `5E` /r : divss xmm, xmm/m32<br>
 :confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`5E` /r : divss xmm, xmm, xmm/m32<br>
+
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `77` : emms<br>
 
 :confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `C2` /r ib : cmpps xmm, xmm/m128, imm8<br>
 :confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`C2` /r ib : vcmpps xmm, xmm, xmm/m128, imm8<br>
