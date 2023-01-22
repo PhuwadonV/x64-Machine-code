@@ -859,43 +859,43 @@ F3 [VEX] `0F 3A`<br>
 :confused: vex.128.66.0F.3A `4B` /r ib : vblendvpd xmm, xmm, xmm/m128, xmm<br>
 :confused: vex.256.66.0F.3A `4B` /r ib : vblendvpd ymm, ymm, ymm/m256, ymm<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `2A` /r : cvtpi2ps xmm, mm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `2A` /r : cvtpi2ps xmm, mm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `2A` /r : cvtpi2pd xmm, mm/m64<br>
-:confused: vex.128.66.0F&emsp;&ensp;`2A` /r : vcvtpi2pd xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`2A` /r : vcvtpi2pd xmm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `2A` /r : cvtpi2pd xmm, mm/m64<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`2A` /r : vcvtpi2pd xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`2A` /r : vcvtpi2pd xmm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `2A` /r : cvtsi2sd xmm, r32/m32<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`2A` /r : vcvtsi2sd xmm, xmm, r/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `2A` /r : cvtsi2sd xmm, r32/m32<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`2A` /r : vcvtsi2sd xmm, xmm, r/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `2A` /r : cvtsi2ss xmm, r/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`2A` /r : vcvtsi2ss xmm, xmm, r/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `2A` /r : cvtsi2ss xmm, r/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`2A` /r : vcvtsi2ss xmm, xmm, r/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `2C` /r : cvttps2pi mm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `2C` /r : cvttps2pi mm, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `2C` /r : cvttpd2pi mm, xmm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `2C` /r : cvttpd2pi mm, xmm/m128<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `2C` /r : cvttsd2si r32, xmm/m64<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`2C` /r : vcvttsd2si r32, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `2C` /r : cvttsd2si r32, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`2C` /r : vcvttsd2si r32, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `2C` /r : cvttss2si r32, xmm/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`2C` /r : vcvttss2si r32, xmm/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `2C` /r : cvttss2si r32, xmm/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`2C` /r : vcvttss2si r32, xmm/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `2D` /r : cvtps2pi mm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `2D` /r : cvtps2pi mm, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `2D` /r : cvtpd2pi mm, xmm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `2D` /r : cvtpd2pi mm, xmm/m128<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `2D` /r : cvtsd2si r32, xmm/m64<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`2D` /r : vcvtsd2si r32, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `2D` /r : cvtsd2si r32, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`2D` /r : vcvtsd2si r32, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `2D` /r : cvtss2si r32, xmm/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`2D` /r : vcvtss2si r32, xmm/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `2D` /r : cvtss2si r32, xmm/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`2D` /r : vcvtss2si r32, xmm/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `2F` /r : comiss xmm, xmm/m64<br>
-:confused: vex.0F&emsp;&emsp;&emsp;&emsp;&ensp;`2F` /r : vcomiss xmm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `2F` /r : comiss xmm, xmm/m64<br>
+:confused: vex.0F&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;`2F` /r : vcomiss xmm, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `2F` /r : comisd xmm, xmm/m64<br>
-:confused: vex.66.0F&emsp;&emsp;&emsp;&nbsp;`2F` /r : vcomisd xmm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `2F` /r : comisd xmm, xmm/m64<br>
+:confused: vex.66.0F&emsp;&emsp;&emsp;&ensp;`2F` /r : vcomisd xmm, xmm/m64<br>
 
 :confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 3A `40` /r ib : dpps xmm, xmm/m128, imm8<br>
 :confused: vex.128.66.0F.3A `40` /r ib : vblendps vdpps xmm, xmm, xmm/m128, imm8<br>
@@ -904,104 +904,104 @@ F3 [VEX] `0F 3A`<br>
 :confused:&emsp;&emsp;&emsp;&ensp;&nbsp;66 0F 3A `41` /r ib : dppd xmm, xmm/m128, imm8<br>
 :confused: vex.128.66.0F.3A `41` /r ib : vdppd xmm, xmm, xmm/m128, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `54` /r : andps xmm, xmm/m128<br>
-:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`54` /r : vandps xmm, xmm, xmm/m128<br>
-:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`54` /r : vandps ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `54` /r : andps xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`54` /r : vandps xmm, xmm, xmm/m128<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&ensp;`54` /r : vandps ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `54` /r : andpd xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`54` /r : vandpd xmm, xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`54` /r : vandpd ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `54` /r : andpd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`54` /r : vandpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`54` /r : vandpd ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `55` /r : andnps xmm, xmm/m128<br>
-:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`55` /r : vandnps xmm, xmm, xmm/m128<br>
-:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`55` /r : vandnps ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `55` /r : andnps xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`55` /r : vandnps xmm, xmm, xmm/m128<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&ensp;`55` /r : vandnps ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `55` /r : andnpd xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`55` /r : vandnpd xmm, xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`55` /r : vandnpd ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `55` /r : andnpd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`55` /r : vandnpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`55` /r : vandnpd ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `58` /r : addps xmm, xmm/m128<br>
-:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`58` /r : vaddps xmm, xmm, xmm/m128<br>
-:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`58` /r : vaddps ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `58` /r : addps xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`58` /r : vaddps xmm, xmm, xmm/m128<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&ensp;`58` /r : vaddps ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`58` /r : vaddpd xmm, xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `58` /r : addpd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`58` /r : vaddpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`58` /r : vaddpd ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `58` /r : addsd xmm, xmm/m64<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`58` /r : vaddsd xmm, xmm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `58` /r : addsd xmm, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddsd xmm, xmm, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `58` /r : addss xmm, xmm/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`58` /r : vaddss xmm, xmm, xmm3/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `58` /r : addss xmm, xmm/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`58` /r : vaddss xmm, xmm, xmm3/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `5A` /r : cvtps2pd xmm, xmm/m64<br>
-:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`5A` /r : vcvtps2pd xmm, xmm/m64<br>
-:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`5A` /r : vcvtps2pd ymm, xmm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `5A` /r : cvtps2pd xmm, xmm/m64<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`5A` /r : vcvtps2pd xmm, xmm/m64<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&ensp;`5A` /r : vcvtps2pd ymm, xmm/m128<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `5A` /r : cvtpd2ps xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`5A` /r : vcvtpd2ps xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`5A` /r : vcvtpd2ps xmm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `5A` /r : cvtpd2ps xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`5A` /r : vcvtpd2ps xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`5A` /r : vcvtpd2ps xmm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `5A` /r : cvtsd2ss xmm, xmm/m64<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`5A` /r : vcvtsd2ss xmm, xmm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `5A` /r : cvtsd2ss xmm, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`5A` /r : vcvtsd2ss xmm, xmm, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `5A` /r : cvtss2sd xmm, xmm/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`5A` /r : cvtss2sd xmm, xmm, xmm/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `5A` /r : cvtss2sd xmm, xmm/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`5A` /r : cvtss2sd xmm, xmm, xmm/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `5B` /r : cvtps2dq xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`5B` /r : vcvtps2dq xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`5B` /r : vcvtps2dq ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `5B` /r : cvtps2dq xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`5B` /r : vcvtps2dq xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`5B` /r : vcvtps2dq ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `5B` /r : cvttps2dq xmm, xmm/m128<br>
-:confused: vex.128.F3.0F&emsp;&ensp;`5B` /r : vcvttps2dq xmm, xmm/m128<br>
-:confused: vex.256.F3.0F&emsp;&ensp;`5B` /r : vcvttps2dq ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `5B` /r : cvttps2dq xmm, xmm/m128<br>
+:confused: vex.128.F3.0F&emsp;&ensp;&nbsp;`5B` /r : vcvttps2dq xmm, xmm/m128<br>
+:confused: vex.256.F3.0F&emsp;&ensp;&nbsp;`5B` /r : vcvttps2dq ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `5E` /r : divps xmm, xmm/m128<br>
-:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`5E` /r : vdivps xmm, xmm, xmm/m128<br>
-:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`5E` /r : vdivps ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `5E` /r : divps xmm, xmm/m128<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`5E` /r : vdivps xmm, xmm, xmm/m128<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&ensp;`5E` /r : vdivps ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `5E` /r : divpd xmm1, xmm2/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`5E` /r : vdivpd xmm, xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`5E` /r : vdivpd ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `5E` /r : divpd xmm1, xmm2/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`5E` /r : vdivpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`5E` /r : vdivpd ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `5E` /r : divsd xmm, xmm/m64<br>
-:confused: vex.F2.0F&emsp;&emsp;&emsp;&nbsp;`5E` /r : vdivsd xmm, xmm, xmm/m64<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `5E` /r : divsd xmm, xmm/m64<br>
+:confused: vex.F2.0F&emsp;&emsp;&emsp;&ensp;`5E` /r : vdivsd xmm, xmm, xmm/m64<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `5E` /r : divss xmm, xmm/m32<br>
-:confused: vex.F3.0F&emsp;&emsp;&emsp;&nbsp;`5E` /r : divss xmm, xmm, xmm/m32<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `5E` /r : divss xmm, xmm/m32<br>
+:confused: vex.F3.0F&emsp;&emsp;&emsp;&ensp;`5E` /r : divss xmm, xmm, xmm/m32<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;0F `C2` /r ib : cmpps xmm, xmm/m128, imm8<br>
-:confused: vex.128.0F&emsp;&ensp;&emsp;&nbsp;`C2` /r ib : vcmpps xmm, xmm, xmm/m128, imm8<br>
-:confused: vex.256.0F&emsp;&ensp;&emsp;&nbsp;`C2` /r ib : vcmpps ymm, ymm, ymm/m256, imm8<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;0F `C2` /r ib : cmpps xmm, xmm/m128, imm8<br>
+:confused: vex.128.0F&emsp;&ensp;&emsp;&ensp;`C2` /r ib : vcmpps xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.0F&emsp;&ensp;&emsp;&ensp;`C2` /r ib : vcmpps ymm, ymm, ymm/m256, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `C2` /r ib: cmppd xmm, xmm/m128, imm8<br>
-:confused: vex.128.66.0F&emsp;&ensp;`C2` /r ib: vcmppd xmm, xmm, xmm/m128, imm8<br>
-:confused: vex.256.66.0F&emsp;&ensp;`C2` /r ib: vcmppd ymm, ymm, ymm/m128, imm8<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `C2` /r ib: cmppd xmm, xmm/m128, imm8<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`C2` /r ib: vcmppd xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`C2` /r ib: vcmppd ymm, ymm, ymm/m128, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `C2` /r ib: cmpsd xmm, xmm/m128, imm8<br>
-:confused: vex.128.F2.0F&emsp;&ensp;`C2` /r ib: vcmpsd xmm, xmm, xmm/m128, imm8<br>
-:confused: vex.256.F2.0F&emsp;&ensp;`C2` /r ib: vcmpsd ymm, ymm, ymm/m128, imm8<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `C2` /r ib: cmpsd xmm, xmm/m128, imm8<br>
+:confused: vex.128.F2.0F&emsp;&ensp;&nbsp;`C2` /r ib: vcmpsd xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.F2.0F&emsp;&ensp;&nbsp;`C2` /r ib: vcmpsd ymm, ymm, ymm/m128, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `C2` /r ib: cmpss xmm, xmm/m128, imm8<br>
-:confused: vex.128.F3.0F&emsp;&ensp;`C2` /r ib: vcmpss xmm, xmm, xmm/m128, imm8<br>
-:confused: vex.256.F3.0F&emsp;&ensp;`C2` /r ib: vcmpss ymm, ymm, ymm/m128, imm8<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `C2` /r ib: cmpss xmm, xmm/m128, imm8<br>
+:confused: vex.128.F3.0F&emsp;&ensp;&nbsp;`C2` /r ib: vcmpss xmm, xmm, xmm/m128, imm8<br>
+:confused: vex.256.F3.0F&emsp;&ensp;&nbsp;`C2` /r ib: vcmpss ymm, ymm, ymm/m128, imm8<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `D0` /r : addsubpd xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`D0` /r : vaddsubpd xmm, xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`D0` /r : vaddsubpd ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `D0` /r : addsubpd xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubpd xmm, xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubpd ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `D0` /r : addsubps xmm, xmm/m128<br>
-:confused: vex.128.F2.0F&emsp;&ensp;`D0` /r : vaddsubps xmm, xmm, xmm/m128<br>
-:confused: vex.256.F2.0F&emsp;&ensp;`D0` /r : vaddsubps ymm, ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `D0` /r : addsubps xmm, xmm/m128<br>
+:confused: vex.128.F2.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubps xmm, xmm, xmm/m128<br>
+:confused: vex.256.F2.0F&emsp;&ensp;&nbsp;`D0` /r : vaddsubps ymm, ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;66 0F `E6` /r : cvttpd2dq xmm, xmm/m128<br>
-:confused: vex.128.66.0F&emsp;&ensp;`E6` /r : vcvttpd2dq xmm, xmm/m128<br>
-:confused: vex.256.66.0F&emsp;&ensp;`E6` /r : vcvttpd2dq xmm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;66 0F `E6` /r : cvttpd2dq xmm, xmm/m128<br>
+:confused: vex.128.66.0F&emsp;&ensp;&nbsp;`E6` /r : vcvttpd2dq xmm, xmm/m128<br>
+:confused: vex.256.66.0F&emsp;&ensp;&nbsp;`E6` /r : vcvttpd2dq xmm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F2 0F `E6` /r : cvtdq2pq xmm, xmm/m128<br>
-:confused: vex.128.F2.0F&emsp;&ensp;`E6` /r : vcvtdq2pq xmm, xmm/m128<br>
-:confused: vex.256.F2.0F&emsp;&ensp;`E6` /r : vcvtdq2pq ymm, ymm/m256<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F2 0F `E6` /r : cvtdq2pq xmm, xmm/m128<br>
+:confused: vex.128.F2.0F&emsp;&ensp;&nbsp;`E6` /r : vcvtdq2pq xmm, xmm/m128<br>
+:confused: vex.256.F2.0F&emsp;&ensp;&nbsp;`E6` /r : vcvtdq2pq ymm, ymm/m256<br>
 
-:confused:&emsp;&emsp;&emsp;&emsp;&emsp;F3 0F `E6` /r : cvtdq2pd xmm, xmm/m64<br>
-:confused: vex.128.F3.0F&emsp;&ensp;`E6` /r : vcvtdq2pd xmm, xmm/m64<br>
-:confused: vex.256.F3.0F&emsp;&ensp;`E6` /r : vcvtdq2pd ymm, ymm/m128<br>
+:confused:&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;F3 0F `E6` /r : cvtdq2pd xmm, xmm/m64<br>
+:confused: vex.128.F3.0F&emsp;&ensp;&nbsp;`E6` /r : vcvtdq2pd xmm, xmm/m64<br>
+:confused: vex.256.F3.0F&emsp;&ensp;&nbsp;`E6` /r : vcvtdq2pd ymm, ymm/m128<br>
