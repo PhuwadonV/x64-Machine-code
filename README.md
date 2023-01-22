@@ -736,9 +736,9 @@ F3 [VEX] `0F 3A`<br>
 :confused:&emsp;&emsp;&emsp;0F `00` /4 : verr r/m16<br>
 :confused:&emsp;&emsp;&emsp;0F `00` /5 : verw r/m16<br>
 
-:green_heart:&emsp;&emsp;&emsp;0F `0B` : ud2
+:green_heart:&emsp;&emsp;&emsp;0F `0B` : ud2<br>
 
-:green_heart:&emsp;&emsp;&emsp;0F `01` F9 : rdtscp
+:green_heart:&emsp;&emsp;&emsp;0F `01` F9 : rdtscp<br>
 
 :confused:&emsp;&emsp;&emsp;0F `18` /0 : prefetchnta m8<br>
 :confused:&emsp;&emsp;&emsp;0F `18` /1 : prefetch0 m8<br>
@@ -772,6 +772,10 @@ F3 [VEX] `0F 3A`<br>
 
 :green_heart:&emsp;&emsp;&emsp;0F `A2` : cpuid<br>
 
+:confused:&emsp;&emsp;&emsp;0F `A3` : bt r/m32, r32<br>
+
+:confused:&emsp;&emsp;&emsp;0F `AB` : bts r/m32, r32<br>
+
 :green_heart:&emsp;&emsp;&emsp;0F `AE` /7 : clflush m8<br>
 :green_heart:&emsp;&emsp;&emsp;0F `AE` E8 : lfence<br>
 :green_heart:&emsp;&emsp;&emsp;0F `AE` F0 : mfence<br>
@@ -782,18 +786,39 @@ F3 [VEX] `0F 3A`<br>
 :green_heart:&emsp;&emsp;&emsp;0F `B0` /r : cmpxchg r/m8, r8<br>
 :green_heart:&emsp;&emsp;&emsp;0F `B1` /r : cmpxchg r/m32, r32<br>
 
+:confused:&emsp;&emsp;&emsp;0F `B3` /r : btr r/m32, r32<br>
+
 :green_heart:&emsp;&emsp;&emsp;0F `B6` /r : movzx r32, r/m8<br>
 :green_heart:&emsp;&emsp;&emsp;0F `B7` /r : movzx r32, r/m16<br>
 
-:confused:&emsp;&emsp;&emsp;0F `B9` /r : ud1 r32, r/m32
+:confused:&emsp;&emsp;&emsp;0F `B9` /r : ud1 r32, r/m32<br>
+
+:confused:&emsp;&emsp;&emsp;0F `BA` /4 ib : bt r/m32, imm8<br>
+:confused:&emsp;&emsp;&emsp;0F `BA` /5 ib : bts r/m32, imm8<br>
+:confused:&emsp;&emsp;&emsp;0F `BA` /6 ib : btr r/m32, imm8<br>
+:confused:&emsp;&emsp;&emsp;0F `BA` /7 ib : btc r/m32, imm8<br>
+
+:confused:&emsp;&emsp;&emsp;0F `BB` /r ib : btc r/m32, r32<br>
+
+:confused:&emsp;&emsp;&emsp;0F `BC` /r : bsf r32, r/m32<br>
+:confused:&emsp;&emsp;&emsp;0F `BD` /r : bsr r32, r/m32<br>
 
 :green_heart:&emsp;&emsp;&emsp;0F `BE` /r : movsx r32, r/m8<br>
 :green_heart:&emsp;&emsp;&emsp;0F `BF` /r : movsx r32, r/m16<br>
 
+:confused:&emsp;&emsp;&emsp;0F `C8` : bswap eax<br>
+:confused:&emsp;&emsp;&emsp;0F `C9` : bswap ecx<br>
+:confused:&emsp;&emsp;&emsp;0F `CA` : bswap edx<br>
+:confused:&emsp;&emsp;&emsp;0F `CB` : bswap ebx<br>
+:confused:&emsp;&emsp;&emsp;0F `CC` : bswap esp<br>
+:confused:&emsp;&emsp;&emsp;0F `CD` : bswap ebp<br>
+:confused:&emsp;&emsp;&emsp;0F `CE` : bswap esi<br>
+:confused:&emsp;&emsp;&emsp;0F `CF` : bswap edi<br>
+
 :confused: F2 0F 38 `F0` /r : crc32 r32, r/m8<br>
 :confused: F2 0F 38 `F1` /r : crc32 r32, r/m16<br>
 
-:confused:&emsp;&emsp;&emsp;0F `FF` /r : ud0 r32, r/m32
+:confused:&emsp;&emsp;&emsp;0F `FF` /r : ud0 r32, r/m32<br>
 
 ## More Opcodes ( SIMD )
 :confused:&emsp;&emsp;&emsp;&nbsp;66 0F 3A `0C` /r ib : blendps xmm, xmm/m128, imm8<br>
