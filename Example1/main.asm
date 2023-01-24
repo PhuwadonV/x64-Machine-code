@@ -2,7 +2,7 @@ includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
 printf proto
 
-.data
+.const
 format db "%d", 0
 
 .code
@@ -19,6 +19,7 @@ main proc
     call printf
 
     add rsp, 40h
+    xor eax, eax
     ret
 main endp
 
