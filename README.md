@@ -21,6 +21,8 @@
 
 # CPU Features
 - x86-64
+- BMI1
+- BMI2
 - MMX
 - SSE
 - SSE2
@@ -30,6 +32,7 @@
 - SSE4.2
 - AVX
 - AVX2
+- FMA
 
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
@@ -380,7 +383,7 @@ F3 [VEX] `0F 3A`<br>
 :skull: `60` : push a&emsp;// Invalid<br>
 :skull: `61` : pop a&emsp;&nbsp;// Invalid<br>
 
-:confused: `63` /r : movsxd r32, r/m32<br>
+:green_heart: `63` /r : movsxd r32, r/m32<br>
 
 :broken_heart: `68`&emsp;&emsp;&ensp;: push imm32<br>
 :confused: `69` /r id : imul r32, r/m32, imm32<br>
