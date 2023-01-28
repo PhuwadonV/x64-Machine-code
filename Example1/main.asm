@@ -11,7 +11,7 @@ main proc
     xor rax, rax
 
   ; add rax, 123456789
-    db 48h, 05h     
+    db 48h, 05h
     dd 123456789
 
     mov rcx, offset format
