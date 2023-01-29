@@ -23,6 +23,7 @@
 - x86-64
 - BMI1
 - BMI2
+- ADX
 - MMX
 - SSE
 - SSE2
