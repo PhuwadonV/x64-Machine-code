@@ -9,6 +9,7 @@ format db "%d", 0
 main proc
     sub rsp, 40h
     xor rax, rax
+  ; ------------------------------
 
   ; add rax, 123456789
     db 48h, 05h
@@ -18,6 +19,7 @@ main proc
     mov rdx, rax
     call printf
 
+  ; ------------------------------
     add rsp, 40h
     xor eax, eax
     ret
