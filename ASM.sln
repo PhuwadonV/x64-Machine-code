@@ -51,6 +51,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{B7
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example1", "Examples\Example1\Example1.vcxproj", "{DDF148FB-D1B1-4197-A38D-31C6E3DB5E22}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rdtsc_rdtscp_clflush_clflushopt", "Instructions\rdtsc_rdtscp_clflush_clflushopt\rdtsc_rdtscp_clflush_clflushopt.vcxproj", "{2280874D-485E-4748-940A-0CDAAA86C864}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -235,6 +237,14 @@ Global
 		{DDF148FB-D1B1-4197-A38D-31C6E3DB5E22}.Release|x64.Build.0 = Release|x64
 		{DDF148FB-D1B1-4197-A38D-31C6E3DB5E22}.Release|x86.ActiveCfg = Release|Win32
 		{DDF148FB-D1B1-4197-A38D-31C6E3DB5E22}.Release|x86.Build.0 = Release|Win32
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Debug|x64.ActiveCfg = Debug|x64
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Debug|x64.Build.0 = Debug|x64
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Debug|x86.ActiveCfg = Debug|Win32
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Debug|x86.Build.0 = Debug|Win32
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Release|x64.ActiveCfg = Release|x64
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Release|x64.Build.0 = Release|x64
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Release|x86.ActiveCfg = Release|Win32
+		{2280874D-485E-4748-940A-0CDAAA86C864}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -262,6 +272,7 @@ Global
 		{775DAD5F-003C-4E93-AD3A-A7951135C794} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{8B84FA09-E944-4B44-B605-058042F53017} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{DDF148FB-D1B1-4197-A38D-31C6E3DB5E22} = {B7269E36-3B02-46C1-8AC8-9A75D34B9187}
+		{2280874D-485E-4748-940A-0CDAAA86C864} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
