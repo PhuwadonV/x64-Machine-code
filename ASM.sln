@@ -55,6 +55,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rdtsc_rdtscp_clflush_clflus
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmovcc", "Instructions\cmovcc\cmovcc.vcxproj", "{B578F01E-F55E-49A4-A630-171153FE1F27}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmp_test", "Instructions\cmp_test\cmp_test.vcxproj", "{A56B7BEF-3337-4B10-AB32-627EE1458A4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -255,6 +257,14 @@ Global
 		{B578F01E-F55E-49A4-A630-171153FE1F27}.Release|x64.Build.0 = Release|x64
 		{B578F01E-F55E-49A4-A630-171153FE1F27}.Release|x86.ActiveCfg = Release|Win32
 		{B578F01E-F55E-49A4-A630-171153FE1F27}.Release|x86.Build.0 = Release|Win32
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Debug|x64.ActiveCfg = Debug|x64
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Debug|x64.Build.0 = Debug|x64
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Debug|x86.ActiveCfg = Debug|Win32
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Debug|x86.Build.0 = Debug|Win32
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Release|x64.ActiveCfg = Release|x64
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Release|x64.Build.0 = Release|x64
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Release|x86.ActiveCfg = Release|Win32
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -284,6 +294,7 @@ Global
 		{DDF148FB-D1B1-4197-A38D-31C6E3DB5E22} = {B7269E36-3B02-46C1-8AC8-9A75D34B9187}
 		{2280874D-485E-4748-940A-0CDAAA86C864} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{B578F01E-F55E-49A4-A630-171153FE1F27} = {BE774291-A689-402F-937E-8E2000CA1FD9}
+		{A56B7BEF-3337-4B10-AB32-627EE1458A4A} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
