@@ -7,8 +7,8 @@ WaitForSingleObject proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format1 db "Main    : ", 2 dup("%08x "), 0Ah, 0
-format2 db "Thread 1: ", 2 dup("%08x "), 0Ah, 0
+format1 db "Main   : ", 2 dup("%d "), 0Ah, 0
+format2 db "Thread : ", 2 dup("%d "), 0Ah, 0
 format3 db "Main: ", 0Ah, 0
 format4 db "Thread", 0Ah, 0
 
@@ -17,7 +17,9 @@ dwThreadId1 dd ?
 dwThreadId2 dd ?
 
 align 16
-@lock db 16 dup(0h) 
+@lock dd 4 dup(0h)
+@value1 dd 4 dup(0h)
+@value2 dd 4 dup(0h)
 
 .code
 main proc
@@ -29,24 +31,20 @@ main proc
     call create_thread
     mov rbx, rax
 
-    rdrand ecx
-    and ecx, 1
-    shl ecx, 26
-    inc ecx
-@@:
-    loop @b
+    mov rcx, 10
+    call Sleep
 
     xor eax, eax
     align 16
 @@:
     pause
     lea edx, [eax + 1]
-    lock cmpxchg dword ptr [@lock], edx
+    lock cmpxchg [@value1], edx
     jne @b
 
     mov rcx, offset format1
     mov edx, eax
-    mov r8d, dword ptr [@lock]
+    mov r8d, [@value1]
     call printf
 
     mov rcx, rbx
@@ -65,13 +63,14 @@ main proc
     mov rbx, rax
 
 spin_lock:
+    mov eax, [@lock]
     cmp [@lock], 0
     je get_lock
     pause
     jmp spin_lock
 get_lock:
     mov eax, 1
-    xchg dword ptr [@lock], eax
+    xchg [@lock], eax
     cmp eax, 0
     jne spin_lock
 
@@ -109,9 +108,18 @@ create_thread endp
 thread1 proc
     sub rsp, 40
   ; ------------------------------
+    
+    mov ecx, dword ptr [@lock]
+    mov edx, 1
 
+    align 16
+@@:
     mov eax, 1
     lock xadd dword ptr [@lock], eax
+    pause
+    cmp eax, ecx
+    adcx ecx, edx
+    je @b
 
     mov rcx, offset format2
     mov edx, eax
