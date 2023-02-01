@@ -11,8 +11,8 @@ main proc
     sub rsp, 40
   ; ------------------------------
   
-    mov eax, 3F800000h ; 1.0
-    mov ecx, 40000000h ; 2.0
+    mov eax, 3F800000h ; 1.0f
+    mov ecx, 40000000h ; 2.0f
     movd xmm0, eax
     movd xmm1, ecx
     comiss xmm0, xmm1

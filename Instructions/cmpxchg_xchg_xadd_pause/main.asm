@@ -37,7 +37,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov eax, 3F800000h
+    mov eax, 3F800000h ; 1.0f
     movd xmm0, eax
     cvtss2si edx, xmm0
 
@@ -49,7 +49,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov eax, 3F800000h
+    mov eax, 3F800000h ; 1.0f
     movd xmm0, eax
     cvtss2sd xmm0, xmm0
     movd rdx, xmm0
@@ -62,7 +62,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov rax, 3FF0000000000000h
+    mov rax, 3FF0000000000000h ; 1.0
     movq xmm0, rax
     cvtsd2si rdx, xmm0
 
@@ -74,7 +74,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov rax, 3FF0000000000000h
+    mov rax, 3FF0000000000000h ; 1.0
     movq xmm0, rax
     cvtsd2ss xmm0, xmm0
     movd edx, xmm0
