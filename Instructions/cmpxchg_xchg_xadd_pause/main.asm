@@ -1,44 +1,23 @@
 includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
 printf proto
-CreateThread proto
-Sleep proto
-WaitForMultipleObjects proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format db "%d", 0Ah, 0
-
-.data
-align 16
-@lock dd 4 dup(0h)
-sum dd 4 dup(?)
+format1 db "%d", 0Ah, 0
+format2 db "%08x", 0Ah, 0
+format3 db "%f", 0Ah, 0
 
 .code
 main proc
-    sub rsp, 56
+    sub rsp, 40
   ; ------------------------------
 
-    mov [sum], 0
+    mov eax, 1
+    cvtsi2ss xmm0, eax
+    movd edx, xmm0
 
-    mov rcx, thread_cmpxchg
-    mov rdx, 500000
-    call create_thread
-    mov [rsp + 32], rax
-
-    mov rcx, thread_cmpxchg
-    mov rdx, 500000
-    call create_thread
-    mov [rsp + 40], rax
-
-    mov rcx, 2
-    lea rdx, [rsp + 32]
-    mov r8, 1
-    mov r9d, 0FFFFFFFFh
-    call WaitForMultipleObjects
-
-    mov rcx, offset format
-    mov edx, [sum]
+    mov rcx, offset format2
     call printf
 
   ; ------------------------------
@@ -46,26 +25,11 @@ main proc
     call printf
   ; ------------------------------
 
-    mov [sum], 0
+    mov rax, 1
+    cvtsi2sd xmm0, rax
+    movd rdx, xmm0
 
-    mov rcx, thread_xchg
-    mov rdx, 500000
-    call create_thread
-    mov [rsp + 32], rax
-
-    mov rcx, thread_xchg
-    mov rdx, 500000
-    call create_thread
-    mov [rsp + 40], rax
-
-    mov rcx, 2
-    lea rdx, [rsp + 32]
-    mov r8, 1
-    mov r9d, 0FFFFFFFFh
-    call WaitForMultipleObjects
-
-    mov rcx, offset format
-    mov edx, [sum]
+    mov rcx, offset format3
     call printf
 
   ; ------------------------------
@@ -73,126 +37,54 @@ main proc
     call printf
   ; ------------------------------
 
-    mov [sum], 0
+    mov eax, 3F800000h
+    movd xmm0, eax
+    cvtss2si edx, xmm0
 
-    mov rcx, thread_xadd
-    mov rdx, 500000
-    call create_thread
-    mov [rsp + 32], rax
-
-    mov rcx, thread_xadd
-    mov rdx, 500000
-    call create_thread
-    mov [rsp + 40], rax
-
-    mov rcx, 2
-    lea rdx, [rsp + 32]
-    mov r8, 1
-    mov r9d, 0FFFFFFFFh
-    call WaitForMultipleObjects
-
-    mov rcx, offset format
-    mov edx, [sum]
+    mov rcx, offset format1
     call printf
 
   ; ------------------------------
-    add rsp, 56
-    xor eax, eax
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov eax, 3F800000h
+    movd xmm0, eax
+    cvtss2sd xmm0, xmm0
+    movd rdx, xmm0
+
+    mov rcx, offset format3
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov rax, 3FF0000000000000h
+    movq xmm0, rax
+    cvtsd2si rdx, xmm0
+
+    mov rcx, offset format1
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov rax, 3FF0000000000000h
+    movq xmm0, rax
+    cvtsd2ss xmm0, xmm0
+    movd edx, xmm0
+
+    mov rcx, offset format2
+    call printf
+
+  ; ------------------------------
+    add rsp, 40
     ret
 main endp
-
-create_thread proc
-    sub rsp, 56
-  ; ------------------------------
-
-    mov r8, rcx
-    mov r9, rdx
-    lea rax, [rsp + 48]
-
-    xor ecx, ecx
-    xor edx, edx
-    mov [rsp + 32], ecx
-    mov [rsp + 40], rax
-    call CreateThread
-
-  ; ------------------------------
-    add rsp, 56
-    ret
-create_thread endp
-
-thread_cmpxchg proc
-    sub rsp, 40
-  ; ------------------------------
-    
-    align 16
-@@:
-    pause
-    mov eax, [sum]
-    lea edx, [eax + 1]
-    lock cmpxchg [sum], edx
-    jne @b
-    dec ecx
-    test ecx, ecx
-    jnz @b
-
-  ; ------------------------------
-    add rsp, 40
-    xor eax, eax
-    ret
-thread_cmpxchg endp
-
-thread_xchg proc
-    sub rsp, 40
-  ; ------------------------------
-
-    align 16
-spin_lock:
-    mov eax, [@lock]
-    cmp [@lock], 0
-    je get_lock
-    pause
-    jmp spin_lock
-get_lock:
-    mov eax, 1
-    xchg [@lock], eax
-  ; mov eax, [@lock]
-  ; mov [@lock], 1
-    cmp eax, 0
-    jne spin_lock
-
-    add [sum], 1
-    mov [@lock], 0
-    
-    mfence
-    lfence
-
-    dec ecx
-    test ecx, ecx
-    jnz spin_lock
-
-  ; ------------------------------
-    add rsp, 40
-    xor eax, eax
-    ret
-thread_xchg endp
-
-thread_xadd proc
-    sub rsp, 40
-  ; ------------------------------
-    
-    align 16
-@@:
-    pause
-    mov eax, 1
-    lock xadd [sum], eax
-    dec ecx
-    test ecx, ecx
-    jnz @b
-
-  ; ------------------------------
-    add rsp, 40
-    xor eax, eax
-    ret
-thread_xadd endp
 
 end
