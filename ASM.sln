@@ -67,6 +67,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmpxchg_xchg_xadd_pause", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mul_mulx_imul", "Instructions\mul_mulx_imul\mul_mulx_imul.vcxproj", "{0C39C85C-869C-4A9E-996C-331E90DBAE09}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "comiss_comisd", "Instructions\comiss_comisd\comiss_comisd.vcxproj", "{758E5283-D784-4D24-8058-8795EA138B26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -299,6 +301,14 @@ Global
 		{0C39C85C-869C-4A9E-996C-331E90DBAE09}.Release|x64.Build.0 = Release|x64
 		{0C39C85C-869C-4A9E-996C-331E90DBAE09}.Release|x86.ActiveCfg = Release|Win32
 		{0C39C85C-869C-4A9E-996C-331E90DBAE09}.Release|x86.Build.0 = Release|Win32
+		{758E5283-D784-4D24-8058-8795EA138B26}.Debug|x64.ActiveCfg = Debug|x64
+		{758E5283-D784-4D24-8058-8795EA138B26}.Debug|x64.Build.0 = Debug|x64
+		{758E5283-D784-4D24-8058-8795EA138B26}.Debug|x86.ActiveCfg = Debug|Win32
+		{758E5283-D784-4D24-8058-8795EA138B26}.Debug|x86.Build.0 = Debug|Win32
+		{758E5283-D784-4D24-8058-8795EA138B26}.Release|x64.ActiveCfg = Release|x64
+		{758E5283-D784-4D24-8058-8795EA138B26}.Release|x64.Build.0 = Release|x64
+		{758E5283-D784-4D24-8058-8795EA138B26}.Release|x86.ActiveCfg = Release|Win32
+		{758E5283-D784-4D24-8058-8795EA138B26}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -334,6 +344,7 @@ Global
 		{512A0D2B-33B0-4089-BC21-EDC32DD0BE40} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{7653A93D-9F28-4670-A266-FBA5FB34C1E5} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{0C39C85C-869C-4A9E-996C-331E90DBAE09} = {BE774291-A689-402F-937E-8E2000CA1FD9}
+		{758E5283-D784-4D24-8058-8795EA138B26} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
