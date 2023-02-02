@@ -97,6 +97,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "int", "Instructions\int\int
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jmp_jcc", "Instructions\jmp_jcc\jmp_jcc.vcxproj", "{3A40E4AF-57E4-4242-9045-31A705158F2D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lea", "Instructions\lea\lea.vcxproj", "{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -449,6 +451,14 @@ Global
 		{3A40E4AF-57E4-4242-9045-31A705158F2D}.Release|x64.Build.0 = Release|x64
 		{3A40E4AF-57E4-4242-9045-31A705158F2D}.Release|x86.ActiveCfg = Release|Win32
 		{3A40E4AF-57E4-4242-9045-31A705158F2D}.Release|x86.Build.0 = Release|Win32
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Debug|x64.ActiveCfg = Debug|x64
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Debug|x64.Build.0 = Debug|x64
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Debug|x86.ActiveCfg = Debug|Win32
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Debug|x86.Build.0 = Debug|Win32
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x64.ActiveCfg = Release|x64
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x64.Build.0 = Release|x64
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x86.ActiveCfg = Release|Win32
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -499,6 +509,7 @@ Global
 		{B7B60F18-4C3E-41AB-BB37-0D82302B266A} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 		{941A5C2C-7F5B-4209-AF3E-AF4AFF24CCB6} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{3A40E4AF-57E4-4242-9045-31A705158F2D} = {BE774291-A689-402F-937E-8E2000CA1FD9}
+		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
