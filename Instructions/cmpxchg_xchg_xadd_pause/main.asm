@@ -151,8 +151,8 @@ thread_xchg proc
 
     align 16
 spin_lock:
-    cmp [@lock], 0
-    je get_lock
+    test [@lock], 0
+    jz get_lock
     pause
     jmp spin_lock
 get_lock:
@@ -160,7 +160,7 @@ get_lock:
     xchg [@lock], eax
   ; mov eax, [@lock]
   ; mov [@lock], 1
-    cmp eax, 0
+    test eax, eax
     jne spin_lock
 
     add [sum], 1

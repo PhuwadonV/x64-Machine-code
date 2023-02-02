@@ -44,6 +44,7 @@ main proc
 
   ; ------------------------------
     add rsp, 56
+    xor eax, eax
     ret
 main endp
 
