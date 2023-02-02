@@ -23,7 +23,7 @@ main proc
 
     cmpps xmm0, xmm1, 0
   ; cmpeqps xmm0, xmm1
-    movupd [rsp + 8], xmm0
+    movups [rsp + 8], xmm0
     mov eax, [rsp + 20]
     mov [rsp + 32], eax
 

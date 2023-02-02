@@ -43,7 +43,7 @@ main proc
 
     movdqa xmm0, xmmword ptr [src2]
     cvtdq2pd xmm0, xmm0
-    movups [rsp + 8], xmm0
+    movupd [rsp + 8], xmm0
 
     mov rcx, offset format4
     mov rdx, [rsp + 8]
@@ -74,7 +74,7 @@ main proc
 
     vmovaps xmm0, xmmword ptr [src3]
     vcvtps2pd ymm0, xmm0
-    vmovups [rsp + 8], ymm0
+    vmovupd [rsp + 8], ymm0
 
     mov rcx, offset format5
     mov rdx, [rsp + 8]

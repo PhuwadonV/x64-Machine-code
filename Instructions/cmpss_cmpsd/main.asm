@@ -21,7 +21,7 @@ main proc
 
     cmpss xmm0, xmm1, 0
   ; cmpeqss xmm0, xmm1
-    movupd [rsp + 8], xmm0
+    movups [rsp + 8], xmm0
 
     mov rcx, offset format1
     mov edx, [rsp + 8]
