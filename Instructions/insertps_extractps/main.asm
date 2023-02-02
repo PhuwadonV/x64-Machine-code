@@ -19,7 +19,7 @@ main proc
     vmovaps xmm0, [src1]
     vinsertps xmm0, xmm0, xmm0, 80h
     vcvtps2pd ymm0, xmm0
-    vmovups [rsp + 8], ymm0
+    vmovupd [rsp + 8], ymm0
 
     mov rcx, offset format1
     mov rdx, [rsp + 8]
