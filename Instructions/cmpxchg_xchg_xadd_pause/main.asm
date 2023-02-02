@@ -147,7 +147,6 @@ thread_xchg proc
 
     align 16
 spin_lock:
-    mov eax, [@lock]
     cmp [@lock], 0
     je get_lock
     pause
@@ -162,9 +161,6 @@ get_lock:
 
     add [sum], 1
     mov [@lock], 0
-    
-    sfence
-    lfence
 
     dec ecx
     test ecx, ecx
