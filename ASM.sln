@@ -99,6 +99,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jmp_jcc", "Instructions\jmp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lea", "Instructions\lea\lea.vcxproj", "{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpuid_lfence_sfence_mfence", "Instructions\cpuid_lfence_sfence_mfence\cpuid_lfence_sfence_mfence.vcxproj", "{E5959852-EDD7-481A-AD99-C5DB119803C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -459,6 +461,14 @@ Global
 		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x64.Build.0 = Release|x64
 		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x86.ActiveCfg = Release|Win32
 		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37}.Release|x86.Build.0 = Release|Win32
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Debug|x64.ActiveCfg = Debug|x64
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Debug|x64.Build.0 = Debug|x64
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Debug|x86.ActiveCfg = Debug|Win32
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Debug|x86.Build.0 = Debug|Win32
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Release|x64.ActiveCfg = Release|x64
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Release|x64.Build.0 = Release|x64
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Release|x86.ActiveCfg = Release|Win32
+		{E5959852-EDD7-481A-AD99-C5DB119803C2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -510,6 +520,7 @@ Global
 		{941A5C2C-7F5B-4209-AF3E-AF4AFF24CCB6} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{3A40E4AF-57E4-4242-9045-31A705158F2D} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{EB8ADBC5-3F75-468B-B64E-4312DB7B8F37} = {BE774291-A689-402F-937E-8E2000CA1FD9}
+		{E5959852-EDD7-481A-AD99-C5DB119803C2} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
