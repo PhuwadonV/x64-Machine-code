@@ -7,7 +7,8 @@ WaitForMultipleObjects proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format db "%d", 0Ah, 0
+format1 db "Main : %d", 0Ah, 0
+format2 db "Thread", 0Ah, 0
 
 .data
 align 16
@@ -37,7 +38,7 @@ main proc
     mov r9d, 0FFFFFFFFh
     call WaitForMultipleObjects
 
-    mov rcx, offset format
+    mov rcx, offset format1
     mov edx, [sum]
     call printf
 
@@ -64,7 +65,7 @@ main proc
     mov r9d, 0FFFFFFFFh
     call WaitForMultipleObjects
 
-    mov rcx, offset format
+    mov rcx, offset format1
     mov edx, [sum]
     call printf
 
@@ -91,7 +92,7 @@ main proc
     mov r9d, 0FFFFFFFFh
     call WaitForMultipleObjects
 
-    mov rcx, offset format
+    mov rcx, offset format1
     mov edx, [sum]
     call printf
 
@@ -135,6 +136,9 @@ thread_cmpxchg proc
     test ecx, ecx
     jnz @b
 
+    mov rcx, offset format2
+    call printf
+
   ; ------------------------------
     add rsp, 40
     xor eax, eax
@@ -166,6 +170,9 @@ get_lock:
     test ecx, ecx
     jnz spin_lock
 
+    mov rcx, offset format2
+    call printf
+
   ; ------------------------------
     add rsp, 40
     xor eax, eax
@@ -184,6 +191,9 @@ thread_xadd proc
     dec ecx
     test ecx, ecx
     jnz @b
+
+    mov rcx, offset format2
+    call printf
 
   ; ------------------------------
     add rsp, 40
