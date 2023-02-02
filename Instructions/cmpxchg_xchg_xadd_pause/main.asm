@@ -163,7 +163,7 @@ get_lock:
     add [sum], 1
     mov [@lock], 0
     
-    mfence
+    sfence
     lfence
 
     dec ecx
