@@ -7,16 +7,17 @@ WaitForMultipleObjects proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format db "%lld", 0Ah, 0
+format1 db "%lld", 0Ah, 0
+format2 db "Finished", 0Ah, 0
 
 .data
 step dd 0
 
 align 16
+dst dd 4096 dup(0h)
 turn dd 4 dup(0)
 a_wants dd 4 dup(0)
 b_wants dd 4 dup(0)
-dst dd 4096 dup(0h)
 
 .code
 main proc
@@ -52,7 +53,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format
+    mov rcx, offset format1
     mov rdx, rax
     call printf
 
@@ -84,7 +85,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format
+    mov rcx, offset format1
     mov rdx, rax
     call printf
 
@@ -142,6 +143,9 @@ main proc
     mov r9d, 0FFFFFFFFh
     call WaitForMultipleObjects
 
+    mov rcx, offset format2
+    call printf
+
   ; ------------------------------
     add rsp, 48
     pop rbx
@@ -180,7 +184,7 @@ thread_consumer proc
     jne @b
     mov edx, [dst + 16380]
 
-    mov rcx, offset format
+    mov rcx, offset format1
     call printf
 
   ; ------------------------------
