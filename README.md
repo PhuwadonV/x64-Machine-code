@@ -1,4 +1,4 @@
-# Purpose[label](../../../..)
+# Purpose
 - To understand Microarchitecture optimization when the document refer to instruction format.
   - Using empty REX ( 0x40 ) for code alignment.
 - To understand how instruction variable length work.
