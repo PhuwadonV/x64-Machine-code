@@ -27,7 +27,7 @@ main proc
 
     mov rax, 1
     cvtsi2sd xmm0, rax
-    movd rdx, xmm0
+    movq rdx, xmm0
 
     mov rcx, offset format3
     call printf
@@ -52,7 +52,7 @@ main proc
     mov eax, 3F800000h ; 1.0f
     movd xmm0, eax
     cvtss2sd xmm0, xmm0
-    movd rdx, xmm0
+    movq rdx, xmm0
 
     mov rcx, offset format3
     call printf

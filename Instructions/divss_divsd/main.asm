@@ -17,7 +17,7 @@ main proc
     cvtss2sd xmm0, xmm0
 
     mov rcx, offset format
-    movd rdx, xmm0
+    movq rdx, xmm0
     call printf
 
   ; ------------------------------
@@ -30,7 +30,7 @@ main proc
     divsd xmm0, xmm0
 
     mov rcx, offset format
-    movd rdx, xmm0
+    movq rdx, xmm0
     call printf
 
   ; ------------------------------
