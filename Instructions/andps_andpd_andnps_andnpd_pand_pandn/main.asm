@@ -24,7 +24,6 @@ main proc
     mov edx, [rsp + 20]
     mov r8d, [rsp + 24]
     mov r9d, [rsp + 28]
-    mov [rsp + 32], eax
     call printf
 
   ; ------------------------------
@@ -41,7 +40,6 @@ main proc
     mov edx, [rsp + 20]
     mov r8d, [rsp + 24]
     mov r9d, [rsp + 28]
-    mov [rsp + 32], eax
     call printf
 
   ; ------------------------------
@@ -58,7 +56,6 @@ main proc
     mov edx, [rsp + 20]
     mov r8d, [rsp + 24]
     mov r9d, [rsp + 28]
-    mov [rsp + 32], eax
     call printf
 
   ; ------------------------------
@@ -75,7 +72,6 @@ main proc
     mov edx, [rsp + 20]
     mov r8d, [rsp + 24]
     mov r9d, [rsp + 28]
-    mov [rsp + 32], eax
     call printf
 
   ; ------------------------------
@@ -92,7 +88,6 @@ main proc
     mov edx, [rsp + 20]
     mov r8d, [rsp + 24]
     mov r9d, [rsp + 28]
-    mov [rsp + 32], eax
     call printf
 
   ; ------------------------------
@@ -109,7 +104,6 @@ main proc
     mov edx, [rsp + 20]
     mov r8d, [rsp + 24]
     mov r9d, [rsp + 28]
-    mov [rsp + 32], eax
     call printf
 
   ; ------------------------------
