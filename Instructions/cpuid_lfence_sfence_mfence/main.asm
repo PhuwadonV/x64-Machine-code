@@ -1,9 +1,9 @@
 includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
 printf proto
-CreateThread proto
 WaitForSingleObject proto
 WaitForMultipleObjects proto
+extern create_thread: proc
 
 .const
 separator db 30 dup("-"), 0Ah, 0
@@ -155,25 +155,6 @@ main proc
     xor eax, eax
     ret
 main endp
-
-create_thread proc
-    sub rsp, 56
-  ; ------------------------------
-
-    mov r8, rcx
-    mov r9, rdx
-    lea rax, [rsp + 48]
-
-    xor ecx, ecx
-    xor edx, edx
-    mov [rsp + 32], ecx
-    mov [rsp + 40], rax
-    call CreateThread
-
-  ; ------------------------------
-    add rsp, 56
-    ret
-create_thread endp
 
 thread_consumer proc
     sub rsp, 40
