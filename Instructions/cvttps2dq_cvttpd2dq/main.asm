@@ -18,14 +18,12 @@ main proc
 
     movaps xmm0, xmmword ptr [src1]
     cvttps2dq xmm0, xmm0
-    movups [rsp + 8], xmm0
-    mov eax, [rsp + 20]
-    mov [rsp + 32], eax
+    movups [rsp + 20], xmm0
 
     mov rcx, offset format1
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     call printf
 
   ; ------------------------------

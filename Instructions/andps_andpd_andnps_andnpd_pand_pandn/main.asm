@@ -18,13 +18,12 @@ main proc
     movdqa xmm0, xmmword ptr [@mask]
     movdqa xmm1, xmmword ptr [src]
     pand xmm0, xmm1
-    movdqu [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -36,13 +35,12 @@ main proc
     movaps xmm0, xmmword ptr [@mask]
     movaps xmm1, xmmword ptr [src]
     andps xmm0, xmm1
-    movups [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movups [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -54,13 +52,12 @@ main proc
     movapd xmm0, xmmword ptr [@mask]
     movapd xmm1, xmmword ptr [src]
     andpd xmm0, xmm1
-    movupd [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movupd [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -73,12 +70,11 @@ main proc
     movdqa xmm1, xmmword ptr [src]
     pandn xmm0, xmm1
     movdqu [rsp + 8], xmm0
-    mov eax, [rsp + 20]
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -90,13 +86,12 @@ main proc
     movaps xmm0, xmmword ptr [@mask]
     movaps xmm1, xmmword ptr [src]
     andnps xmm0, xmm1
-    movups [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movups [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -108,13 +103,12 @@ main proc
     movapd xmm0, xmmword ptr [@mask]
     movapd xmm1, xmmword ptr [src]
     andnpd xmm0, xmm1
-    movupd [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movupd [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 

@@ -22,13 +22,12 @@ main proc
     movdqa xmm1, xmmword ptr [src1]
     movdqa xmm2, xmmword ptr [src2]
     pblendvb xmm1, xmm2, xmm0
-    movdqu [rsp + 8], xmm1
-    mov eax, [rsp + 20]
+    movdqu [rsp + 20], xmm1
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -40,13 +39,12 @@ main proc
     movdqa xmm0, xmmword ptr [src1]
     movdqa xmm1, xmmword ptr [src2]
     pblendw xmm0, xmm1, 055h
-    movdqu [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -58,13 +56,12 @@ main proc
     movdqa xmm0, xmmword ptr [src1]
     movdqa xmm1, xmmword ptr [src2]
     vpblendd xmm0, xmm0, xmm1, 0Ah
-    movdqu [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     vzeroupper
     call printf
@@ -77,13 +74,12 @@ main proc
     movaps xmm0, xmmword ptr [src1]
     movaps xmm1, xmmword ptr [src2]
     blendps xmm0, xmm1, 0Ah
-    movups [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movups [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -96,13 +92,12 @@ main proc
     movaps xmm1, xmmword ptr [src1]
     movaps xmm2, xmmword ptr [src2]
     blendvps xmm1, xmm2, xmm0
-    movups [rsp + 8], xmm1
-    mov eax, [rsp + 20]
+    movups [rsp + 20], xmm1
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -114,13 +109,12 @@ main proc
     movapd xmm0, xmmword ptr [src1]
     movapd xmm1, xmmword ptr [src2]
     blendpd xmm0, xmm1, 2h
-    movupd [rsp + 8], xmm0
-    mov eax, [rsp + 20]
+    movupd [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 
@@ -133,13 +127,12 @@ main proc
     movapd xmm1, xmmword ptr [src1]
     movapd xmm2, xmmword ptr [src2]
     blendvpd xmm1, xmm2, xmm0
-    movupd [rsp + 8], xmm1
-    mov eax, [rsp + 20]
+    movupd [rsp + 20], xmm1
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     mov [rsp + 32], eax
     call printf
 

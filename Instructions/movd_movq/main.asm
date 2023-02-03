@@ -17,14 +17,12 @@ main proc
     mov eax, 0FFFFFFFFh
     movdqa xmm0, xmmword ptr [src]
     movd xmm0, eax
-    movdqu [rsp + 8], xmm0
-    mov eax, [rsp + 20]
-    mov [rsp + 32], eax
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     call printf
 
   ; ------------------------------
@@ -35,14 +33,12 @@ main proc
     mov rax, 0FFFFFFFFFFFFFFFFh
     movdqa xmm0, xmmword ptr [src]
     movq xmm0, rax
-    movdqu [rsp + 8], xmm0
-    mov eax, [rsp + 20]
-    mov [rsp + 32], eax
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
-    mov edx, [rsp + 8]
-    mov r8d, [rsp + 12]
-    mov r9d, [rsp + 16]
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     call printf
 
   ; ------------------------------
