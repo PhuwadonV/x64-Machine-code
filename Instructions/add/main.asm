@@ -7,7 +7,7 @@ format db "%d %u", 0Ah, "%d %u", 0
 
 .code
 main proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     mov edx, 0FFFFFFFEh
@@ -23,7 +23,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

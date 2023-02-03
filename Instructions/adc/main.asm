@@ -10,7 +10,7 @@ dst db 4 dup(0FFh), 4 dup(0h)
 
 .code
 main proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     mov rdx, qword ptr [dst]
@@ -30,7 +30,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

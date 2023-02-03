@@ -22,7 +22,7 @@ b_wants dd 4 dup(0)
 .code
 main proc
     push rbx
-    sub rsp, 48
+    sub rsp, 32 + 16
   ; ------------------------------
 
     mov eax, 3
@@ -150,14 +150,14 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 48
+    add rsp, 32 + 16
     pop rbx
     xor eax, eax
     ret
 main endp
 
 thread_consumer proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
     
     mov [step], 1
@@ -172,13 +172,13 @@ thread_consumer proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_consumer endp
 
 thread_a proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
     
     align 16
@@ -203,13 +203,13 @@ get_lock:
     jnz get_lock
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_a endp
 
 thread_b proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     align 16
@@ -234,7 +234,7 @@ get_lock:
     jnz get_lock
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_b endp

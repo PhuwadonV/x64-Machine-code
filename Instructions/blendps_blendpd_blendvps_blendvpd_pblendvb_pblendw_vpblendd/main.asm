@@ -15,7 +15,7 @@ value3 dq 0h, 8000000000000000h
 
 .code
 main proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     movdqa xmm0, xmmword ptr [value1]
@@ -144,7 +144,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

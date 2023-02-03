@@ -4,7 +4,7 @@ CreateThread proto
 
 .code
 create_thread proc export
-    sub rsp, 56
+    sub rsp, 32 + 16 + 8
   ; ------------------------------
 
     mov r8, rcx
@@ -18,7 +18,7 @@ create_thread proc export
     call CreateThread
 
   ; ------------------------------
-    add rsp, 56
+    add rsp, 32 + 16 + 8
     ret
 create_thread endp
 

@@ -12,7 +12,7 @@ src db 16 dup(0FFh)
 
 .code
 main proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     movdqa xmm0, xmmword ptr [@mask]
@@ -119,7 +119,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

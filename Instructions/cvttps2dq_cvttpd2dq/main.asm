@@ -13,7 +13,7 @@ src2 dq 1.9, 2.9
 
 .code
 main proc
-    sub rsp, 56
+    sub rsp, 32 + 16 + 8
   ; ------------------------------
 
     movaps xmm0, xmmword ptr [src1]
@@ -43,7 +43,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 56
+    add rsp, 32 + 16 + 8
     xor eax, eax
     ret
 main endp

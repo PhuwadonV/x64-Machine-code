@@ -7,7 +7,7 @@ format db 4 dup('%02hhX '), 0
 
 .code
 main proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     mov eax, 12345678h
@@ -25,7 +25,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

@@ -17,7 +17,7 @@ main proc
     push r10
     push r11
     push r12
-    sub rsp, 80
+    sub rsp, 32 + 16 * 3
   ; ------------------------------
 
     mov rdx, [max]
@@ -46,7 +46,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 80
+    add rsp, 32 + 16 * 3
     pop r12
     pop r11
     pop r10

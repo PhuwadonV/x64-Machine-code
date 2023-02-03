@@ -11,7 +11,7 @@ src dq 2 dup(1)
 
 .code
 main proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     vmovaps xmm0, xmmword ptr [src]
@@ -49,7 +49,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

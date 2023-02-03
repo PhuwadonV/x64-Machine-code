@@ -17,7 +17,7 @@ sum dd 4 dup(?)
 
 .code
 main proc
-    sub rsp, 56
+    sub rsp, 32 + 16 + 8
   ; ------------------------------
 
     mov [sum], 0
@@ -97,13 +97,13 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 56
+    add rsp, 32 + 16 + 8
     xor eax, eax
     ret
 main endp
 
 thread_cmpxchg proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
     
     align 16
@@ -121,13 +121,13 @@ thread_cmpxchg proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_cmpxchg endp
 
 thread_xchg proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
 
     align 16
@@ -155,13 +155,13 @@ get_lock:
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_xchg endp
 
 thread_xadd proc
-    sub rsp, 40
+    sub rsp, 32 + 8
   ; ------------------------------
     
     align 16
@@ -177,7 +177,7 @@ thread_xadd proc
     call printf
 
   ; ------------------------------
-    add rsp, 40
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_xadd endp

@@ -16,7 +16,7 @@ main proc
     push rbx
     push rsi
     push rdi
-    sub rsp, 64
+    sub rsp, 32 + 16 * 2
   ; ------------------------------
 
     mov byte ptr [src + 0], 3  ; C
@@ -49,7 +49,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 64
+    add rsp, 32 + 16 * 2
     pop rdi
     pop rsi
     pop rbx

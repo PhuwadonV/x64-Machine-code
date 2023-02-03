@@ -8,7 +8,7 @@ format db 4 dup("%llx", 0Ah), 0
 .code
 main proc
     push rbx
-    sub rsp, 48
+    sub rsp, 32 + 16
   ; ------------------------------
 
     xor eax, eax
@@ -33,7 +33,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 48
+    add rsp, 32 + 16
     pop rbx
     xor eax, eax
     ret
