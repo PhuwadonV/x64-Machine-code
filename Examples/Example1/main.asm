@@ -8,8 +8,9 @@ format db "%d", 0
 .code
 main proc
     sub rsp, 40h
-    xor rax, rax
   ; ------------------------------
+
+    xor rax, rax
 
   ; add rax, 123456789
     db 48h, 05h
