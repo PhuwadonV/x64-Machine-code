@@ -1,7 +1,9 @@
+includelib msvcrt.lib
+
 CreateThread proto
 
 .code
-create_thread proc
+create_thread proc export
     sub rsp, 56
   ; ------------------------------
 
