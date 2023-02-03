@@ -111,6 +111,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maskmovdqu", "Instructions\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minps_minpd_maxps_maxpd", "Instructions\minps_minpd_maxps_maxpd\minps_minpd_maxps_maxpd.vcxproj", "{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "xorps_xorpd", "Instructions\xorps_xorpd\xorps_xorpd.vcxproj", "{4B9178C8-7E01-41E7-B268-DE21F3330B77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -511,6 +513,14 @@ Global
 		{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791}.Release|x64.Build.0 = Release|x64
 		{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791}.Release|x86.ActiveCfg = Release|Win32
 		{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791}.Release|x86.Build.0 = Release|Win32
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Debug|x64.ActiveCfg = Debug|x64
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Debug|x64.Build.0 = Debug|x64
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Debug|x86.ActiveCfg = Debug|Win32
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Debug|x86.Build.0 = Debug|Win32
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Release|x64.ActiveCfg = Release|x64
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Release|x64.Build.0 = Release|x64
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Release|x86.ActiveCfg = Release|Win32
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -568,6 +578,7 @@ Global
 		{61AFD8C6-67E0-403F-9894-F3D5262BD5FC} = {B7269E36-3B02-46C1-8AC8-9A75D34B9187}
 		{7F6DFE98-2E31-4076-B83E-87F018EDA159} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 		{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
+		{4B9178C8-7E01-41E7-B268-DE21F3330B77} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
