@@ -109,7 +109,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example2", "Examples\Exampl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maskmovdqu", "Instructions\maskmovdqu\maskmovdqu.vcxproj", "{7F6DFE98-2E31-4076-B83E-87F018EDA159}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maxps_maxpd", "Instructions\maxps_maxpd\maxps_maxpd.vcxproj", "{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minps_minpd_maxps_maxpd", "Instructions\minps_minpd_maxps_maxpd\minps_minpd_maxps_maxpd.vcxproj", "{BDFCAA05-C9AA-4E90-ACBB-92E6CF70D791}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
