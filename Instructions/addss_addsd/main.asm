@@ -4,7 +4,7 @@ printf proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format db "%f", 0Ah, 00
+format db "%f", 0Ah, 0
 
 .code
 main proc
