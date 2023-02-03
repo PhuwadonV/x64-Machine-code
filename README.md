@@ -1,4 +1,4 @@
-# Purpose
+# Purpose[label](../../../..)
 - To understand Microarchitecture optimization when the document refer to instruction format.
   - Using empty REX ( 0x40 ) for code alignment.
 - To understand how instruction variable length work.
@@ -431,7 +431,7 @@ F3 [VEX] `0F 3A`<br>
 :green_heart: `81` /6 id : xor r/m32, imm32<br>
 :green_heart: `81` /7 id : cmp r/m32, imm32<br>
 
-:thought_balloon: `82` : // Unknown<br>
+:thought_balloon: `82` :&emsp;// Unknown<br>
 
 :green_heart: `83` /0 ib : add r/m32, imm8<br>
 :green_heart: `83` /1 ib : or r/m32, imm8<br>
@@ -460,7 +460,7 @@ F3 [VEX] `0F 3A`<br>
 
 :confused: `8F` /r : pop r/m64<br>
 
-:green_heart: `90` : xchg eax, eax // nop<br>
+:green_heart: `90` : xchg eax, eax&emsp;// nop<br>
 :confused: `91` : xchg ecx, eax<br>
 :confused: `92` : xchg edx, eax<br>
 :confused: `93` : xchg ebx, eax<br>
@@ -593,7 +593,7 @@ F3 [VEX] `0F 3A`<br>
 :skull: `D4` ib : aam imm8&emsp;// Invalid<br>
 :skull: `D5` ib : aad imm8&emsp;// Invalid<br>
 
-:thought_balloon: `D6` : // Unknown<br>
+:thought_balloon: `D6` :&emsp;// Unknown<br>
 
 :confused: `D7` : xlat<br>
 
@@ -750,7 +750,7 @@ F3 [VEX] `0F 3A`<br>
 :broken_heart: `EE` : out dx, al<br>
 :broken_heart: `EF` : out dx, eax<br>
 
-:confused: `F1` : int1 // icebp<br>
+:confused: `F1` : int1&emsp;// icebp<br>
 :confused: `F4` : hlt<br>
 :confused: `F5` : cmc<br>
 
@@ -774,8 +774,8 @@ F3 [VEX] `0F 3A`<br>
 
 :confused: `F8` : clc<br>
 :confused: `F9` : stc<br>
-:confused: `FA` : cli<br>
-:confused: `FB` : sti<br>
+:warning: `FA` : cli&emsp;// Privilege<br>
+:warning: `FB` : sti&emsp;// Privilege<br>
 :confused: `FC` : cld<br>
 :confused: `FD` : std<br>
 
