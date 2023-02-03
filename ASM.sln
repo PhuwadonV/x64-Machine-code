@@ -117,6 +117,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movddup", "Instructions\mov
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "maskmovdqu_movmskps_movmskpd", "Instructions\maskmovdqu_movmskps_movmskpd\maskmovdqu_movmskps_movmskpd.vcxproj", "{7F6DFE98-2E31-4076-B83E-87F018EDA159}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movhlps_movlhps", "Instructions\movhlps_movlhps\movhlps_movlhps.vcxproj", "{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -541,6 +543,14 @@ Global
 		{7F6DFE98-2E31-4076-B83E-87F018EDA159}.Release|x64.Build.0 = Release|x64
 		{7F6DFE98-2E31-4076-B83E-87F018EDA159}.Release|x86.ActiveCfg = Release|Win32
 		{7F6DFE98-2E31-4076-B83E-87F018EDA159}.Release|x86.Build.0 = Release|Win32
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Debug|x64.ActiveCfg = Debug|x64
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Debug|x64.Build.0 = Debug|x64
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Debug|x86.ActiveCfg = Debug|Win32
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Debug|x86.Build.0 = Debug|Win32
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Release|x64.ActiveCfg = Release|x64
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Release|x64.Build.0 = Release|x64
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Release|x86.ActiveCfg = Release|Win32
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -601,6 +611,7 @@ Global
 		{38492DB6-E585-474E-A567-6B114F2EA52F} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{5D450635-4F25-4FFE-A626-B09C41F64791} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 		{7F6DFE98-2E31-4076-B83E-87F018EDA159} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
+		{D0F72315-8C88-44F5-8AEF-8DCE02BAF505} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
