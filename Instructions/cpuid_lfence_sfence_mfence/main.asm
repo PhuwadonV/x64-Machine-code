@@ -109,8 +109,11 @@ main proc
 
     align 16
 @@:
-    movnti [rbx + rcx], eax
-    add ecx, 4
+    movnti [rbx + rcx + 0], eax
+    movnti [rbx + rcx + 4], eax
+    movnti [rbx + rcx + 8], eax
+    movnti [rbx + rcx + 12], eax
+    add ecx, 16
     cmp ecx, 16384
     jne @b
     sfence
