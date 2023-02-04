@@ -59,16 +59,8 @@ main proc
 
     align 16
 @@:
-    clflush [rbp]
-
-    xor eax, eax
-    cpuid
-
-    mov eax, [rbp + 64]
-    mfence
-
-    movntdqa xmm0, xmmword ptr [rbp]
     movntdqa xmm1, xmmword ptr [rbp + 64]
+    movntdqa xmm0, xmmword ptr [rbp]
   ; mov edx, [rbp]
   ; mov r8d, [rbp + 64]
     movd edx, xmm0
@@ -295,8 +287,9 @@ thread_wc proc
     align 16
 @@:
     inc eax
-    mov [rcx + 64], eax
     mov [rcx], eax
+    pause
+    mov [rcx + 64], eax
     cmp [step], 2
     jne @b
 
