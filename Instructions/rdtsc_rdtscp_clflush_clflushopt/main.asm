@@ -14,7 +14,6 @@ main proc
     sub rsp, 32 + 8
 
     call GetCurrentThread
-    mov rbx, rax
 
     mov dword ptr [rsp], 0
 

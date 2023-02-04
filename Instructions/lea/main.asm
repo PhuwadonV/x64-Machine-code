@@ -7,6 +7,7 @@ format db 4 dup("%d "), 0Ah, 0
 
 .code
 main proc
+    push rbx
     sub rsp, 32 + 8
   ; ------------------------------
 
@@ -25,6 +26,7 @@ main proc
 
   ; ------------------------------
     add rsp, 32 + 8
+    pop rbx
     xor eax, eax
     ret
 main endp
