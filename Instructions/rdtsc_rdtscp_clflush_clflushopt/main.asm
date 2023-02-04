@@ -1,5 +1,7 @@
 includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
+GetCurrentThread proto
+SetThreadAffinityMask proto
 printf proto
 
 .const
@@ -10,6 +12,15 @@ src dd 0h
 .code
 main proc
     sub rsp, 32 + 8
+
+    call GetCurrentThread
+    mov rbx, rax
+
+    mov dword ptr [rsp], 0
+
+    mov rcx, rax
+    mov rdx, [rsp]
+    call SetThreadAffinityMask
   ; ------------------------------
 
     clflush [src]
