@@ -205,7 +205,6 @@ get_lock:
     cmp eax, 1
     jne @f
     cmp edx, 1
-    pause
     je @b
     mov a_wants, 0
 @@:
@@ -236,7 +235,6 @@ get_lock:
     cmp eax, 1
     jne @f
     cmp edx, 0
-    pause
     je @b
     mov b_wants, 0
 @@:

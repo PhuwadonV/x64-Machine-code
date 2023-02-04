@@ -112,6 +112,7 @@ thread_cmpxchg proc
     mov eax, [sum]
     lea edx, [eax + 1]
     lock cmpxchg [sum], edx
+  ; cmpxchg [sum], edx
     jne @b
     dec ecx
     test ecx, ecx
@@ -169,6 +170,7 @@ thread_xadd proc
     pause
     mov eax, 1
     lock xadd [sum], eax
+  ; xadd [sum], eax
     dec ecx
     test ecx, ecx
     jnz @b
