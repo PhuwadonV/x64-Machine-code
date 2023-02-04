@@ -1,6 +1,8 @@
 includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
 printf proto
+GetCurrentThread proto
+SetThreadAffinityMask proto
 WaitForSingleObject proto
 WaitForMultipleObjects proto
 extern create_thread: proc
@@ -23,6 +25,15 @@ b_wants dd 4 dup(0)
 main proc
     push rbx
     sub rsp, 32 + 16
+
+    call GetCurrentThread
+    mov rbx, rax
+
+    mov dword ptr [rsp], 0
+
+    mov rcx, rax
+    mov rdx, [rsp]
+    call SetThreadAffinityMask
   ; ------------------------------
 
     mov eax, 3
