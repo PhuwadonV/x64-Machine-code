@@ -105,7 +105,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov rcx, thread_consumer
+    mov rcx, thread_dst
     call create_thread
     mov rdx, rax
 
@@ -167,7 +167,7 @@ main proc
     ret
 main endp
 
-thread_consumer proc
+thread_dst proc
     sub rsp, 32 + 8
   ; ------------------------------
     
@@ -186,7 +186,7 @@ thread_consumer proc
     add rsp, 32 + 8
     xor eax, eax
     ret
-thread_consumer endp
+thread_dst endp
 
 thread_a proc
     sub rsp, 32 + 8
