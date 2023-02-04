@@ -13,6 +13,8 @@ dst db 8 dup(?)
 
 .code
 main proc
+    push rsi
+    push rdi
     sub rsp, 32 + 8
   ; ------------------------------
 
@@ -77,6 +79,8 @@ main proc
 
   ; ------------------------------
     add rsp, 32 + 8
+    pop rdi
+    pop rsi
     xor eax, eax
     ret
 main endp

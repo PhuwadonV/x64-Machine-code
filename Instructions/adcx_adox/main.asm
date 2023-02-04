@@ -14,9 +14,9 @@ zero dq 0h
 
 .code
 main proc
-    push r10
-    push r11
-    push r12
+    push rbx
+    push rsi
+    push rdi
     sub rsp, 32 + 16 * 3
   ; ------------------------------
 
@@ -24,25 +24,25 @@ main proc
     mov r8,  [max]
     mov r9,  [zero]
 
-    mov r10, [max]
-    mov r11, [max]
-    mov r12, [zero]
+    mov rbx, [max]
+    mov rsi, [max]
+    mov rdi, [zero]
 
     xor rax, rax
     
     @adc1 rdx, [max]
-    @adc2 r10, [max]
+    @adc2 rbx, [max]
 
     @adc1 r8,  [max]
-    @adc2 r11, [max]
+    @adc2 rsi, [max]
 
     @adc1 r9,  [zero]
-    @adc2 r12, [zero]
+    @adc2 rdi, [zero]
 
     mov rcx, offset format
-    mov [rsp + 32], r10
-    mov [rsp + 40], r11
-    mov [rsp + 48], r12
+    mov [rsp + 32], rbx
+    mov [rsp + 40], rsi
+    mov [rsp + 48], rdi
     call printf
 
   ; ------------------------------
