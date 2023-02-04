@@ -28,7 +28,6 @@ main proc
     cpuid
 
     rdtsc
-    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -61,7 +60,6 @@ main proc
     cpuid
 
     rdtscp
-    lfence
     mov r8d, eax
     mov r9d, edx
 
