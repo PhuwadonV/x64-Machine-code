@@ -23,8 +23,7 @@ dst dd 4 dup(0h)
 .code
 main proc
     push rbx
-    push rbp
-    sub rsp, 32 + 16 + 8
+    sub rsp, 32 + 16
 
     call GetCurrentThread
 
@@ -43,40 +42,32 @@ main proc
     mov r9d, 1000h
     mov dword ptr [rsp + 32], 404h
     call VirtualAllocEx
-    mov rbp, rax
-
-    mov [step], 0
-
-    mov rcx, thread_wc
-    mov rdx, rax
-    call create_thread
     mov rbx, rax
 
-    align 16
-@@:
-    cmp [step], 1
-    jne @b
+    movntdqa xmm0, xmmword ptr [rbx]
+    lfence
 
-    align 16
-@@:
-    movntdqa xmm1, xmmword ptr [rbp + 64]
-    movntdqa xmm0, xmmword ptr [rbp]
-  ; mov edx, [rbp]
-  ; mov r8d, [rbp + 64]
-    movd edx, xmm0
-    movd r8d, xmm1
+    rdtscp
+    lfence
+    mov r8d, eax
+    mov r9d, edx
 
-    test edx, edx
-    jz @b
+    movntdqa xmm0, xmmword ptr [rbx]
+    movntdqa xmm0, xmmword ptr [rbx + 16]
+    movntdqa xmm0, xmmword ptr [rbx + 32]
+    movntdqa xmm0, xmmword ptr [rbx + 48]
+    mfence
 
-    mov [step], 2
+    rdtscp
+    shl r9, 20h
+    shl rdx, 20h
+    or r8, r9
+    or rax, rdx
+    sub rax, r8
 
-    mov rcx, offset format1
+    mov rcx, offset format2
+    mov rdx, rax
     call printf
-
-    mov rcx, rbx
-    mov rdx, 0FFFFFFFFh
-    call WaitForSingleObject
 
   ; ------------------------------
     mov rcx, offset separator
@@ -124,10 +115,10 @@ main proc
     cpuid
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
-    lfence
     mov eax, [dst]
     mfence
 
@@ -159,10 +150,10 @@ main proc
     cpuid
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
-    lfence
     mov eax, [dst]
     mfence
 
@@ -194,10 +185,10 @@ main proc
     cpuid
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
-    lfence
     mov eax, [dst]
     mfence
 
@@ -229,10 +220,10 @@ main proc
     cpuid
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
-    lfence
     mov eax, [dst]
     mfence
 
@@ -248,8 +239,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 32 + 16 + 8
-    pop rbp
+    add rsp, 32 + 16
     pop rbx
     xor eax, eax
     ret
@@ -276,27 +266,5 @@ thread_dst proc
     xor eax, eax
     ret
 thread_dst endp
-
-thread_wc proc
-    sub rsp, 32 + 8
-  ; ------------------------------
-
-    xor eax, eax
-    mov [step], 1
-    
-    align 16
-@@:
-    inc eax
-    mov [rcx], eax
-    pause
-    mov [rcx + 64], eax
-    cmp [step], 2
-    jne @b
-
-  ; ------------------------------
-    add rsp, 32 + 8
-    xor eax, eax
-    ret
-thread_wc endp
 
 end

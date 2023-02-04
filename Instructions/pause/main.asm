@@ -27,11 +27,11 @@ main proc
     cpuid
 
     rdtsc
+    lfence
     mov r8d, eax
     mov r9d, edx
 
     pause
-    lfence
 
     rdtsc
     shl r9, 20h

@@ -76,16 +76,14 @@ main proc
     cpuid
 
     rdtsc
+    lfence
     mov r8d, eax
     mov r9d, edx
-
-    lfence
 
     mov eax, 123456
     mov ecx, 654321
     cdq
     div ecx
-
     lfence
 
     rdtsc
@@ -205,6 +203,7 @@ get_lock:
     jne @f
     cmp edx, 1
     je @b
+    mfence
     mov a_wants, 0
 @@:
     dec ecx
@@ -235,6 +234,7 @@ get_lock:
     jne @f
     cmp edx, 0
     je @b
+    mfence
     mov b_wants, 0
 @@:
     dec ecx

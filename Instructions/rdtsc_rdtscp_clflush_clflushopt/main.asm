@@ -28,10 +28,10 @@ main proc
     cpuid
 
     rdtsc
+    lfence
     mov r8d, eax
     mov r9d, edx
 
-    lfence
     mov eax, [src]
     mfence
     lfence
@@ -61,10 +61,10 @@ main proc
     cpuid
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
-    lfence
     mov eax, [src]
     mfence
 
