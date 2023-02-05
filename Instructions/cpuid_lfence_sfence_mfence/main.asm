@@ -14,12 +14,13 @@ format2 db "Finished", 0Ah, 0
 
 .data
 step dd 0
-
-align 16
 dst dd 4096 dup(0h)
-turn dd 4 dup(0)
-a_wants dd 4 dup(0)
-b_wants dd 4 dup(0)
+
+data segment align(64) 'DATA'
+turn dd 16 dup(0)
+a_wants dd 16 dup(0)
+b_wants dd 16 dup(0)
+data ends
 
 .code
 main proc

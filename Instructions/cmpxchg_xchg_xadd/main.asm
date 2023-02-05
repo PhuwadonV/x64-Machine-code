@@ -10,10 +10,10 @@ separator db 30 dup("-"), 0Ah, 0
 format1 db "Main : %d", 0Ah, 0
 format2 db "Thread", 0Ah, 0
 
-.data
-align 16
-@lock dd 4 dup(0h)
-sum dd 4 dup(?)
+data segment align(64) 'DATA'
+@lock dd 16 dup(0h)
+sum dd 16 dup(?)
+data ends
 
 .code
 main proc

@@ -14,11 +14,10 @@ format1 db "Main   : %d %d", 0Ah, 0
 format2 db "Main   : %lld", 0Ah, 0
 format3 db "Thread : %d", 0Ah, 0
 
-.data
+data segment align(64) 'DATA'
+dst dd 16 dup(0h)
 step dd ?
-
-align 16
-dst dd 4 dup(0h)
+data ends
 
 .code
 main proc
