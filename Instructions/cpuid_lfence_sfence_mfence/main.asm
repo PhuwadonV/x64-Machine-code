@@ -203,9 +203,9 @@ get_lock:
     jne @f
     cmp edx, 1
     je @b
+@@:
     mfence
     mov a_wants, 0
-@@:
     dec ecx
     test ecx, ecx
     jnz get_lock
@@ -234,9 +234,9 @@ get_lock:
     jne @f
     cmp edx, 0
     je @b
+@@:
     mfence
     mov b_wants, 0
-@@:
     dec ecx
     test ecx, ecx
     jnz get_lock
