@@ -9,8 +9,7 @@ extern create_thread: proc
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format1 db "%lld", 0Ah, 0
-format2 db "Finished", 0Ah, 0
+format db "%lld", 0Ah, 0
 
 .data
 step dd 0
@@ -20,6 +19,7 @@ data segment align(64) 'DATA'
 turn dd 16 dup(0)
 a_wants dd 16 dup(0)
 b_wants dd 16 dup(0)
+sum dd 16 dup(0)
 data ends
 
 .code
@@ -64,7 +64,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format1
+    mov rcx, offset format
     mov rdx, rax
     call printf
 
@@ -93,7 +93,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format1
+    mov rcx, offset format
     mov rdx, rax
     call printf
 
@@ -154,7 +154,8 @@ main proc
     mov r9d, 0FFFFFFFFh
     call WaitForMultipleObjects
 
-    mov rcx, offset format2
+    mov rcx, offset format
+    mov edx, [sum]
     call printf
 
   ; ------------------------------
@@ -176,7 +177,7 @@ thread_dst proc
     jne @b
     mov edx, [dst + 16380]
 
-    mov rcx, offset format1
+    mov rcx, offset format
     call printf
 
   ; ------------------------------
@@ -204,7 +205,7 @@ get_lock:
     cmp edx, 1
     je @b
 @@:
-    mfence
+    add [sum], 1
     mov a_wants, 0
     dec ecx
     test ecx, ecx
@@ -235,7 +236,7 @@ get_lock:
     cmp edx, 0
     je @b
 @@:
-    mfence
+    add [sum], 1
     mov b_wants, 0
     dec ecx
     test ecx, ecx
