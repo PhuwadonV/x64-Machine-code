@@ -26,10 +26,8 @@ main proc
 
     call GetCurrentThread
 
-    mov dword ptr [rsp], 0
-
     mov rcx, rax
-    mov rdx, [rsp]
+    mov rdx, 1
     call SetThreadAffinityMask
   ; ------------------------------
 
