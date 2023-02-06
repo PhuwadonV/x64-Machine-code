@@ -24,13 +24,13 @@ main proc
     xor eax, eax
     cpuid
 
-    rdtsc
+    rdtscp
     mov r8d, eax
     mov r9d, edx
 
     pause
 
-    rdtsc
+    rdtscp
     shl r9, 20h
     shl rdx, 20h
     or r8, r9
