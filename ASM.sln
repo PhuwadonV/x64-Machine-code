@@ -127,6 +127,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pause", "Instructions\pause
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmpxchg_xchg_xadd", "Instructions\cmpxchg_xchg_xadd\cmpxchg_xchg_xadd.vcxproj", "{7653A93D-9F28-4670-A266-FBA5FB34C1E5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prefetch0_prefetch1_prefetch2_prefetchnta", "Instructions\prefetch0_prefetch1_prefetch2_prefetchnta\prefetch0_prefetch1_prefetch2_prefetchnta.vcxproj", "{C7637AB6-7BCE-465A-B009-F3A04193E5C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -583,6 +585,14 @@ Global
 		{7653A93D-9F28-4670-A266-FBA5FB34C1E5}.Release|x64.Build.0 = Release|x64
 		{7653A93D-9F28-4670-A266-FBA5FB34C1E5}.Release|x86.ActiveCfg = Release|Win32
 		{7653A93D-9F28-4670-A266-FBA5FB34C1E5}.Release|x86.Build.0 = Release|Win32
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Debug|x64.ActiveCfg = Debug|x64
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Debug|x64.Build.0 = Debug|x64
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Debug|x86.ActiveCfg = Debug|Win32
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Debug|x86.Build.0 = Debug|Win32
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Release|x64.ActiveCfg = Release|x64
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Release|x64.Build.0 = Release|x64
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Release|x86.ActiveCfg = Release|Win32
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -648,6 +658,7 @@ Global
 		{68B9D49D-91CD-4F8D-B60C-387A222857E9} = {B2DECBF3-9DC8-4032-8F13-D769050B5D62}
 		{513D2D1B-44D6-49D3-9B73-426A50F023DB} = {B2DECBF3-9DC8-4032-8F13-D769050B5D62}
 		{7653A93D-9F28-4670-A266-FBA5FB34C1E5} = {B2DECBF3-9DC8-4032-8F13-D769050B5D62}
+		{C7637AB6-7BCE-465A-B009-F3A04193E5C7} = {B2DECBF3-9DC8-4032-8F13-D769050B5D62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
