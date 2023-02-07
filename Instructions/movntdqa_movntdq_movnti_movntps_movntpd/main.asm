@@ -1,10 +1,10 @@
 includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
+printf proto
 GetCurrentThread proto
 GetCurrentProcess proto
 SetThreadAffinityMask proto
 VirtualAllocEx proto
-printf proto
 WaitForSingleObject proto
 extern create_thread: proc
 

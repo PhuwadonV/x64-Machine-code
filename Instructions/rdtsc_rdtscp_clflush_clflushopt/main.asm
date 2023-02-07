@@ -1,8 +1,8 @@
 includelib msvcrt.lib
 includelib legacy_stdio_definitions.lib
+printf proto
 GetCurrentThread proto
 SetThreadAffinityMask proto
-printf proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
