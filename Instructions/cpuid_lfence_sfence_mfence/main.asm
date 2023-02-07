@@ -202,8 +202,7 @@ get_lock:
 @@:
     add [sum], 1
     mov a_wants, 0
-    dec ecx
-    test ecx, ecx
+    sub ecx, 1
     jnz get_lock
 
   ; ------------------------------
@@ -233,8 +232,7 @@ get_lock:
 @@:
     add [sum], 1
     mov b_wants, 0
-    dec ecx
-    test ecx, ecx
+    sub ecx, 1
     jnz get_lock
 
   ; ------------------------------

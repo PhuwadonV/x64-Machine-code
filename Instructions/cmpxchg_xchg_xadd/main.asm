@@ -114,8 +114,7 @@ thread_cmpxchg proc
     lock cmpxchg [sum], edx
   ; cmpxchg [sum], edx
     jne @b
-    dec ecx
-    test ecx, ecx
+    sub ecx, 1
     jnz @b
 
     mov rcx, offset format2
@@ -148,8 +147,7 @@ get_lock:
     add [sum], 1
     mov [@lock], 0
 
-    dec ecx
-    test ecx, ecx
+    sub ecx, 1
     jnz spin_lock
 
     mov rcx, offset format2
@@ -171,8 +169,7 @@ thread_xadd proc
     mov eax, 1
     lock xadd [sum], eax
   ; xadd [sum], eax
-    dec ecx
-    test ecx, ecx
+    sub ecx, 1 
     jnz @b
 
     mov rcx, offset format2
