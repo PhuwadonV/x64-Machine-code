@@ -37,7 +37,7 @@ main proc
     xor edx, edx
     mov r8d, 128
     mov r9d, 1000h
-    mov dword ptr [rsp + 32], 404h
+    mov dword ptr [rsp + 32], 404h ; PAGE_WRITECOMBINE
     call VirtualAllocEx
     mov rbx, rax
 
