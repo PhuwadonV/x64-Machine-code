@@ -101,9 +101,6 @@ main proc
 
     clflush [dst]
 
-    mfence
-    lfence
-
     movntdq xmmword ptr [dst], xmm0
   ; mov [dst], eax
 
@@ -134,9 +131,6 @@ main proc
   ; ------------------------------
 
     clflush [dst]
-
-    mfence
-    lfence
 
     movnti [dst], eax
   ; mov [dst], eax
@@ -169,9 +163,6 @@ main proc
 
     clflush [dst]
 
-    mfence
-    lfence
-
     movntps [dst], xmm0
   ; mov [dst], eax
 
@@ -202,9 +193,6 @@ main proc
   ; ------------------------------
 
     clflush [dst]
-
-    mfence
-    lfence
 
     movntpd xmmword ptr [dst], xmm0
   ; mov [dst], eax

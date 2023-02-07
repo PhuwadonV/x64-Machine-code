@@ -20,6 +20,7 @@ main proc
     call SetThreadAffinityMask
   ; ------------------------------
 
+    mov eax, [src]
     clflush [src]
 
     mfence
@@ -49,6 +50,7 @@ main proc
     call printf
   ; ------------------------------
 
+    mov eax, [src]
     clflushopt [src]
 
     mfence
