@@ -13,7 +13,7 @@ format db "%lld", 0Ah, 0
 
 .data
 step dd 0
-dst dd 4096 dup(0h)
+dst dd (16 * 256) dup(0h)
 
 data segment align(64) 'DATA'
 turn dd 16 dup(0)
@@ -70,9 +70,6 @@ main proc
     mov rcx, offset separator
     call printf
   ; ------------------------------
-
-    xor eax, eax
-    cpuid
 
     rdtsc
     mov r8d, eax

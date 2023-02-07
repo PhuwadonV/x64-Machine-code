@@ -101,14 +101,14 @@ main proc
 
     clflush [dst]
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     movntdq xmmword ptr [dst], xmm0
   ; mov [dst], eax
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     rdtscp
     mov r8d, eax
@@ -135,14 +135,14 @@ main proc
 
     clflush [dst]
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     movnti [dst], eax
   ; mov [dst], eax
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     rdtscp
     mov r8d, eax
@@ -169,14 +169,14 @@ main proc
 
     clflush [dst]
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     movntps [dst], xmm0
   ; mov [dst], eax
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     rdtscp
     mov r8d, eax
@@ -203,14 +203,14 @@ main proc
 
     clflush [dst]
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     movntpd xmmword ptr [dst], xmm0
   ; mov [dst], eax
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     rdtscp
     mov r8d, eax

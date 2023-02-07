@@ -22,8 +22,8 @@ main proc
 
     clflush [src]
 
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     rdtsc
     mov r8d, eax
@@ -51,11 +51,8 @@ main proc
 
     clflushopt [src]
 
-    xor eax, eax
-    cpuid
-
-    xor eax, eax
-    cpuid
+    mfence
+    lfence
 
     rdtscp
     mov r8d, eax
