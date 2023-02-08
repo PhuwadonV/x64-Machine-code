@@ -3,11 +3,9 @@ includelib legacy_stdio_definitions.lib
 printf proto
 GetCurrentThread proto
 SetThreadAffinityMask proto
-WaitForSingleObject proto
-extern create_thread: proc
 
 const segment align(64) 'CONST'
-src dd 16 dup(0h)
+src dd (16 * (4096 + 2048)) dup(0h)
 const ends
 
 .const
@@ -30,7 +28,7 @@ main proc
 
     clflush [src]
 
-    mfence
+    lfence
 
     prefetcht0 [src]
 
@@ -42,7 +40,7 @@ main proc
     mov r9d, edx
 
     mov eax, [src]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -74,7 +72,7 @@ main proc
     mov r9d, edx
 
     mov eax, [src]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -106,7 +104,7 @@ main proc
     mov r9d, edx
 
     mov eax, [src]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -138,7 +136,7 @@ main proc
     mov r9d, edx
 
     mov eax, [src]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -158,14 +156,17 @@ main proc
 
     clflush [src]
 
-    mfence
     lfence
 
-    mov rcx, thread
-    call create_thread
+    mov rax, offset src + 512
+    xor ecx, ecx
 
+    align 16
 @@:
-    cmp [step], 1
+    prefetchnta [rax + rcx]
+  ; prefetcht0 [rax + rcx]
+    add ecx, 64
+    cmp ecx, 262144 + 131072
     jne @b
 
     mfence
@@ -176,7 +177,7 @@ main proc
     mov r9d, edx
 
     mov eax, [src]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -194,24 +195,5 @@ main proc
     xor eax, eax
     ret
 main endp
-
-thread proc
-    sub rsp, 32 + 8
-
-    call GetCurrentThread
-
-    mov rcx, rax
-    mov rdx, 1
-    call SetThreadAffinityMask
-  ; ------------------------------
-    
-    prefetchnta [src]
-    mov [step], 1
-
-  ; ------------------------------
-    add rsp, 32 + 8
-    xor eax, eax
-    ret
-thread endp
 
 end

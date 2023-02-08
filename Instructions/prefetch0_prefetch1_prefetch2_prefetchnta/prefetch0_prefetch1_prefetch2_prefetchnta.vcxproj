@@ -21,11 +21,6 @@
   <ItemGroup>
     <MASM Include="main.asm" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utils\Utils.vcxproj">
-      <Project>{7854863a-88cb-4153-b38b-3c2575210502}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
