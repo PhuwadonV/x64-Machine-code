@@ -52,7 +52,7 @@ main proc
     movntdqa xmm0, xmmword ptr [rbx + 16]
     movntdqa xmm0, xmmword ptr [rbx + 32]
     movntdqa xmm0, xmmword ptr [rbx + 48]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -88,7 +88,7 @@ main proc
     movnti [dst], ecx
   ; mov [dst], ecx
     cmp ecx, 10000
-    jne @b 
+    jne @b
 
     mov rcx, rbx
     mov rdx, 0FFFFFFFFh
@@ -112,7 +112,7 @@ main proc
     mov r9d, edx
 
     mov eax, [dst]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -143,7 +143,7 @@ main proc
     mov r9d, edx
 
     mov eax, [dst]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -174,7 +174,7 @@ main proc
     mov r9d, edx
 
     mov eax, [dst]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -205,7 +205,7 @@ main proc
     mov r9d, edx
 
     mov eax, [dst]
-    mfence
+    lfence
 
     rdtscp
     shl r9, 20h
@@ -228,7 +228,7 @@ main endp
 thread_dst proc
     sub rsp, 32 + 8
   ; ------------------------------
-    
+
     mov eax, [dst]
     mov [step], 1
 

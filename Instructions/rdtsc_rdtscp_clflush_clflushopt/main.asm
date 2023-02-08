@@ -23,7 +23,6 @@ main proc
     mov eax, [src]
     clflush [src]
 
-    mfence
     lfence
 
     rdtsc
@@ -53,7 +52,6 @@ main proc
     mov eax, [src]
     clflushopt [src]
 
-    mfence
     lfence
 
     rdtscp

@@ -184,7 +184,7 @@ thread_dst endp
 thread_a proc
     sub rsp, 32 + 8
   ; ------------------------------
-    
+
     align 16
 get_lock:
     mov a_wants, 1

@@ -19,11 +19,6 @@ main proc
     call SetThreadAffinityMask
   ; ------------------------------
 
-    clflush [src]
-
-    mfence
-    lfence
-
     rdtscp
     mov r8d, eax
     mov r9d, edx
