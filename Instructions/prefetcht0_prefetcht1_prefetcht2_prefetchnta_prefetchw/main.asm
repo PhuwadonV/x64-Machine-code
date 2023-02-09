@@ -188,7 +188,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov rcx, thread_read
+    mov rcx, thread_invilidate
     call create_thread
 
 @@:
@@ -225,7 +225,7 @@ main proc
     ret
 main endp
 
-thread_read proc
+thread_invilidate proc
     sub rsp, 32 + 8
 
     call GetCurrentThread
@@ -249,6 +249,6 @@ thread_read proc
     add rsp, 32 + 8
     xor eax, eax
     ret
-thread_read endp
+thread_invilidate endp
 
 end

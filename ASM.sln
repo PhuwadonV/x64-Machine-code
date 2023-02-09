@@ -127,7 +127,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cmpxchg_xchg_xadd", "Instru
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movmskps_movmskpd", "Instructions\movmskps_movmskpd\movmskps_movmskpd.vcxproj", "{7F6DFE98-2E31-4076-B83E-87F018EDA159}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prefetch0_prefetch1_prefetch2_prefetchnta_prefetchw", "Instructions\prefetch0_prefetch1_prefetch2_prefetchnta_prefetchw\prefetch0_prefetch1_prefetch2_prefetchnta_prefetchw.vcxproj", "{C7637AB6-7BCE-465A-B009-F3A04193E5C7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prefetcht0_prefetcht1_prefetcht2_prefetchnta_prefetchw", "Instructions\prefetcht0_prefetcht1_prefetcht2_prefetchnta_prefetchw\prefetcht0_prefetcht1_prefetcht2_prefetchnta_prefetchw.vcxproj", "{C7637AB6-7BCE-465A-B009-F3A04193E5C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
