@@ -42,7 +42,6 @@ main proc
     mov rbx, rax
 
     mov eax, [rbx + 64] ; Commit
-    lfence
 
     rdtscp
     mov r8d, eax
@@ -52,7 +51,6 @@ main proc
     movntdqa xmm0, xmmword ptr [rbx + 16]
     movntdqa xmm0, xmmword ptr [rbx + 32]
     movntdqa xmm0, xmmword ptr [rbx + 48]
-    lfence
 
     rdtscp
     shl r9, 20h
@@ -104,15 +102,11 @@ main proc
     movntdq xmmword ptr [dst], xmm0
   ; mov [dst], eax
 
-    mfence
-    lfence
-
     rdtscp
     mov r8d, eax
     mov r9d, edx
 
     mov eax, [dst]
-    lfence
 
     rdtscp
     shl r9, 20h
@@ -135,15 +129,11 @@ main proc
     movnti [dst], eax
   ; mov [dst], eax
 
-    mfence
-    lfence
-
     rdtscp
     mov r8d, eax
     mov r9d, edx
 
     mov eax, [dst]
-    lfence
 
     rdtscp
     shl r9, 20h
@@ -166,15 +156,11 @@ main proc
     movntps [dst], xmm0
   ; mov [dst], eax
 
-    mfence
-    lfence
-
     rdtscp
     mov r8d, eax
     mov r9d, edx
 
     mov eax, [dst]
-    lfence
 
     rdtscp
     shl r9, 20h
@@ -197,15 +183,11 @@ main proc
     movntpd xmmword ptr [dst], xmm0
   ; mov [dst], eax
 
-    mfence
-    lfence
-
     rdtscp
     mov r8d, eax
     mov r9d, edx
 
     mov eax, [dst]
-    lfence
 
     rdtscp
     shl r9, 20h

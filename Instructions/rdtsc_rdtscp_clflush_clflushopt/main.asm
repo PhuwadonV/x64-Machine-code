@@ -59,7 +59,6 @@ main proc
     mov r9d, edx
 
     mov eax, [src]
-    mfence
 
     rdtscp
     shl r9, 20h
