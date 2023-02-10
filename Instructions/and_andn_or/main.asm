@@ -31,6 +31,18 @@ main proc
     call printf
 
   ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov edx, 00F0F0F0Fh
+    mov r8d, 0F0F0F0F0h
+    or edx, r8d
+
+    mov rcx, offset format
+    call printf
+
+  ; ------------------------------
     add rsp, 32 + 8
     xor eax, eax
     ret
