@@ -3,7 +3,8 @@ includelib legacy_stdio_definitions.lib
 printf proto
 
 .const
-format db "%d %u", 0Ah, "%d %u", 0
+separator db 30 dup("-"), 0Ah, 0
+format db "%d %u", 0Ah, "%d %u", 0Ah, 0
 
 .code
 main proc
@@ -17,6 +18,23 @@ main proc
 
     add r9d, 1
     add eax, 1
+
+    mov rcx, offset format
+    mov [rsp + 32], eax
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov edx, 0FFFFFFFFh
+    mov r8d, 0FFFFFFFFh
+    mov r9d, edx
+    mov eax, r8d
+
+    sub r9d, 1
+    sub eax, 1
 
     mov rcx, offset format
     mov [rsp + 32], eax
