@@ -15,6 +15,18 @@ format db "%lld", 0Ah, 0
 step dd 0
 dst dd (16 * 256) dup(0h)
 
+thread_a label ptr
+dq offset a_wants
+dq offset b_wants
+dd 1
+dd 1000000
+
+thread_b label ptr
+dq offset b_wants
+dq offset a_wants
+dd 0
+dd 1000000
+
 data segment align(64) 'DATA'
 turn dd 16 dup(0)
 a_wants dd 16 dup(0)
@@ -46,14 +58,15 @@ main proc
     div ecx
     div ecx
 
+  ; ....................
     xor eax, eax
     cpuid
+  ; ....................
 
     rdtsc
+    lfence
     mov r8d, eax
     mov r9d, edx
-
-    lfence
 
     rdtsc
     shl r9, 20h
@@ -72,6 +85,7 @@ main proc
   ; ------------------------------
 
     rdtsc
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -79,7 +93,9 @@ main proc
     mov ecx, 654321
     cdq
     div ecx
+  ; ....................
     lfence
+  ; ....................
 
     rdtsc
     shl r9, 20h
@@ -119,7 +135,9 @@ main proc
     add ecx, 16
     cmp ecx, 16384
     jne @b
+  ; ....................
     sfence
+  ; ....................
     mov [step], 2
 
     mov rcx, rdx
@@ -133,13 +151,13 @@ main proc
 
     mov [step], 0
 
-    mov rcx, thread_a
-    mov rdx, 1000000
+    mov rcx, thread_add
+    mov rdx, offset thread_a
     call create_thread
     mov [rsp + 32], rax
 
-    mov rcx, thread_b
-    mov rdx, 1000000
+    mov rcx, thread_add
+    mov rdx, offset thread_b
     call create_thread
     mov [rsp + 40], rax
 
@@ -181,64 +199,52 @@ thread_dst proc
     ret
 thread_dst endp
 
-thread_a proc
-    sub rsp, 32 + 8
+thread_add proc
+    push rbx
+    sub rsp, 32
   ; ------------------------------
+
+    lock add [step], 1
+
+    align 16
+@@:
+    cmp [step], 2
+    jne @b
+
+    mov rbx, [rcx]
+    mov r8, [rcx + 8]
+    mov r9d, [rcx + 16]
+    mov ecx, [rcx + 20]
 
     align 16
 get_lock:
-    mov a_wants, 1
-    mov turn, 1
+    mov eax, 1
+    mov [rbx], eax
+    mov [turn], r9d
+  ; ....................
     mfence
+  ; ....................
 
     align 16
 @@:
-    mov eax, [b_wants]
+    mov eax, [r8]
     mov edx, [turn]
     cmp eax, 1
     jne @f
-    cmp edx, 1
+    cmp edx, r9d
     je @b
 @@:
     add [sum], 1
-    mov a_wants, 0
+    xor eax, eax
+    mov [rbx], eax
     sub ecx, 1
     jnz get_lock
 
   ; ------------------------------
-    add rsp, 32 + 8
+    add rsp, 32
+    pop rbx
     xor eax, eax
     ret
-thread_a endp
-
-thread_b proc
-    sub rsp, 32 + 8
-  ; ------------------------------
-
-    align 16
-get_lock:
-    mov b_wants, 1
-    mov turn, 0
-    mfence
-
-    align 16
-@@:
-    mov eax, [a_wants]
-    mov edx, [turn]
-    cmp eax, 1
-    jne @f
-    cmp edx, 0
-    je @b
-@@:
-    add [sum], 1
-    mov b_wants, 0
-    sub ecx, 1
-    jnz get_lock
-
-  ; ------------------------------
-    add rsp, 32 + 8
-    xor eax, eax
-    ret
-thread_b endp
+thread_add endp
 
 end

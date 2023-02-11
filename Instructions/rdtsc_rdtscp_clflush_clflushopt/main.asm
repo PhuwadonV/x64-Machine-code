@@ -21,11 +21,13 @@ main proc
   ; ------------------------------
 
     mov eax, [src]
+  ; ....................
     clflush [src]
-
+  ; ....................
     lfence
 
     rdtsc
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -50,11 +52,13 @@ main proc
   ; ------------------------------
 
     mov eax, [src]
+  ; ....................
     clflushopt [src]
-
+  ; ....................
     lfence
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 

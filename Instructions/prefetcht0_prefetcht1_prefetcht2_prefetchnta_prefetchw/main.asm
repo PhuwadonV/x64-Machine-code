@@ -40,6 +40,7 @@ main proc
     mfence
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -70,6 +71,7 @@ main proc
     mfence
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -100,36 +102,7 @@ main proc
     mfence
 
     rdtscp
-    mov r8d, eax
-    mov r9d, edx
-
-    mov eax, [src]
-
-    rdtscp
-    shl r9, 20h
-    shl rdx, 20h
-    or r8, r9
-    or rax, rdx
-    sub rax, r8
-
-    mov rcx, offset format
-    mov rdx, rax
-    call printf
-
-  ; ------------------------------
-    mov rcx, offset separator
-    call printf
-  ; ------------------------------
-
-    clflush [src]
-
     lfence
-
-    prefetcht2 [src]
-
-    mfence
-
-    rdtscp
     mov r8d, eax
     mov r9d, edx
 
@@ -160,8 +133,10 @@ main proc
 
     align 16
 @@:
+  ; ....................
     prefetchnta [rax + rcx]
   ; prefetcht0 [rax + rcx]
+  ; ....................
     add ecx, 64
     cmp ecx, @l1_size
     jne @b
@@ -169,6 +144,7 @@ main proc
     mfence
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -205,6 +181,7 @@ main proc
     jne @b
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -243,8 +220,10 @@ thread_invilidate proc
     cmp [step], 2
     jne @b
 
+  ; ....................
     prefetchw [dst]
   ; prefetcht0 [dst]
+  ; ....................
     mov [step], 3
 
   ; ------------------------------

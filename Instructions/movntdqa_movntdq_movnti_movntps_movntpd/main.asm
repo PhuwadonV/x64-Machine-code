@@ -44,13 +44,20 @@ main proc
     mov eax, [rbx + 64] ; Commit
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
+  ; ....................
     movntdqa xmm0, xmmword ptr [rbx]
     movntdqa xmm0, xmmword ptr [rbx + 16]
     movntdqa xmm0, xmmword ptr [rbx + 32]
     movntdqa xmm0, xmmword ptr [rbx + 48]
+  ; movdqa xmm0, xmmword ptr [rbx]
+  ; movdqa xmm0, xmmword ptr [rbx + 16]
+  ; movdqa xmm0, xmmword ptr [rbx + 32]
+  ; movdqa xmm0, xmmword ptr [rbx + 48]
+  ; ....................
 
     rdtscp
     shl r9, 20h
@@ -83,8 +90,10 @@ main proc
     align 16
 @@:
     inc ecx
+  ; ....................
     movnti [dst], ecx
   ; mov [dst], ecx
+  ; ....................
     cmp ecx, 10000
     jne @b
 
@@ -99,10 +108,13 @@ main proc
 
     clflush [dst]
 
+  ; ....................
     movntdq xmmword ptr [dst], xmm0
   ; mov [dst], eax
+  ; ....................
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -126,10 +138,13 @@ main proc
 
     clflush [dst]
 
+  ; ....................
     movnti [dst], eax
   ; mov [dst], eax
+  ; ....................
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -153,10 +168,13 @@ main proc
 
     clflush [dst]
 
+  ; ....................
     movntps [dst], xmm0
   ; mov [dst], eax
+  ; ....................
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 
@@ -180,10 +198,13 @@ main proc
 
     clflush [dst]
 
+  ; ....................
     movntpd xmmword ptr [dst], xmm0
   ; mov [dst], eax
+  ; ....................
 
     rdtscp
+    lfence
     mov r8d, eax
     mov r9d, edx
 

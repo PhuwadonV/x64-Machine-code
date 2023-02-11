@@ -111,8 +111,10 @@ thread_cmpxchg proc
     pause
     mov eax, [sum]
     lea edx, [eax + 1]
+  ; ....................
     lock cmpxchg [sum], edx
   ; cmpxchg [sum], edx
+  ; ....................
     jne @b
     sub ecx, 1
     jnz @b
@@ -138,9 +140,11 @@ spin_lock:
     jmp spin_lock
 get_lock:
     mov eax, 1
+  ; ....................
     xchg [@lock], eax
   ; mov eax, [@lock]
   ; mov [@lock], 1
+  ; ....................
     test eax, eax
     jne spin_lock
 
@@ -167,8 +171,12 @@ thread_xadd proc
 @@:
     pause
     mov eax, 1
+
+  ; ....................
     lock xadd [sum], eax
   ; xadd [sum], eax
+  ; ....................
+
     sub ecx, 1 
     jnz @b
 
