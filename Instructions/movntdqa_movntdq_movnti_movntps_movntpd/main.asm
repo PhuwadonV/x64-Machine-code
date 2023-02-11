@@ -35,13 +35,13 @@ main proc
 
     mov rcx, rax
     xor edx, edx
-    mov r8d, 128
+    mov r8d, 256
     mov r9d, 1000h ; MEM_COMMIT
     mov dword ptr [rsp + 32], 404h ; PAGE_WRITECOMBINE | PAGE_READWRITE
     call VirtualAllocEx
     mov rbx, rax
 
-    mov eax, [rbx + 64] ; Commit
+    mov eax, [rbx] ; Commit
 
     rdtscp
     lfence
@@ -50,13 +50,13 @@ main proc
 
   ; ....................
     movntdqa xmm0, xmmword ptr [rbx]
-    movntdqa xmm0, xmmword ptr [rbx + 16]
-    movntdqa xmm0, xmmword ptr [rbx + 32]
-    movntdqa xmm0, xmmword ptr [rbx + 48]
+    movntdqa xmm0, xmmword ptr [rbx + 64]
+    movntdqa xmm0, xmmword ptr [rbx + 64 * 2]
+    movntdqa xmm0, xmmword ptr [rbx + 64 * 3]
   ; movdqa xmm0, xmmword ptr [rbx]
-  ; movdqa xmm0, xmmword ptr [rbx + 16]
-  ; movdqa xmm0, xmmword ptr [rbx + 32]
-  ; movdqa xmm0, xmmword ptr [rbx + 48]
+  ; movdqa xmm0, xmmword ptr [rbx + 64]
+  ; movdqa xmm0, xmmword ptr [rbx + 64 * 2]
+  ; movdqa xmm0, xmmword ptr [rbx + 64 * 3]
   ; ....................
 
     rdtscp
@@ -94,7 +94,7 @@ main proc
     movnti [dst], ecx
   ; mov [dst], ecx
   ; ....................
-    cmp ecx, 10000
+    cmp ecx, 100000
     jne @b
 
     mov rcx, rbx

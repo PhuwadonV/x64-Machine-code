@@ -11,9 +11,10 @@ extern create_thread: proc
 separator db 30 dup("-"), 0Ah, 0
 format db "%lld", 0Ah, 0
 
-.data
-step dd 0
-dst dd (16 * 256) dup(0h)
+data segment align(64) 'DATA'
+step dd 16 dup(0)
+dst dd 16 dup(0h)
+data ends
 
 thread_a label ptr
 dq offset a_wants
@@ -122,19 +123,13 @@ main proc
     cmp [step], 1
     jne @b
 
+    prefetchw [step]
+
     mov eax, 1
     mov rbx, offset dst
     xor ecx, ecx
 
-    align 16
-@@:
-    movnti [rbx + rcx + 0], eax
-    movnti [rbx + rcx + 4], eax
-    movnti [rbx + rcx + 8], eax
-    movnti [rbx + rcx + 12], eax
-    add ecx, 16
-    cmp ecx, 16384
-    jne @b
+    movnti [dst], eax
   ; ....................
     sfence
   ; ....................
@@ -169,7 +164,7 @@ main proc
 
     mov rcx, offset format
     mov edx, [sum]
-    call printf
+    call printf 
 
   ; ------------------------------
     add rsp, 32 + 16
@@ -188,7 +183,7 @@ thread_dst proc
 @@:
     cmp [step], 2
     jne @b
-    mov edx, [dst + 16380]
+    mov edx, [dst]
 
     mov rcx, offset format
     call printf
