@@ -5,14 +5,14 @@ GetCurrentThread proto
 GetCurrentProcess proto
 SetThreadAffinityMask proto
 VirtualAllocEx proto
+VirtualFree proto
 WaitForSingleObject proto
 extern create_thread: proc
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format1 db "Main   : %d %d", 0Ah, 0
-format2 db "Main   : %lld", 0Ah, 0
-format3 db "Thread : %d", 0Ah, 0
+format1 db "Main   : %lld", 0Ah, 0
+format2 db "Thread : %d", 0Ah, 0
 
 data segment align(64) 'DATA'
 dst dd 16 dup(0h)
@@ -66,9 +66,14 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format2
+    mov rcx, offset format1
     mov rdx, rax
     call printf
+
+    mov rcx, rbx
+    mov edx, 256
+    mov r8d, 8000h
+    call VirtualFree
 
   ; ------------------------------
     mov rcx, offset separator
@@ -127,7 +132,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format2
+    mov rcx, offset format1
     mov rdx, rax
     call printf
 
@@ -157,7 +162,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format2
+    mov rcx, offset format1
     mov rdx, rax
     call printf
 
@@ -187,7 +192,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format2
+    mov rcx, offset format1
     mov rdx, rax
     call printf
 
@@ -217,7 +222,7 @@ main proc
     or rax, rdx
     sub rax, r8
 
-    mov rcx, offset format2
+    mov rcx, offset format1
     mov rdx, rax
     call printf
 
@@ -241,7 +246,7 @@ thread_dst proc
     cmp edx, eax
     je @b
 
-    mov rcx, offset format3
+    mov rcx, offset format2
     call printf
 
   ; ------------------------------
