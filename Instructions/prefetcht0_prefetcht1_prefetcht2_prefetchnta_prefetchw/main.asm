@@ -8,7 +8,7 @@ extern create_thread: proc
 @l1_size = 262144
 
 const segment align(64) 'CONST'
-src dd (@l1_size / 4) dup(?)
+src dd (16 + @l1_size / 4) dup(?)
 const ends
 
 .const
@@ -32,11 +32,8 @@ main proc
   ; ------------------------------
 
     clflush [src]
-
     lfence
-
     prefetcht0 [src]
-
     mfence
 
     rdtscp
@@ -63,11 +60,8 @@ main proc
   ; ------------------------------
 
     clflush [src]
-
     lfence
-
     prefetcht1 [src]
-
     mfence
 
     rdtscp
@@ -94,11 +88,8 @@ main proc
   ; ------------------------------
 
     clflush [src]
-
     lfence
-
     prefetcht2 [src]
-
     mfence
 
     rdtscp
@@ -125,10 +116,9 @@ main proc
   ; ------------------------------
 
     clflush [src]
-
     lfence
 
-    mov rax, offset src + 512
+    mov rax, offset src + 64
     xor ecx, ecx
 
     align 16
