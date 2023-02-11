@@ -5,10 +5,10 @@ GetCurrentThread proto
 SetThreadAffinityMask proto
 extern create_thread: proc
 
-@l1_size = 32768
+@l1d_size = 32768
 
 const segment align(64) 'CONST'
-src dd (16 + @l1_size / 4) dup(?)
+src dd (16 + @l1d_size / 4) dup(?)
 const ends
 
 .const
@@ -33,8 +33,8 @@ main proc
 
     clflush [src]
     lfence
-    prefetcht0 [src]
-    mfence
+  ; prefetcht0 [src]
+  ; mfence
 
     rdtscp
     lfence
@@ -133,7 +133,7 @@ main proc
     mov edx, [rax + rcx]
     lfence
     add ecx, 64
-    cmp ecx, @l1_size
+    cmp ecx, @l1d_size
     jne @b
 
     mfence
