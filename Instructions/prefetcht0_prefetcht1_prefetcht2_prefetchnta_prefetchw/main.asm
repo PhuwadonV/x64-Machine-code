@@ -33,8 +33,8 @@ main proc
 
     clflush [src]
     lfence
-  ; prefetcht0 [src]
-  ; mfence
+    prefetcht0 [src]
+    mfence
 
     rdtscp
     lfence
