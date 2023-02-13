@@ -8,7 +8,7 @@ extern create_thread: proc
 @l1d_size = 32768
 
 const segment align(64) 'CONST'
-src dd (16 + @l1d_size / 4) dup(?)
+src db (@l1d_size + 64) dup(?)
 const ends
 
 .const
@@ -22,7 +22,10 @@ data ends
 
 .code
 main proc
-    sub rsp, 32 + 8
+    push rbx
+    push rsi
+    push rdi
+    sub rsp, 32
 
     call GetCurrentThread
 
@@ -32,16 +35,20 @@ main proc
   ; ------------------------------
 
     clflush [src]
+    mfence
     lfence
+  ; ....................
     prefetcht0 [src]
-    mfence
+  ; ....................
+    xor eax, eax
+    cpuid
 
     rdtscp
     lfence
     mov r8d, eax
     mov r9d, edx
 
-    mov eax, [src]
+    mov eax, dword ptr [src]
 
     rdtscp
     shl r9, 20h
@@ -60,16 +67,20 @@ main proc
   ; ------------------------------
 
     clflush [src]
+    mfence
     lfence
+  ; ....................
     prefetcht1 [src]
-    mfence
+  ; ....................
+    xor eax, eax
+    cpuid
 
     rdtscp
     lfence
     mov r8d, eax
     mov r9d, edx
 
-    mov eax, [src]
+    mov eax, dword ptr [src]
 
     rdtscp
     shl r9, 20h
@@ -88,16 +99,20 @@ main proc
   ; ------------------------------
 
     clflush [src]
+    mfence
     lfence
+  ; ....................
     prefetcht2 [src]
-    mfence
+  ; ....................
+    xor eax, eax
+    cpuid
 
     rdtscp
     lfence
     mov r8d, eax
     mov r9d, edx
 
-    mov eax, [src]
+    mov eax, dword ptr [src]
 
     rdtscp
     shl r9, 20h
@@ -115,25 +130,29 @@ main proc
     call printf
   ; ------------------------------
 
-    clflush [src]
-    lfence
-    prefetchnta [src]
-    mfence
+    mov esi, 10000
+    xor edi, edi
 
-    mov rax, offset src + 64
-    xor ecx, ecx
+    align 16
+start:
+    clflush [src]
+    mfence
+    lfence
+
+    mov r8, offset src
+    xor r9, r9
 
     align 16
 @@:
   ; ....................
-    prefetchnta [rax + rcx]
-  ; prefetcht0 [rax + rcx]
+    prefetchnta [r8 + r9]
+  ; prefetcht0 [r8 + r9]
   ; ....................
-    mfence
-    mov edx, [rax + rcx]
-    lfence
-    add ecx, 64
-    cmp ecx, @l1d_size
+    xor eax, eax
+    cpuid
+    mov edx, [r8 + r9]
+    add r9d, 64
+    cmp r9d, @l1d_size + 64
     jne @b
 
     mfence
@@ -143,7 +162,7 @@ main proc
     mov r8d, eax
     mov r9d, edx
 
-    mov eax, [src]
+    mov eax, dword ptr [src]
 
     rdtscp
     shl r9, 20h
@@ -151,6 +170,15 @@ main proc
     or r8, r9
     or rax, rdx
     sub rax, r8
+
+    add rdi, rax
+    sub esi, 1
+    jnz start
+
+    mov rax, rdi
+    mov rcx, 10000
+    cqo
+    div rcx
 
     mov rcx, offset format
     mov rdx, rax
@@ -219,10 +247,16 @@ thread_invilidate proc
     prefetchw [dst]
   ; prefetcht0 [dst]
   ; ....................
+    xor eax, eax
+    cpuid
+
     mov [step], 3
 
   ; ------------------------------
-    add rsp, 32 + 8
+    pop rdi
+    pop rsi
+    pop rbx
+    add rsp, 32
     xor eax, eax
     ret
 thread_invilidate endp

@@ -24,6 +24,7 @@ main proc
   ; ....................
     clflush [src]
   ; ....................
+    mfence
     lfence
 
     rdtsc
@@ -55,7 +56,7 @@ main proc
   ; ....................
     clflushopt [src]
   ; ....................
-    lfence
+    mfence
 
     rdtscp
     lfence
