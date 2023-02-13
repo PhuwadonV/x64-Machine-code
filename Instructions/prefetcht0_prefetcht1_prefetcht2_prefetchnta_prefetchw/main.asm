@@ -155,8 +155,6 @@ start:
     cmp r9d, @l1d_size + 64
     jne @b
 
-    mfence
-
     rdtscp
     lfence
     mov r8d, eax
