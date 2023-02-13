@@ -149,6 +149,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "and_andn", "Instructions\an
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "or", "Instructions\or\or.vcxproj", "{FFEE42E0-418E-4A4D-9602-1B18A2483944}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "por_orps_orpd", "Instructions\por_orps_orpd\por_orps_orpd.vcxproj", "{6D58EC88-31CD-4051-9FBF-CC78818939B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -653,6 +655,14 @@ Global
 		{FFEE42E0-418E-4A4D-9602-1B18A2483944}.Release|x64.Build.0 = Release|x64
 		{FFEE42E0-418E-4A4D-9602-1B18A2483944}.Release|x86.ActiveCfg = Release|Win32
 		{FFEE42E0-418E-4A4D-9602-1B18A2483944}.Release|x86.Build.0 = Release|Win32
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Debug|x64.ActiveCfg = Debug|x64
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Debug|x64.Build.0 = Debug|x64
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Debug|x86.ActiveCfg = Debug|Win32
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Debug|x86.Build.0 = Debug|Win32
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Release|x64.ActiveCfg = Release|x64
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Release|x64.Build.0 = Release|x64
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Release|x86.ActiveCfg = Release|Win32
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -729,6 +739,7 @@ Global
 		{4264C5AC-EF38-411C-93F8-4EDD045FEA4A} = {03DDD801-2527-465C-9E57-AB85FA7F694D}
 		{B745D075-0A90-47B7-B3BD-2FFB8F8EB9D7} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{FFEE42E0-418E-4A4D-9602-1B18A2483944} = {BE774291-A689-402F-937E-8E2000CA1FD9}
+		{6D58EC88-31CD-4051-9FBF-CC78818939B3} = {86322673-9C81-405D-B67D-417E6831096C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
