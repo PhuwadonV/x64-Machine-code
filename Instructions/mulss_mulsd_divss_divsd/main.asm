@@ -13,6 +13,33 @@ main proc
 
     mov eax, 40000000h ; 2.0f
     movd xmm0, eax
+    mulss xmm0, xmm0
+    cvtss2sd xmm0, xmm0
+
+    mov rcx, offset format
+    movq rdx, xmm0
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov rax, 4000000000000000h ; 2.0
+    movq xmm0, rax
+    mulsd xmm0, xmm0
+
+    mov rcx, offset format
+    movq rdx, xmm0
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    mov eax, 40000000h ; 2.0f
+    movd xmm0, eax
     divss xmm0, xmm0
     cvtss2sd xmm0, xmm0
 
