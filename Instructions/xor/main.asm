@@ -3,7 +3,7 @@ includelib legacy_stdio_definitions.lib
 printf proto
 
 .const
-format db 4 dup("%llx", 0Ah), 0
+format db 4 dup("%016llx", 0Ah), 0
 
 .code
 main proc

@@ -3,7 +3,7 @@ includelib legacy_stdio_definitions.lib
 printf proto
 
 .const
-format db "%x", 0
+format db "%08x", 0
 
 .code
 main proc

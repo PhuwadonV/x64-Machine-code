@@ -8,7 +8,7 @@ printf proto
 ; @adc2 equ adc
 
 .const
-format db 3 dup("%llx "), 0Ah, 3 dup("%llx "), 0
+format db 3 dup("%016llx "), 0Ah, 3 dup("%016llx "), 0
 max dq 0FFFFFFFFFFFFFFFFh
 zero dq 0h
 
