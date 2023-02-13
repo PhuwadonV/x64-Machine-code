@@ -17,6 +17,37 @@ main proc
   ; ------------------------------
 
     vmovaps xmm0, [src1]
+    vmulps xmm0, xmm0, xmm0
+    vcvtps2pd ymm0, xmm0
+    vmovupd [rsp + 8], ymm0
+
+    mov rcx, offset format1
+    mov rdx, [rsp + 8]
+    mov r8, [rsp + 16]
+    mov r9, [rsp + 24]
+    vzeroupper
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    movapd xmm0, [src2]
+    mulpd xmm0, xmm0
+    movupd [rsp + 8], xmm0
+
+    mov rcx, offset format2
+    mov rdx, [rsp + 8]
+    mov r8, [rsp + 16]
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    vmovaps xmm0, [src1]
     vdivps xmm0, xmm0, xmm0
     vcvtps2pd ymm0, xmm0
     vmovupd [rsp + 8], ymm0

@@ -141,6 +141,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SIMD-Logic", "SIMD-Logic", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pand_pandn_andps_andpd_andnps_andnpd", "Instructions\pand_pandn_andps_andpd_andnps_andnpd\pand_pandn_andps_andpd_andnps_andnpd.vcxproj", "{C445833D-747B-434D-BCE9-11551E303696}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mulps_mulpd_divps_divpd", "Instructions\mulps_mulpd_divps_divpd\mulps_mulpd_divps_divpd.vcxproj", "{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -613,6 +615,14 @@ Global
 		{C445833D-747B-434D-BCE9-11551E303696}.Release|x64.Build.0 = Release|x64
 		{C445833D-747B-434D-BCE9-11551E303696}.Release|x86.ActiveCfg = Release|Win32
 		{C445833D-747B-434D-BCE9-11551E303696}.Release|x86.Build.0 = Release|Win32
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Debug|x64.ActiveCfg = Debug|x64
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Debug|x64.Build.0 = Debug|x64
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Debug|x86.ActiveCfg = Debug|Win32
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Debug|x86.Build.0 = Debug|Win32
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Release|x64.ActiveCfg = Release|x64
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Release|x64.Build.0 = Release|x64
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Release|x86.ActiveCfg = Release|Win32
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -685,6 +695,7 @@ Global
 		{8FB566DD-AB63-4F89-AF0B-C45BB4DCB657} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{86322673-9C81-405D-B67D-417E6831096C} = {BE774291-A689-402F-937E-8E2000CA1FD9}
 		{C445833D-747B-434D-BCE9-11551E303696} = {86322673-9C81-405D-B67D-417E6831096C}
+		{2ADEBE83-1A8F-44B8-9954-1B5A088CAC05} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
