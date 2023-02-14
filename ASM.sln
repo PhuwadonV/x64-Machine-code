@@ -155,6 +155,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vzeroupper_vzeroall", "Inst
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rol_ror_rcl_rcr", "Instructions\rol_ror_rcl_rcr\rol_ror_rcl_rcr.vcxproj", "{33C55B24-4564-492B-B7F3-992DB8D8AC73}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "popcnt", "Instructions\popcnt\popcnt.vcxproj", "{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -683,6 +685,14 @@ Global
 		{33C55B24-4564-492B-B7F3-992DB8D8AC73}.Release|x64.Build.0 = Release|x64
 		{33C55B24-4564-492B-B7F3-992DB8D8AC73}.Release|x86.ActiveCfg = Release|Win32
 		{33C55B24-4564-492B-B7F3-992DB8D8AC73}.Release|x86.Build.0 = Release|Win32
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Debug|x64.ActiveCfg = Debug|x64
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Debug|x64.Build.0 = Debug|x64
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Debug|x86.ActiveCfg = Debug|Win32
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Debug|x86.Build.0 = Debug|Win32
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Release|x64.ActiveCfg = Release|x64
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Release|x64.Build.0 = Release|x64
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Release|x86.ActiveCfg = Release|Win32
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -762,6 +772,7 @@ Global
 		{6D58EC88-31CD-4051-9FBF-CC78818939B3} = {86322673-9C81-405D-B67D-417E6831096C}
 		{9096E845-DC53-41BF-A57D-8BBBFFBCA2D2} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 		{33C55B24-4564-492B-B7F3-992DB8D8AC73} = {BE774291-A689-402F-937E-8E2000CA1FD9}
+		{ADEA6E10-0FB3-47AB-90C6-D737DB4FC576} = {03DDD801-2527-465C-9E57-AB85FA7F694D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
