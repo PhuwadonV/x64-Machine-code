@@ -7,8 +7,8 @@ separator db 30 dup("-"), 0Ah, 0
 format db 4 dup("%08x "), 0Ah, 0
 
 align 16
-src1 db 16 dup(011h)
-src2 db 16 dup(022h)
+src1 db 16 dup(11h)
+src2 db 16 dup(22h)
 value1 db 8 dup(80h, 0h)
 value2 dd 2 dup(0h, 80000000h)
 value3 dq 0h, 8000000000000000h
