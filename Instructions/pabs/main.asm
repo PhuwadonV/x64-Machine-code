@@ -10,7 +10,6 @@ align 16
 src1 db 16 dup(-1)
 src2 dw 8 dup(-1)
 src3 dd 4 dup(-1)
-src4 dq 2 dup(-1)
 
 .code
 main proc
