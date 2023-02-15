@@ -9,9 +9,11 @@ format2 db 2 dup("%f "), 0Ah, 0
 
 align 16
 src1 dd 1.0f, 1.0f, 1.0f, 1.0f
-src2 dq 1.0, 1.0
-src3 dd 2.0f, 3.0f
-src4 dq 2.0
+src2 dd 9.0f, 9.0f
+
+align 16
+src3 dq 1.0, 1.0
+src4 dq 9.0
 
 .code
 main proc
@@ -19,7 +21,7 @@ main proc
   ; ------------------------------
 
     vmovaps xmm0, [src1]
-    vmovhps xmm0, xmm0, [src3]
+    vmovhps xmm0, xmm0, [src2]
     vcvtps2pd ymm0, xmm0
     vmovupd [rsp + 8], ymm0
 
@@ -35,7 +37,7 @@ main proc
     call printf
   ; ------------------------------
 
-    movapd xmm0, [src2]
+    movapd xmm0, [src3]
     movhpd xmm0, [src4]
     movupd [rsp + 8], xmm0
 
@@ -51,7 +53,7 @@ main proc
   ; ------------------------------
 
     vmovaps xmm0, [src1]
-    vmovlps xmm0, xmm0, qword ptr [src3]
+    vmovlps xmm0, xmm0, qword ptr [src2]
     vcvtps2pd ymm0, xmm0
     vmovupd [rsp + 8], ymm0
 
@@ -67,7 +69,7 @@ main proc
     call printf
   ; ------------------------------
 
-    movapd xmm0, [src2]
+    movapd xmm0, [src3]
     movlpd xmm0, [src4]
     movupd [rsp + 8], xmm0
 

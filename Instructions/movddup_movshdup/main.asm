@@ -8,7 +8,7 @@ format1 db 2 dup("%f "), 0Ah, 0
 format2 db 4 dup("%08x "), 0Ah, 0
 
 align 16
-src dd 2 dup(0h, 0FFFFFFFFh)
+src dd 2 dup(99h, 1.0f)
 
 .code
 main proc
@@ -30,7 +30,7 @@ main proc
     call printf
   ; ------------------------------
 
-    movaps xmm0, src
+    movaps xmm0, [src]
     movshdup xmm0, xmm0
     movups [rsp + 20], xmm0
 

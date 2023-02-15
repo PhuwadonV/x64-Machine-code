@@ -7,14 +7,14 @@ separator db 30 dup("-"), 0Ah, 0
 format db 4 dup("%08x "), 0Ah, 0
 
 align 16
-src db 16 dup(0FFh)
+src db 16 dup(11h)
 
 .code
 main proc
     sub rsp, 32 + 8
   ; ------------------------------
 
-    mov eax, 0FFFFFFFFh
+    mov eax, 99999999h
     movdqa xmm0, xmmword ptr [src]
     movd xmm0, eax
     movdqu [rsp + 20], xmm0
@@ -30,7 +30,7 @@ main proc
     call printf
   ; ------------------------------
 
-    mov rax, 0FFFFFFFFFFFFFFFFh
+    mov rax, 9999999999999999h
     movdqa xmm0, xmmword ptr [src]
     movq xmm0, rax
     movdqu [rsp + 20], xmm0

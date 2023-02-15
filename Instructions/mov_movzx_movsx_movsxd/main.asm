@@ -4,34 +4,23 @@ printf proto
 
 .const
 separator db 30 dup("-"), 0Ah, 0
-format1 db 4 dup("%016llx", 0Ah), 0
+format1 db 3 dup("%016llx", 0Ah), 0
 format2 db "%016llx", 0Ah, 0
 
 .code
 main proc
-    push rbx
-    sub rsp, 32 + 16
+    sub rsp, 32 + 8
   ; ------------------------------
 
-    xor eax, eax
-    add rax, 0FFFFFFFFFFFFFFFFh ; add rax, sign-entended imm8
-    mov rcx, rax
-    mov rdx, rax
-    mov rbx, rax
+    mov rdx, 1111111111111111h
+    mov r8, rdx
+    mov r9, rdx
 
-    mov ecx, 0
-    mov dx, 0
-    mov bl, 0
-
-    mov [rsp + 8], rax
-    mov [rsp + 16], rcx
-    mov [rsp + 24], rdx
-    mov [rsp + 32], rbx
+    mov edx, 99999999h
+    mov r8w, 9999h
+    mov r9b, 99h
 
     mov rcx, offset format1
-    mov rdx, [rsp + 8]
-    mov r8, [rsp + 16]
-    mov r9, [rsp + 24]
     call printf
 
   ; ------------------------------
@@ -40,7 +29,7 @@ main proc
   ; ------------------------------
 
     mov rdx, 1111111111111111h
-    mov al, 88h
+    mov al, 99h
 
     movzx rdx, al
 
@@ -53,7 +42,7 @@ main proc
   ; ------------------------------
 
     mov rdx, 1111111111111111h
-    mov al, 88h
+    mov al, 99h
 
     movsx rdx, al
 
@@ -66,7 +55,7 @@ main proc
   ; ------------------------------
 
     mov rdx, 1111111111111111h
-    mov eax, 88888888h
+    mov eax, 99999999h
 
     movsxd rdx, eax
 
@@ -74,8 +63,7 @@ main proc
     call printf
 
   ; ------------------------------
-    add rsp, 32 + 16
-    pop rbx
+    add rsp, 32 + 8
     xor eax, eax
     ret
 main endp

@@ -11,8 +11,7 @@ main proc
     sub rsp, 32 + 16
   ; ------------------------------
 
-    xor eax, eax
-    add rax, 0FFFFFFFFFFFFFFFFh ; add rax, sign-entended imm8
+    mov rax, 1111111111111111h
     mov rcx, rax
     mov rdx, rax
     mov rbx, rax
