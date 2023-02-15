@@ -24,7 +24,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5d450635-4f25-4ffe-a626-b09c41f64791}</ProjectGuid>
+    <ProjectGuid>{113A19BD-FDC3-4510-8206-7482CE86D350}</ProjectGuid>
     <RootNamespace>movddup</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
