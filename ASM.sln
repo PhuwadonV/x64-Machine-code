@@ -165,6 +165,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqrtss_sqrtsd", "Instructio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movshdup_movddup", "Instructions\movshdup_movddup\movshdup_movddup.vcxproj", "{113A19BD-FDC3-4510-8206-7482CE86D350}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sqrtps_sqrtpd", "Instructions\sqrtps_sqrtpd\sqrtps_sqrtpd.vcxproj", "{51115A10-AC38-4286-B967-5C9CB2BDFDCB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -725,6 +727,14 @@ Global
 		{113A19BD-FDC3-4510-8206-7482CE86D350}.Release|x64.Build.0 = Release|x64
 		{113A19BD-FDC3-4510-8206-7482CE86D350}.Release|x86.ActiveCfg = Release|Win32
 		{113A19BD-FDC3-4510-8206-7482CE86D350}.Release|x86.Build.0 = Release|Win32
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Debug|x64.ActiveCfg = Debug|x64
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Debug|x64.Build.0 = Debug|x64
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Debug|x86.ActiveCfg = Debug|Win32
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Debug|x86.Build.0 = Debug|Win32
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Release|x64.ActiveCfg = Release|x64
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Release|x64.Build.0 = Release|x64
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Release|x86.ActiveCfg = Release|Win32
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -809,6 +819,7 @@ Global
 		{48A1A4B5-A2CC-48D2-AE48-CB32EE9204E5} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 		{E9618A32-66AD-4043-BB61-5BECEA473512} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{113A19BD-FDC3-4510-8206-7482CE86D350} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
+		{51115A10-AC38-4286-B967-5C9CB2BDFDCB} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
