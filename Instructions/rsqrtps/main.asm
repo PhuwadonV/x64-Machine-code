@@ -3,20 +3,27 @@ includelib legacy_stdio_definitions.lib
 printf proto
 
 .const
-format db "%f", 0Ah, 0
+separator db 30 dup("-"), 0Ah, 0
+format db 4 dup("%f "), 0Ah, 0
+
+align 16
+src1 dd 4.0f, 9.0f, 16.0f, 25.0f
 
 .code
 main proc
     sub rsp, 32 + 8
   ; ------------------------------
 
-    mov eax, 40800000h ; 4.0f
-    movd xmm0, eax
-    sqrtss xmm0, xmm0
-    cvtss2sd xmm0, xmm0
+    vmovaps xmm0, [src1]
+    vrsqrtps xmm0, xmm0
+    vcvtps2pd ymm0, xmm0
+    vmovupd [rsp + 8], ymm0
 
     mov rcx, offset format
-    movq rdx, xmm0
+    mov rdx, [rsp + 8]
+    mov r8, [rsp + 16]
+    mov r9, [rsp + 24]
+    vzeroupper
     call printf
 
   ; ------------------------------

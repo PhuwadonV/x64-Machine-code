@@ -12,7 +12,7 @@ main proc
 
     mov eax, 40800000h ; 4.0f
     movd xmm0, eax
-    sqrtss xmm0, xmm0
+    rsqrtss xmm0, xmm0
     cvtss2sd xmm0, xmm0
 
     mov rcx, offset format
