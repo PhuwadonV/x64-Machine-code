@@ -179,6 +179,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pinsr_pextr_insertps_extrac
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "packss_packus", "Instructions\packss_packus\packss_packus.vcxproj", "{1B655B84-F05F-48B0-9E87-1993AC01671B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "padd_psub", "Instructions\padd_psub\padd_psub.vcxproj", "{F177E42B-44DB-47AE-BEFC-4A3738597BF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -795,6 +797,14 @@ Global
 		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x64.Build.0 = Release|x64
 		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x86.ActiveCfg = Release|Win32
 		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x86.Build.0 = Release|Win32
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Debug|x64.ActiveCfg = Debug|x64
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Debug|x64.Build.0 = Debug|x64
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Debug|x86.ActiveCfg = Debug|Win32
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Debug|x86.Build.0 = Debug|Win32
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Release|x64.ActiveCfg = Release|x64
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Release|x64.Build.0 = Release|x64
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Release|x86.ActiveCfg = Release|Win32
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -886,6 +896,7 @@ Global
 		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 		{EBEDFCCC-C877-45B7-931D-CDBC7610AA53} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 		{1B655B84-F05F-48B0-9E87-1993AC01671B} = {BCB9925D-6696-4540-B739-87ACAE66449B}
+		{F177E42B-44DB-47AE-BEFC-4A3738597BF2} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
