@@ -177,6 +177,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pshuf_shufps_shufpd", "Inst
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pinsr_pextr_insertps_extractps", "Instructions\pinsr_pextr_insertps_extractps\pinsr_pextr_insertps_extractps.vcxproj", "{EBEDFCCC-C877-45B7-931D-CDBC7610AA53}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "packss_packus", "Instructions\packss_packus\packss_packus.vcxproj", "{1B655B84-F05F-48B0-9E87-1993AC01671B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -785,6 +787,14 @@ Global
 		{EBEDFCCC-C877-45B7-931D-CDBC7610AA53}.Release|x64.Build.0 = Release|x64
 		{EBEDFCCC-C877-45B7-931D-CDBC7610AA53}.Release|x86.ActiveCfg = Release|Win32
 		{EBEDFCCC-C877-45B7-931D-CDBC7610AA53}.Release|x86.Build.0 = Release|Win32
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Debug|x64.ActiveCfg = Debug|x64
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Debug|x64.Build.0 = Debug|x64
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Debug|x86.ActiveCfg = Debug|Win32
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Debug|x86.Build.0 = Debug|Win32
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x64.ActiveCfg = Release|x64
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x64.Build.0 = Release|x64
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x86.ActiveCfg = Release|Win32
+		{1B655B84-F05F-48B0-9E87-1993AC01671B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -875,6 +885,7 @@ Global
 		{113A19BD-FDC3-4510-8206-7482CE86D350} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 		{EBEDFCCC-C877-45B7-931D-CDBC7610AA53} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
+		{1B655B84-F05F-48B0-9E87-1993AC01671B} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
