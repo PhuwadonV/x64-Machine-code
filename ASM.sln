@@ -175,6 +175,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rsqrtps", "Instructions\rsq
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movshdup_movsldup_movddup", "Instructions\movshdup_movsldup_movddup\movshdup_movsldup_movddup.vcxproj", "{113A19BD-FDC3-4510-8206-7482CE86D350}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pshuf_shufps_shufpd", "Instructions\pshuf_shufps_shufpd\pshuf_shufps_shufpd.vcxproj", "{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -775,6 +777,14 @@ Global
 		{113A19BD-FDC3-4510-8206-7482CE86D350}.Release|x64.Build.0 = Release|x64
 		{113A19BD-FDC3-4510-8206-7482CE86D350}.Release|x86.ActiveCfg = Release|Win32
 		{113A19BD-FDC3-4510-8206-7482CE86D350}.Release|x86.Build.0 = Release|Win32
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Debug|x64.ActiveCfg = Debug|x64
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Debug|x64.Build.0 = Debug|x64
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Debug|x86.ActiveCfg = Debug|Win32
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Debug|x86.Build.0 = Debug|Win32
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Release|x64.ActiveCfg = Release|x64
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Release|x64.Build.0 = Release|x64
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Release|x86.ActiveCfg = Release|Win32
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -864,6 +874,7 @@ Global
 		{1BA1B3AF-2F6E-4DB6-8AF9-89D92863221F} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{7854C2BE-EBC0-4A30-A02F-99FDD5880C31} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 		{113A19BD-FDC3-4510-8206-7482CE86D350} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
+		{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
