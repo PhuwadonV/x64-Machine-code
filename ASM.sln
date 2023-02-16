@@ -175,7 +175,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "movshdup_movsldup_movddup",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pshuf_shufps_shufpd", "Instructions\pshuf_shufps_shufpd\pshuf_shufps_shufpd.vcxproj", "{627255E5-9CBE-4CB7-8C5C-FBDFB98E7B7B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pinsr_insertps_extractps", "Instructions\pinsr_insertps_extractps\pinsr_insertps_extractps.vcxproj", "{EBEDFCCC-C877-45B7-931D-CDBC7610AA53}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pinsr_pextr_insertps_extractps", "Instructions\pinsr_pextr_insertps_extractps\pinsr_pextr_insertps_extractps.vcxproj", "{EBEDFCCC-C877-45B7-931D-CDBC7610AA53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
