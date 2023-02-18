@@ -17,9 +17,10 @@ main proc
     sub rsp, 32 + 8
   ; ------------------------------
 
-    movaps xmm0, xmmword ptr [src1]
-    punpckhbw xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src1]
+    punpckhbw xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]
@@ -32,9 +33,10 @@ main proc
     call printf
   ; ------------------------------
   
-    movaps xmm0, xmmword ptr [src2]
-    punpckhwd xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src2]
+    punpckhwd xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]
@@ -47,9 +49,10 @@ main proc
     call printf
   ; ------------------------------
   
-    movaps xmm0, xmmword ptr [src3]
-    punpckhdq xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src3]
+    punpckhdq xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]
@@ -62,9 +65,10 @@ main proc
     call printf
   ; ------------------------------
   
-    movaps xmm0, xmmword ptr [src4]
-    punpckhqdq xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src4]
+    punpckhqdq xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]
@@ -77,24 +81,10 @@ main proc
     call printf
   ; ------------------------------
 
-    movaps xmm0, xmmword ptr [src1]
-    punpcklbw xmm0, xmm0
-    movups [rsp + 20], xmm0
-
-    mov rcx, offset format
-    mov edx, [rsp + 20]
-    mov r8d, [rsp + 24]
-    mov r9d, [rsp + 28]
-    call printf
-
-  ; ------------------------------
-    mov rcx, offset separator
-    call printf
-  ; ------------------------------
-  
-    movaps xmm0, xmmword ptr [src2]
-    punpcklwd xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src1]
+    punpcklbw xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]
@@ -107,9 +97,10 @@ main proc
     call printf
   ; ------------------------------
   
-    movaps xmm0, xmmword ptr [src3]
-    punpckldq xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src2]
+    punpcklwd xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]
@@ -122,9 +113,26 @@ main proc
     call printf
   ; ------------------------------
   
-    movaps xmm0, xmmword ptr [src4]
-    punpcklqdq xmm0, xmm0
-    movups [rsp + 20], xmm0
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src3]
+    punpckldq xmm0, xmm1
+    movdqu [rsp + 20], xmm0
+
+    mov rcx, offset format
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+  
+    pxor xmm0, xmm0
+    movdqa xmm1, xmmword ptr [src4]
+    punpcklqdq xmm0, xmm1
+    movdqu [rsp + 20], xmm0
 
     mov rcx, offset format
     mov edx, [rsp + 20]

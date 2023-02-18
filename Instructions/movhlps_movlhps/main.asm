@@ -7,8 +7,8 @@ separator db 30 dup("-"), 0Ah, 0
 format db 4 dup("%f "), 0Ah, 0
 
 align 16
-src1 dd 0h, 0h, 3.0f, 4.0f
-src2 dd 1.0f, 2.0f, 0h, 0h
+src1 dd 9.0h, 9.0h, 9.0h, 9.0h
+src2 dd 1.0f, 2.0f, 3.0f, 4.0f
 
 .code
 main proc
@@ -16,7 +16,8 @@ main proc
   ; ------------------------------
 
     vmovaps xmm0, [src1]
-    vmovhlps xmm0, xmm0, xmm0
+    vmovaps xmm1, [src2]
+    vmovhlps xmm0, xmm0, xmm1
     vcvtps2pd ymm0, xmm0
     vmovupd [rsp + 8], ymm0
 
@@ -32,8 +33,9 @@ main proc
     call printf
   ; ------------------------------
 
-    vmovaps xmm0, [src2]
-    vmovlhps xmm0, xmm0, xmm0
+    vmovaps xmm0, [src1]
+    vmovaps xmm1, [src2]
+    vmovlhps xmm0, xmm0, xmm1
     vcvtps2pd ymm0, xmm0
     vmovupd [rsp + 8], ymm0
 
