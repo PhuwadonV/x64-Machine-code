@@ -13,6 +13,11 @@ extern create_thread: proc
 separator db 30 dup("-"), 0Ah, 0
 format1 db "Main   : %lld", 0Ah, 0
 format2 db "Thread : %d", 0Ah, 0
+format3 db 4 dup("%08x "), 0Ah, 0
+
+align 16
+src dd 1, 2, 3, 4
+@mask dd 2 dup(80h, 0h)
 
 data segment align(64) 'DATA'
 dst dd 16 dup(0h)
@@ -224,6 +229,28 @@ main proc
 
     mov rcx, offset format1
     mov rdx, rax
+    call printf
+
+  ; ------------------------------
+    mov rcx, offset separator
+    call printf
+  ; ------------------------------
+
+    lea rdi, [rsp + 20]
+    movdqa xmm0, xmmword ptr [src]
+    movdqa xmm1, xmmword ptr [@mask]
+
+    mov rax, 9999999999999999h
+    movq xmm2, rax
+    movddup xmm2, xmm2
+    movdqu [rsp + 20], xmm2
+
+    maskmovdqu xmm0, xmm1
+
+    mov rcx, offset format3
+    mov edx, [rsp + 20]
+    mov r8d, [rsp + 24]
+    mov r9d, [rsp + 28]
     call printf
 
   ; ------------------------------
