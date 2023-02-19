@@ -9,7 +9,6 @@ align 16
 src1 dq 3333222211110000h, 7777666655554444h
 src2 dq 0BBBBAAAA99998888h, 0FFFFEEEEDDDDCCCCh
 
-
 .code
 main proc
     sub rsp, 32 + 8
