@@ -69,7 +69,6 @@ main proc
     mov rdx, [rsp + 8]
     call printf
 
-
   ; ------------------------------
     add rsp, 32 + 8
     xor eax, eax
