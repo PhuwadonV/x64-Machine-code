@@ -195,6 +195,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "palignr", "Instructions\pal
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pavg", "Instructions\pavg\pavg.vcxproj", "{B51FC25C-A2C5-4A80-B954-91BCCA320DD1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pcmpeq_pcmpgt", "Instructions\pcmpeq_pcmpgt\pcmpeq_pcmpgt.vcxproj", "{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -867,6 +869,14 @@ Global
 		{B51FC25C-A2C5-4A80-B954-91BCCA320DD1}.Release|x64.Build.0 = Release|x64
 		{B51FC25C-A2C5-4A80-B954-91BCCA320DD1}.Release|x86.ActiveCfg = Release|Win32
 		{B51FC25C-A2C5-4A80-B954-91BCCA320DD1}.Release|x86.Build.0 = Release|Win32
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Debug|x64.ActiveCfg = Debug|x64
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Debug|x64.Build.0 = Debug|x64
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Debug|x86.ActiveCfg = Debug|Win32
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Debug|x86.Build.0 = Debug|Win32
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Release|x64.ActiveCfg = Release|x64
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Release|x64.Build.0 = Release|x64
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Release|x86.ActiveCfg = Release|Win32
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -966,6 +976,7 @@ Global
 		{CC03943D-739A-4B46-9EF7-567A99B79BE9} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 		{B51FC25C-A2C5-4A80-B954-91BCCA320DD1} = {BCB9925D-6696-4540-B739-87ACAE66449B}
+		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
