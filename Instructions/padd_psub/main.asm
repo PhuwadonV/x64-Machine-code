@@ -23,7 +23,7 @@ main proc
   ; ------------------------------
 
     movdqa xmm0, xmmword ptr [src1]
-    paddb xmm0, xmm0
+    pmaddubsw xmm0, xmm0
     movdqu [rsp + 20], xmm0
 
     mov rcx, offset format1

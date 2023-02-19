@@ -199,6 +199,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pcmpeq_pcmpgt", "Instructio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phadd_phsub", "Instructions\phadd_phsub\phadd_phsub.vcxproj", "{15BF275B-E985-45C7-AFF8-63ED3C753748}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pmins_pminu_pmaxs_pmaxu", "Instructions\pmins_pminu_pmaxs_pmaxu\pmins_pminu_pmaxs_pmaxu.vcxproj", "{6F4069E2-A071-4E60-BA54-7912A48C35EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -887,6 +889,14 @@ Global
 		{15BF275B-E985-45C7-AFF8-63ED3C753748}.Release|x64.Build.0 = Release|x64
 		{15BF275B-E985-45C7-AFF8-63ED3C753748}.Release|x86.ActiveCfg = Release|Win32
 		{15BF275B-E985-45C7-AFF8-63ED3C753748}.Release|x86.Build.0 = Release|Win32
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Debug|x64.ActiveCfg = Debug|x64
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Debug|x64.Build.0 = Debug|x64
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Debug|x86.ActiveCfg = Debug|Win32
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Debug|x86.Build.0 = Debug|Win32
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Release|x64.ActiveCfg = Release|x64
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Release|x64.Build.0 = Release|x64
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Release|x86.ActiveCfg = Release|Win32
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -988,6 +998,7 @@ Global
 		{B51FC25C-A2C5-4A80-B954-91BCCA320DD1} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 		{08507FE8-9BC0-43B4-9BD6-8F7C5BF97BB8} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 		{15BF275B-E985-45C7-AFF8-63ED3C753748} = {BCB9925D-6696-4540-B739-87ACAE66449B}
+		{6F4069E2-A071-4E60-BA54-7912A48C35EA} = {BCB9925D-6696-4540-B739-87ACAE66449B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
