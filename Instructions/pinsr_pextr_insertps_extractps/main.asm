@@ -34,7 +34,7 @@ main proc
   ; ------------------------------
     mov rcx, offset separator
     call printf
-  ; ------------------------------
+  ; ------------------------------  
 
     movdqa xmm0, xmmword ptr [src1]
     mov eax, 9999h
