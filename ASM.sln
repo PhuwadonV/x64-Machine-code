@@ -191,6 +191,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rcpps", "Instructions\rcpps
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rcpss", "Instructions\rcpss\rcpss.vcxproj", "{CC03943D-739A-4B46-9EF7-567A99B79BE9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "palignr", "Instructions\palignr\palignr.vcxproj", "{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -847,6 +849,14 @@ Global
 		{CC03943D-739A-4B46-9EF7-567A99B79BE9}.Release|x64.Build.0 = Release|x64
 		{CC03943D-739A-4B46-9EF7-567A99B79BE9}.Release|x86.ActiveCfg = Release|Win32
 		{CC03943D-739A-4B46-9EF7-567A99B79BE9}.Release|x86.Build.0 = Release|Win32
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Debug|x64.ActiveCfg = Debug|x64
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Debug|x64.Build.0 = Debug|x64
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Debug|x86.ActiveCfg = Debug|Win32
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Debug|x86.Build.0 = Debug|Win32
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Release|x64.ActiveCfg = Release|x64
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Release|x64.Build.0 = Release|x64
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Release|x86.ActiveCfg = Release|Win32
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -944,6 +954,7 @@ Global
 		{54D04E7D-FB39-4F84-AD40-FE8E89D824E0} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
 		{69F29C8C-3669-4848-9D07-1CA7A301B6D7} = {D7A13B5C-BE2A-4D41-97A8-926D77618608}
 		{CC03943D-739A-4B46-9EF7-567A99B79BE9} = {C3C0A640-8AC6-40FA-91EA-62AC092D3FEF}
+		{77A7A6CD-1DBB-436D-A57F-829C6BDA0855} = {8D2AD28F-BDE2-44D2-9646-F14430EF038E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {691B63D8-C463-432A-9D1F-B6408B3FDD16}
