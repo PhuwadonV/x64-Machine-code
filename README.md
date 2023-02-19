@@ -19,22 +19,6 @@
   - shl eax, 3 // Normal instruction ( C1 E0 03 )
   - test eax, eax  // Shorter than : cmp eax, 0
 
-# CPU Features
-- x86-64
-- BMI1
-- BMI2
-- ADX
-- MMX
-- SSE
-- SSE2
-- SSE3
-- SSSE3
-- SSE4.1
-- SSE4.2
-- AVX
-- AVX2
-- FMA
-
 # Link
 [Disassembler](https://defuse.ca/online-x86-assembler.htm)<br>
 [Intel Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html)<br>
