@@ -245,8 +245,8 @@ thread_invilidate proc
     jne @b
 
   ; ....................
-  ; prefetchw [dst]
-    prefetcht0 [dst]
+    prefetchw [dst]
+  ; prefetcht0 [dst]
   ; ....................
     xor eax, eax
     cpuid
