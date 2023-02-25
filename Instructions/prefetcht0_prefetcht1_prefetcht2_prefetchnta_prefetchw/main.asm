@@ -220,7 +220,10 @@ start:
     call printf
   
   ; ------------------------------
-    add rsp, 32 + 8
+    add rsp, 32
+    pop rdi
+    pop rsi
+    pop rbx
     xor eax, eax
     ret
 main endp
@@ -242,8 +245,8 @@ thread_invilidate proc
     jne @b
 
   ; ....................
-    prefetchw [dst]
-  ; prefetcht0 [dst]
+  ; prefetchw [dst]
+    prefetcht0 [dst]
   ; ....................
     xor eax, eax
     cpuid
@@ -251,10 +254,7 @@ thread_invilidate proc
     mov [step], 3
 
   ; ------------------------------
-    pop rdi
-    pop rsi
-    pop rbx
-    add rsp, 32
+    add rsp, 32 + 8
     xor eax, eax
     ret
 thread_invilidate endp
